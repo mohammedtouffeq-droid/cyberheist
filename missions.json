@@ -1,0 +1,165 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-10-15T06:45:09.465706+00:00",
+  "architect": "Mohammed Ahmed & Google Gemini 2.5 Pro",
+  "missions": [
+    {
+      "id": "M01",
+      "title": "Proxy Infiltration: OmniCorp Port 443",
+      "target": "OmniCorp Local Relays",
+      "difficulty": "Novice",
+      "reward_credits": 250,
+      "reward_exp": 120,
+      "desc": "Infiltrate OmniCorp's outer proxy network to harvest encryption seeds.",
+      "nodes": [
+        "PROXY",
+        "FIREWALL"
+      ],
+      "solution_commands": [
+        {
+          "cmd": "scan",
+          "output": "[SCAN] Target OmniCorp port 443 exposed. Vulnerability found: CVE-2026-NEURAL."
+        },
+        {
+          "cmd": "crack",
+          "output": "[CRACK] Key handshake cracked: SEED_0x89F. Firewall weakened."
+        },
+        {
+          "cmd": "breach",
+          "output": "[BREACH SUCCESS] Proxy node seized! Harvested \u20bf 250 credits and 120 EXP."
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "title": "The Dark Ledger: Black Market Node",
+      "target": "Aegis Syndicate Databank",
+      "difficulty": "Adept",
+      "reward_credits": 600,
+      "reward_exp": 300,
+      "desc": "Bypass Aegis Syndicate multi-tier cryptographic vault and siphon offshore logs.",
+      "nodes": [
+        "PROXY",
+        "FIREWALL",
+        "DATABASE"
+      ],
+      "solution_commands": [
+        {
+          "cmd": "scan",
+          "output": "[SCAN] Aegis Syndicate subnets detected. 3 nodes online. Intrusion countermeasures active."
+        },
+        {
+          "cmd": "nmap",
+          "output": "[NMAP] Open ports: 22 (SSH-Weak), 3306 (SQL-Vulnerable), 8443 (Firewall)."
+        },
+        {
+          "cmd": "crack",
+          "output": "[CRACK] Brute-forcing quantum salt... Decryption key generated: AEGIS_779_ALPHA."
+        },
+        {
+          "cmd": "breach",
+          "output": "[BREACH SUCCESS] Aegis Database extracted! Ledger captured. +\u20bf 600 CREDITS!"
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "title": "Deep Neural Vault: Sentinel AI Core",
+      "target": "GovNet Sovereign Quantum Cluster",
+      "difficulty": "Master",
+      "reward_credits": 1500,
+      "reward_exp": 850,
+      "desc": "Infiltrate GovNet core sovereign server protected by Sentinel AI counter-intrusion algorithms.",
+      "nodes": [
+        "PROXY",
+        "FIREWALL",
+        "DATABASE",
+        "VAULT"
+      ],
+      "solution_commands": [
+        {
+          "cmd": "scan",
+          "output": "[SCAN WARNING] Sentinel AI detected scan vector. Counter-trace initiated!"
+        },
+        {
+          "cmd": "trace-shield",
+          "output": "[DEFENSE] Spoofed IP routing through 12 orbital nodes. Corp trace suppressed."
+        },
+        {
+          "cmd": "crack",
+          "output": "[CRACK] Neural hash injection successful. Overriding firewall rulesets."
+        },
+        {
+          "cmd": "breach",
+          "output": "[HEIST MASTERED] Sovereign Quantum Cluster completely cracked! You are now an Elite Shadow Operator!"
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "title": "Operation Ghost Signal #4",
+      "target": "Sub-Orbital Relay Grid 51",
+      "difficulty": "Master",
+      "reward_credits": 1450,
+      "reward_exp": 740,
+      "desc": "Automated cloud generator deployed deep orbital infiltration protocols.",
+      "nodes": [
+        "PROXY",
+        "FIREWALL",
+        "DATABASE",
+        "VAULT"
+      ],
+      "solution_commands": [
+        {
+          "cmd": "scan",
+          "output": "[SCAN] Orbital Grid M04 frequencies located."
+        },
+        {
+          "cmd": "nmap",
+          "output": "[NMAP] Quantum port 9022 unshielded."
+        },
+        {
+          "cmd": "crack",
+          "output": "[CRACK] Decrypting military satellite cipher... Complete."
+        },
+        {
+          "cmd": "breach",
+          "output": "[BREACH SUCCESS] Mission M04 conquered! Vault captured."
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "title": "Operation BlackOut: Hyperion Incursion",
+      "target": "Hyperion Bio-Quantum Labs",
+      "difficulty": "Master",
+      "reward_credits": 2079,
+      "reward_exp": 945,
+      "desc": "High-frequency biometric authentication grid with cryogenic cooling nodes.",
+      "nodes": [
+        "PROXY",
+        "FIREWALL",
+        "DATABASE",
+        "VAULT"
+      ],
+      "solution_commands": [
+        {
+          "cmd": "scan",
+          "output": "[SCAN] Telemetry mapped for Hyperion Bio-Quantum Labs. Quantum subnets located."
+        },
+        {
+          "cmd": "nmap",
+          "output": "[NMAP] Vulnerable entry vector: Port 9802 (Zero-Day Exploitable)."
+        },
+        {
+          "cmd": "crack",
+          "output": "[CRACK] Cipher 569-ALPHA neutralized. Bypass token issued."
+        },
+        {
+          "cmd": "breach",
+          "output": "[BREACH SUCCESS] Vault penetrated! Exfiltrated \u20bf 2079 and 945 EXP!"
+        }
+      ]
+    }
+  ]
+}

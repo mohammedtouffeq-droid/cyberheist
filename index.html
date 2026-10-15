@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CYBERHEIST // Neural Infiltration OS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="crt-overlay">
+  <canvas id="matrixCanvas"></canvas>
+
+  <div class="hud-container">
+    <!-- TOP STATUS BAR -->
+    <header class="hud-header">
+      <div class="header-left">
+        <span class="glitch" data-text="CYBERHEIST_OS">CYBERHEIST_OS</span>
+        <span class="sys-version">v2.4.9 // PROTOCOL ACTIVE</span>
+      </div>
+      <div class="header-center">
+        <div class="trace-meter">
+          <span class="trace-label">CORP TRACE:</span>
+          <div class="trace-bar-bg"><div id="traceBar" class="trace-bar-fill"></div></div>
+          <span id="tracePercent" class="trace-val">0%</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <span class="stat-badge">EXP: <b id="expDisplay">0</b></span>
+        <span class="stat-badge">CREDITS: <b id="credDisplay">₿ 0</b></span>
+        <button id="audioToggle" class="hud-btn">🔊 AUDIO</button>
+      </div>
+    </header>
+
+    <!-- MAIN INTERFACE SPLIT -->
+    <main class="hud-body">
+      <!-- TERMINAL CONSOLE -->
+      <section class="panel terminal-panel">
+        <div class="panel-header">
+          <span class="panel-title">TERMINAL // DEV_PORT_8080</span>
+          <span class="status-indicator live">ENCRYPTED</span>
+        </div>
+        <div id="terminalOutput" class="terminal-screen">
+          <div class="log-line sys-msg">=== CYBERHEIST NEURAL INFILTRATION TERMINAL ===</div>
+          <div class="log-line sys-msg">Type <span class="cmd-highlight">'help'</span> for command protocols or <span class="cmd-highlight">'missions'</span> to view active targets.</div>
+          <div class="log-line sys-msg">Autonomous Cloud Engine: <span class="status-green">ONLINE // DAILY SYNCS ENABLED</span></div>
+        </div>
+        <div class="terminal-input-bar">
+          <span class="prompt-symbol">operator@heist:~#</span>
+          <input type="text" id="terminalInput" placeholder="Enter cyber command..." autocomplete="off" autofocus>
+          <button id="sendBtn" class="hud-btn execute-btn">RUN</button>
+        </div>
+      </section>
+
+      <!-- INTEL & RADAR SIDEBAR -->
+      <aside class="panel intel-panel">
+        <div class="panel-header">
+          <span class="panel-title">TARGET INTEL // RADAR</span>
+          <span id="targetStatusBadge" class="status-indicator">STANDBY</span>
+        </div>
+
+        <div class="intel-content">
+          <!-- ACTIVE MISSION CARD -->
+          <div class="card mission-card">
+            <div class="card-label">CURRENT CONTRACT</div>
+            <h3 id="missionTitle">Scanning Uplink...</h3>
+            <p id="missionDesc">Load mission protocols to establish quantum tunnel.</p>
+            <div class="mission-objectives">
+              <span class="obj-label">OBJECTIVE:</span>
+              <div id="missionObjective" class="obj-text">Run 'missions' command to select breach target.</div>
+            </div>
+            <div class="progress-container">
+              <span class="prog-label">BREACH PROGRESS:</span>
+              <div class="prog-bar-bg"><div id="breachProgress" class="prog-bar-fill" style="width: 0%"></div></div>
+            </div>
+          </div>
+
+          <!-- NODE TOPOLOGY / DECRYPT MATRIX -->
+          <div class="card matrix-card">
+            <div class="card-label">SYSTEM TOPOLOGY</div>
+            <div id="nodesGrid" class="nodes-grid">
+              <div class="node-box" data-node="PROXY">PROXY<br><span class="node-state">IDLE</span></div>
+              <div class="node-box" data-node="FIREWALL">FIREWALL<br><span class="node-state">SECURE</span></div>
+              <div class="node-box" data-node="DATABASE">DATABASE<br><span class="node-state">LOCKED</span></div>
+              <div class="node-box" data-node="VAULT">CORE VAULT<br><span class="node-state">OFFLINE</span></div>
+            </div>
+          </div>
+
+          <!-- ACTION BUTTONS (MOBILE ACCESSIBLE) -->
+          <div class="quick-commands">
+            <div class="card-label">FAST PROTOCOLS</div>
+            <div class="btn-grid">
+              <button class="macro-btn" data-cmd="help">HELP</button>
+              <button class="macro-btn" data-cmd="missions">MISSIONS</button>
+              <button class="macro-btn" data-cmd="scan">SCAN</button>
+              <button class="macro-btn" data-cmd="crack">CRACK</button>
+              <button class="macro-btn" data-cmd="breach">BREACH</button>
+              <button class="macro-btn" data-cmd="clear">CLEAR</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- FOOTER HUD -->
+    <footer class="hud-footer">
+      <div class="footer-left">CREATED BY: <span class="creator-tag">MOHAMMED AHMED // ARCHITECT</span></div>
+      <div class="footer-center">POWERED BY: <span class="engine-tag">GOOGLE GEMINI 2.5 PRO & CLOUD RUNTIME</span></div>
+      <div class="footer-right"><span id="networkPing">PING: 18ms</span> | CLOUD STATUS: <span class="status-green">SYNCHRONIZED</span></div>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
