@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-10-15T19:33:42.040643+00:00",
+  "last_updated": "2026-10-16T08:35:52.098828+00:00",
   "architect": "Mohammed Ahmed & Google Gemini 2.5 Pro",
   "missions": [
     {
@@ -257,6 +257,39 @@
         {
           "cmd": "breach",
           "output": "[BREACH ACCOMPLISHED]\n\n    [ K U R O S H I O ]\n    ~~~[DEEP-SEA-NET]~~~\n    ===// NEXUS 4000 //===\n\nVault siphoned! Harvested \u20bf 3116 Credits & 1448 EXP!"
+        }
+      ]
+    },
+    {
+      "id": "M09",
+      "title": "Operation Overdrive: Hyperion Bio-Neural Core",
+      "target": "Hyperion Bio-Neural Core",
+      "difficulty": "Cyber-Lord",
+      "reward_credits": 3476,
+      "reward_exp": 1621,
+      "desc": "Synthetic human neural link testing facility holding genetic decryption keys.",
+      "nodes": [
+        "PROXY",
+        "FIREWALL",
+        "DATABASE",
+        "VAULT"
+      ],
+      "solution_commands": [
+        {
+          "cmd": "scan",
+          "output": "[SCAN // HYPERION] Quantum subnets mapped. Target: Hyperion Bio-Neural Core. Firewall integrity at 100%."
+        },
+        {
+          "cmd": "nmap",
+          "output": "[NMAP // VULN] Port 9314 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
+        },
+        {
+          "cmd": "crack",
+          "output": "[CRACK // CIPHER] Quantum salt broken: HYPERION_170_SIG. Root authorization acquired."
+        },
+        {
+          "cmd": "breach",
+          "output": "[BREACH ACCOMPLISHED]\n\n    [ H Y P E R I O N ]\n    <*[[ BIO-NEURAL ]]*>\n    <<==GEN-CORE-v4==>>\n\nVault siphoned! Harvested \u20bf 3476 Credits & 1621 EXP!"
         }
       ]
     }
