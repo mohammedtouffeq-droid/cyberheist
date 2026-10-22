@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-10-21T19:46:02.511203+00:00",
+  "last_updated": "2026-10-22T09:00:57.984829+00:00",
   "architect": "Mohammed Ahmed & Google Gemini 2.5 Pro",
   "missions": [
     {
@@ -653,6 +653,39 @@
         {
           "cmd": "breach",
           "output": "[BREACH ACCOMPLISHED]\n\n    [ N A K A M O T O ]\n    \u20bf [ SHADOW-DAO ] \u20bf\n    ===ZK-PROOF-CORE===\n\nVault siphoned! Harvested \u20bf 6414 Credits & 2804 EXP!"
+        }
+      ]
+    },
+    {
+      "id": "M21",
+      "title": "Operation Overdrive: Valkyrie Sovereign Defense",
+      "target": "Valkyrie Sovereign Defense",
+      "difficulty": "Cyber-Lord",
+      "reward_credits": 6662,
+      "reward_exp": 2900,
+      "desc": "Autonomous swarm drone intelligence network with counter-intrusion lethal firewalls.",
+      "nodes": [
+        "PROXY",
+        "FIREWALL",
+        "DATABASE",
+        "VAULT"
+      ],
+      "solution_commands": [
+        {
+          "cmd": "scan",
+          "output": "[SCAN // VALKYRIE] Quantum subnets mapped. Target: Valkyrie Sovereign Defense. Firewall integrity at 100%."
+        },
+        {
+          "cmd": "nmap",
+          "output": "[NMAP // VULN] Port 7021 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
+        },
+        {
+          "cmd": "crack",
+          "output": "[CRACK // CIPHER] Quantum salt broken: VALKYRIE_383_SIG. Root authorization acquired."
+        },
+        {
+          "cmd": "breach",
+          "output": "[BREACH ACCOMPLISHED]\n\n    [ N A K A M O T O ]\n    \u20bf [ SHADOW-DAO ] \u20bf\n    ===ZK-PROOF-CORE===\n\nVault siphoned! Harvested \u20bf 6662 Credits & 2900 EXP!"
         }
       ]
     }
