@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-10-24T08:29:37.513356+00:00",
+  "last_updated": "2026-10-24T18:26:38.746630+00:00",
   "architect": "Mohammed Ahmed & Google Gemini 2.5 Pro",
   "missions": [
     {
@@ -818,6 +818,39 @@
         {
           "cmd": "breach",
           "output": "[BREACH ACCOMPLISHED]\n\n    [ H Y P E R I O N ]\n    <*[[ BIO-NEURAL ]]*>\n    <<==GEN-CORE-v4==>>\n\nVault siphoned! Harvested \u20bf 7367 Credits & 3402 EXP!"
+        }
+      ]
+    },
+    {
+      "id": "M26",
+      "title": "Operation Overdrive: Specter Bio-Cybernetics",
+      "target": "Specter Bio-Cybernetics",
+      "difficulty": "Master",
+      "reward_credits": 7590,
+      "reward_exp": 3510,
+      "desc": "Illegal military-grade cyberware schematics encrypted in biological memory chips.",
+      "nodes": [
+        "PROXY",
+        "FIREWALL",
+        "DATABASE",
+        "VAULT"
+      ],
+      "solution_commands": [
+        {
+          "cmd": "scan",
+          "output": "[SCAN // SPECTER] Quantum subnets mapped. Target: Specter Bio-Cybernetics. Firewall integrity at 100%."
+        },
+        {
+          "cmd": "nmap",
+          "output": "[NMAP // VULN] Port 4124 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
+        },
+        {
+          "cmd": "crack",
+          "output": "[CRACK // CIPHER] Quantum salt broken: SPECTER_116_SIG. Root authorization acquired."
+        },
+        {
+          "cmd": "breach",
+          "output": "[BREACH ACCOMPLISHED]\n\n    [ A E T H E R I U S ]\n    /\\===[QUANTUM]===/\\\n    \\/===ORBIT-NET===\\/\n\nVault siphoned! Harvested \u20bf 7590 Credits & 3510 EXP!"
         }
       ]
     }
