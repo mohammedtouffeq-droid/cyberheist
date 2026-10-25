@@ -21,12 +21,16 @@ python -m http.server 8000
 
 Then visit [http://localhost:8000](http://localhost:8000).
 
+Check the authored course content with `python scripts/validate_content.py`.
+
 ## Project structure
 
 - `index.html` — accessible page structure and mission dialog
 - `style.css` — responsive visual design
 - `game.js` — mission flow, scoring, and local progress
-- `missions.json` — reviewed, fictional learning scenarios
+- `missions.json` — authored fictional learning scenarios and static case evidence
+- `curriculum.json` — 60-day course map; the first 7 lessons are playable in this slice
+- `scripts/validate_content.py` — checks course coverage, scenario structure, and answer references
 
 ## Product direction
 

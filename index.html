@@ -16,6 +16,8 @@
         <span class="brand-copy">CYBERHEIST<small>SECURITY FIELD OFFICE</small></span>
       </a>
       <div class="topbar-status"><span class="status-dot"></span> TRAINING DESK <span class="status-divider">/</span> LOCAL PROFILE</div>
+      <button class="header-action" id="academyButton">60-DAY ACADEMY <span>↗</span></button>
+      <button class="header-action notes-action" id="notesButton">FIELD NOTES <span id="noteCount">00</span></button>
       <span class="profile-button" aria-label="Local operator" role="img">AH</span>
     </header>
 
@@ -23,8 +25,10 @@
       <nav class="side-rail" aria-label="Main navigation">
         <span class="rail-label">WORKSPACE</span>
         <a class="nav-link active" href="#home"><span class="nav-number">01</span> Briefing</a>
-        <a class="nav-link" href="#cases"><span class="nav-number">02</span> Case files</a>
-        <a class="nav-link" href="#record"><span class="nav-number">03</span> Your record</a>
+        <button class="nav-link course-nav" id="academyRailButton"><span class="nav-number">02</span> 60-day academy</button>
+        <a class="nav-link" href="#cases"><span class="nav-number">03</span> Case files</a>
+        <button class="nav-link notes-nav" id="notesRailButton"><span class="nav-number">04</span> Field notes</button>
+        <a class="nav-link" href="#record"><span class="nav-number">05</span> Your record</a>
         <div class="rail-spacer"></div>
         <div class="rail-note"><span class="note-rule"></span><p>Every case is fictional.<br>Every skill is real.</p></div>
         <span class="rail-version">FIELD MANUAL <b>01—A</b></span>
@@ -37,12 +41,12 @@
         </section>
 
         <section class="featured-case" aria-labelledby="featuredTitle">
-          <div class="featured-watermark" aria-hidden="true">01</div>
-          <div class="featured-top"><span><i></i> TODAY'S CASE</span><span class="case-ref">CASE FILE&nbsp; / &nbsp;001</span></div>
+          <div id="featuredWatermark" class="featured-watermark" aria-hidden="true">01</div>
+          <div class="featured-top"><span><i></i> TODAY'S TRAINING</span><span id="featuredReference" class="case-ref">DAY 01&nbsp; / &nbsp;60</span></div>
           <div class="featured-content"><div class="featured-copy"><p class="featured-kicker">FIELD EXERCISE <span>·</span> 05 MIN</p><h2 id="featuredTitle">The message<br>that wants a click.</h2><p id="featuredDescription">A familiar logo. An unfamiliar link. Slow down and read the clues.</p><button id="startFeatured" class="start-button"><span>Open the case</span><b aria-hidden="true">↗</b></button></div>
             <div class="case-illustration" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="mail-card"><span class="mail-topline"></span><span class="mail-line long"></span><span class="mail-line"></span><span class="mail-alert">!</span><span class="mail-bottomline"></span></div><span class="illustration-index">SIGNAL&nbsp; / &nbsp;01</span></div>
           </div>
-          <div class="featured-foot"><span>THREE DECISIONS</span><span class="foot-divider"></span><span>NO REAL ACCOUNTS OR LINKS</span><span class="foot-spacer"></span><span class="featured-xp">+60 XP</span></div>
+          <div class="featured-foot"><span>LESSON + SIMULATION</span><span class="foot-divider"></span><span>FICTIONAL CASE</span><span class="foot-spacer"></span><span id="featuredXp" class="featured-xp">+50 XP</span></div>
         </section>
 
         <section id="record" class="record-strip" aria-label="Learning record">
@@ -59,10 +63,12 @@
         <footer><span>CYBERHEIST&nbsp; / &nbsp;FIELD OFFICE <i>—</i> LEARN THE SIGNAL. BUILD THE INSTINCT.</span><span>PROGRESS SAVED ON THIS DEVICE</span></footer>
       </main>
     </div>
-    <nav class="mobile-nav" aria-label="Main navigation"><a class="mobile-link active" href="#home"><span>01</span>Briefing</a><a class="mobile-link" href="#cases"><span>02</span>Case files</a><a class="mobile-link" href="#record"><span>03</span>Your record</a></nav>
+      <nav class="mobile-nav" aria-label="Main navigation"><a class="mobile-link active" href="#home"><span>01</span>Briefing</a><button class="mobile-link" id="academyMobileButton"><span>60</span>Academy</button><a class="mobile-link" href="#cases"><span>02</span>Cases</a><button class="mobile-link" id="notesMobileButton"><span id="mobileNoteCount">00</span>Notes</button></nav>
   </div>
 
   <dialog id="missionDialog" class="mission-dialog" aria-labelledby="dialogTitle"><div class="dialog-top"><span class="dialog-chip" id="dialogCategory">CASE FILE</span><button id="closeDialog" class="close-button" aria-label="Close mission">×</button></div><div id="missionStage"></div></dialog>
+  <dialog id="academyDialog" class="academy-dialog" aria-labelledby="academyTitle"><div class="academy-head"><div><p class="eyebrow"><span class="eyebrow-rule"></span> THE FIELD ACADEMY</p><h2 id="academyTitle">A 60-day route to strong foundations.</h2><p class="academy-summary">Short daily study, a safe simulation, and a field note. Build skills step by step; the capstone checks what you can demonstrate.</p></div><button id="closeAcademy" class="close-button" aria-label="Close academy route">×</button></div><div class="academy-progress"><div><strong id="academyProgressText">0 / 60 DAYS</strong><span id="academyAvailability">7 daily lessons ready</span></div><div class="academy-track"><span id="academyProgressBar"></span></div></div><div id="academyModules" class="academy-modules"></div><p class="academy-disclaimer">This is a learning path, not a professional certification or a promise of expertise. The available lessons are marked; future lessons stay on the course map until they are authored and reviewed.</p></dialog>
+  <dialog id="notesDialog" class="notes-dialog" aria-labelledby="notesTitle"><div class="dialog-top"><div><p class="eyebrow"><span class="eyebrow-rule"></span> OPERATOR JOURNAL</p><h2 id="notesTitle">Field notes</h2></div><button id="closeNotes" class="close-button" aria-label="Close field notes">×</button></div><p class="notes-intro">Your notes are saved on this device. Write only what you want to remember.</p><div id="savedNotes" class="saved-notes"></div></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="game.js" defer></script>
 </body>

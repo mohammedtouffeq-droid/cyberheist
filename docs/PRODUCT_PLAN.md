@@ -41,6 +41,12 @@ Use an investigative field-office language: warm paper, ink, deep forest green, 
 
 ## 3. Game modes and content map
 
+### 60-day beginner field academy
+
+The first course path is 60 days. The design target is a short concept lesson, fictional decision simulation, recall questions, and a private field note each day; the currently playable prototype cases take about 3–6 minutes, while later lessons need more authored practice to meet a fuller daily-study target. The map is divided into digital-safety foundations, identity and access, networks, devices, privacy and trust, monitoring, secure configuration, incident response, and a final tabletop capstone.
+
+The learning outcome is a demonstrable foundation: explain core concepts, make sound personal-security choices, read a curated event timeline, write a factual case note, and complete a fictional defensive response exercise. The product must not promise expert status, employment, or professional certification after 60 days. Expertise depends on further study, supervised practice, assessment, and real experience. This prototype marks only authored days as playable; the rest of the map stays visibly planned, and all content needs qualified review before public release.
+
 | Mode | Player experience | Safe simulation boundary | Release |
 |---|---|---|---|
 | Case Files | Investigate phishing, account alerts, privacy settings, and social engineering | Fictional messages and accounts; no links that resolve to real targets | MVP |
@@ -67,10 +73,10 @@ Use an investigative field-office language: warm paper, ink, deep forest green, 
 
 Track the work in four reviewable build parts, as requested. The parts describe deliverable slices, not a claim that four messages can replace implementation, device QA, or release gates.
 
-1. **Part 1 — Product foundation and visual/gameplay prototype:** product direction, distinct visual identity, responsive briefing desk, working first case loop, and review of the existing web experience. This is the current slice.
-2. **Part 2 — Actual game systems and content:** reusable lesson schema, content validation/review, Defender Desk and additional game modes, replay/mastery, player controls, and stronger local progression.
+1. **Part 1 — Product foundation and visual/gameplay prototype:** product direction, distinct visual identity, responsive briefing desk, working first case loop, and review of the existing web experience. Delivered as a browser prototype; it is not the Android app.
+2. **Part 2 — Academy and game systems:** 60-day course map, first authored lesson set, daily case rotation, field notes, content validation, and reusable progression/gameplay. This is the current slice; qualified content review remains a launch requirement.
 3. **Part 3 — Native Android product:** Compose app foundation, offline content/state, navigation/accessibility, device testing, and Android build pipeline.
-4. **Part 4 — League and release candidate:** League services and anti-cheat only after privacy/moderation design, broader content/device QA, Play Store readiness, and a verified release candidate.
+4. **Part 4 — League and release candidate:** League services and scoring integrity after privacy/moderation design, broader content/device QA, current Play Store declarations, and a verified release candidate.
 
 Do not announce a part as complete until its listed scope is implemented and its acceptance evidence is available. The full Play Store project is complete only after Part 4 release criteria pass.
 
