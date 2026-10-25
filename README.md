@@ -32,6 +32,8 @@ Then visit [http://localhost:8000](http://localhost:8000).
 
 This repository currently contains a web game, not an Android application. The Android/Play Store release is a separate product milestone that needs an Android project, device testing, privacy disclosures, and store materials. The first release target here is a safe, usable learning-game MVP that can be previewed locally.
 
+The staged product roadmap is in [`docs/PRODUCT_PLAN.md`](docs/PRODUCT_PLAN.md), and the proposed native Android architecture is in [`docs/TECHNICAL_PLAN.md`](docs/TECHNICAL_PLAN.md). These documents distinguish planned work from features that have actually shipped.
+
 ## Content contributions
 
 Keep all scenarios fictional and defensive. Do not add instructions that act on real systems, real accounts, or third-party networks. Keep each lesson understandable without specialist experience and explain why the safer choice helps.
