@@ -54,7 +54,7 @@ Each lesson should be data, not executable code. A reviewed lesson includes:
 - correct/acceptable responses and short explanations
 - safety classification and reviewer metadata
 
-The browser prototype separates the 60-day outline (`curriculum.json`) from playable scenario content (`missions.json`). The current authored boundary is the first seven days. Day 7 includes a static fictional evidence timeline rendered as text. `scripts/validate_content.py` checks day coverage, lesson references, answer indexes, field-guide copy, evidence fields, and required explanations before content is considered ready; this structural check does not replace qualified subject-matter review.
+The browser prototype separates the 60-day outline (`curriculum.json`) from playable scenario content (`missions.json`); the current pack maps each course day to a playable mission. Day 7 includes a static fictional evidence timeline rendered as text. `scripts/build_course_pack.py` rebuilds the data pack, and `scripts/validate_content.py` checks day coverage, lesson references, answer indexes, field-guide and practice copy, evidence fields, and required explanations; these structural checks do not replace qualified subject-matter review.
 
 The renderer must treat lesson text as text, not markup or commands. The client must not interpret a lesson as a URL to visit, a shell command to execute, a network target to inspect, or a credential to capture. Remote content, if ever introduced, is untrusted input and must pass the same schema and review rules as bundled content.
 

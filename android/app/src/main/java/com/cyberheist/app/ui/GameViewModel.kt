@@ -35,6 +35,7 @@ data class GameUiState(
     val selectedAnswer: Int? = null,
     val correctAnswers: Int = 0,
     val missionFinished: Boolean = false,
+    val missionPassed: Boolean = false,
     val earnedXp: Int = 0,
     val noteDraft: String = "",
     val noteSaved: Boolean = false,
@@ -70,7 +71,9 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     fun dailyMission(): Mission? {
         val missions = _state.value.program?.missions.orEmpty().filter { it.day != null }.sortedBy { it.day }
-        return missions.firstOrNull { it.id !in _state.value.progress.completedMissionIds } ?: missions.firstOrNull()
+        if (missions.isEmpty()) return null
+        return missions.firstOrNull { it.id !in _state.value.progress.completedMissionIds }
+            ?: missions.getOrNull(LocalDate.now().dayOfYear % missions.size)
     }
 
     fun startMission(missionId: String) {
@@ -82,6 +85,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
             selectedAnswer = null,
             correctAnswers = 0,
             missionFinished = false,
+            missionPassed = false,
             earnedXp = 0,
             noteDraft = _state.value.progress.notes.firstOrNull { it.missionId == mission.id }
                 ?.text?.takeIf { it != mission.takeaway }.orEmpty(),
@@ -108,8 +112,14 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
             return
         }
 
+        val requiredCorrect = kotlin.math.ceil(mission.questions.size * 2.0 / 3.0).toInt()
+        val passed = state.correctAnswers >= requiredCorrect
         val alreadyCompleted = mission.id in state.progress.completedMissionIds
-        val earned = if (alreadyCompleted) 0 else mission.xp
+        val earned = if (passed && !alreadyCompleted) mission.xp else 0
+        if (!passed || alreadyCompleted) {
+            _state.value = state.copy(missionFinished = true, missionPassed = passed, earnedXp = 0)
+            return
+        }
         val today = LocalDate.now()
         val previous = state.progress.lastPlayed?.let { runCatching { LocalDate.parse(it) }.getOrNull() }
         val nextStreak = when {
@@ -124,7 +134,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
             lastPlayed = today.toString(),
         )
         viewModelScope.launch { progressRepository.save(progress) }
-        _state.value = state.copy(progress = progress, earnedXp = earned, missionFinished = true)
+        _state.value = state.copy(progress = progress, earnedXp = earned, missionFinished = true, missionPassed = true)
     }
 
     fun editNote(text: String) {
@@ -148,6 +158,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
             questionIndex = 0,
             selectedAnswer = null,
             missionFinished = false,
+            missionPassed = false,
             noteSaved = false,
         )
     }

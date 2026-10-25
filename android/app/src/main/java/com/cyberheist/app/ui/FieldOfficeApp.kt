@@ -75,6 +75,7 @@ fun FieldOfficeApp(game: GameViewModel = viewModel()) {
                 state = state,
                 question = game.currentQuestion,
                 onBack = game::closeMission,
+                onRetry = { game.startMission(mission.id) },
                 onAnswer = game::chooseAnswer,
                 onNext = game::advanceDecision,
                 onNoteChange = game::editNote,
@@ -310,6 +311,7 @@ private fun MissionRoute(
     state: GameUiState,
     question: com.cyberheist.app.data.DecisionQuestion?,
     onBack: () -> Unit,
+    onRetry: () -> Unit,
     onAnswer: (Int) -> Unit,
     onNext: () -> Unit,
     onNoteChange: (String) -> Unit,
@@ -319,22 +321,37 @@ private fun MissionRoute(
         TextButton(onClick = onBack) { Text("← BACK TO CASES") }
         if (state.missionFinished) {
             Eyebrow("CASE DEBRIEF")
-            Text("Case cleared.", fontFamily = FontFamily.Serif, fontSize = 30.sp)
+            val required = kotlin.math.ceil(mission.questions.size * 2.0 / 3.0).toInt()
+            Text(if (state.missionPassed) "Case cleared." else "Review, then retry.", fontFamily = FontFamily.Serif, fontSize = 30.sp)
             Text("${state.correctAnswers} / ${mission.questions.size} decisions matched the safest choice", fontWeight = FontWeight.SemiBold, fontSize = 12.sp)
             Spacer(Modifier.height(8.dp))
-            Text(if (state.earnedXp > 0) "+${state.earnedXp} XP earned" else "Replay complete · no repeat XP", color = androidx.compose.material3.MaterialTheme.colorScheme.secondary, fontWeight = FontWeight.Bold)
-            Text(mission.takeaway, Modifier.padding(top = 12.dp), fontSize = 12.sp, lineHeight = 18.sp)
-            Spacer(Modifier.height(16.dp))
-            OutlinedTextField(
-                value = state.noteDraft,
-                onValueChange = onNoteChange,
-                modifier = Modifier.fillMaxWidth(),
-                label = { Text("Your private field note") },
-                supportingText = { Text("${state.noteDraft.length} / 280 · on this device · no passwords or codes") },
-                maxLines = 4,
+            Text(
+                when {
+                    !state.missionPassed -> "$required correct answers are needed to clear this lesson. Review the explanations and retry; this attempt does not count toward course progress."
+                    state.earnedXp > 0 -> "+${state.earnedXp} XP earned"
+                    else -> "Already cleared · replay for practice · no repeat XP"
+                },
+                color = androidx.compose.material3.MaterialTheme.colorScheme.secondary,
+                fontWeight = FontWeight.Bold,
+                fontSize = 12.sp,
+                lineHeight = 17.sp,
             )
-            Spacer(Modifier.height(8.dp))
-            Button(onClick = onSaveNote, modifier = Modifier.fillMaxWidth()) { Text(if (state.noteSaved) "Field note saved ✓" else "Save field note") }
+            Text(mission.takeaway, Modifier.padding(top = 12.dp), fontSize = 12.sp, lineHeight = 18.sp)
+            if (!state.missionPassed) {
+                Button(onClick = onRetry, modifier = Modifier.fillMaxWidth().padding(top = 14.dp)) { Text("Retry this case") }
+            } else {
+                Spacer(Modifier.height(16.dp))
+                OutlinedTextField(
+                    value = state.noteDraft,
+                    onValueChange = onNoteChange,
+                    modifier = Modifier.fillMaxWidth(),
+                    label = { Text("Your private field note") },
+                    supportingText = { Text("${state.noteDraft.length} / 280 · on this device · no passwords or codes") },
+                    maxLines = 4,
+                )
+                Spacer(Modifier.height(8.dp))
+                Button(onClick = onSaveNote, modifier = Modifier.fillMaxWidth()) { Text(if (state.noteSaved) "Field note saved ✓" else "Save field note") }
+            }
             Spacer(Modifier.height(8.dp))
             OutlinedButton(onClick = onBack, modifier = Modifier.fillMaxWidth()) { Text("Back to field office") }
         } else {
@@ -343,6 +360,7 @@ private fun MissionRoute(
             Text(mission.description, fontSize = 13.sp, lineHeight = 18.sp, color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant)
             LessonCard(mission.lesson)
             InfoCard("THE SITUATION", mission.scenario)
+            if (mission.practice.isNotBlank()) PracticeCard(mission.practice)
             if (mission.evidence.isNotEmpty()) EvidenceCard(mission.evidence)
             question?.let { current ->
                 Spacer(Modifier.height(9.dp))
@@ -381,6 +399,17 @@ private fun LessonCard(lesson: String) {
         Column(Modifier.padding(12.dp)) {
             Eyebrow("FIELD GUIDE")
             Text(lesson, fontSize = 12.sp, lineHeight = 18.sp)
+        }
+    }
+}
+
+@Composable
+private fun PracticeCard(practice: String) {
+    Card(Modifier.fillMaxWidth().padding(top = 9.dp), colors = CardDefaults.cardColors(containerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceVariant), shape = RoundedCornerShape(8.dp)) {
+        Column(Modifier.padding(12.dp)) {
+            Eyebrow("FIELD PRACTICE")
+            Text(practice, fontSize = 12.sp, lineHeight = 18.sp)
+            Text("Use only your own device/settings or this fictional case. Never enter or share passwords or codes.", Modifier.padding(top = 7.dp), fontSize = 10.sp, lineHeight = 15.sp, color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant)
         }
     }
 }

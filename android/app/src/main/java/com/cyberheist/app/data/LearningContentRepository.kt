@@ -74,6 +74,7 @@ class LearningContentRepository(context: Context) {
             day = item.optInt("day").takeIf { it > 0 },
             lesson = item.optString("lesson"),
             takeaway = item.optString("takeaway"),
+            practice = item.optString("practice"),
             scenario = item.getString("scenario"),
             questions = questions,
             evidence = evidence,

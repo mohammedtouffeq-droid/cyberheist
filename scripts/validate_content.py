@@ -41,8 +41,8 @@ def main() -> int:
         mission_id = mission.get("id", "<missing id>")
         if not mission.get("title") or not mission.get("description") or not mission.get("scenario"):
             errors.append(f"{mission_id}: title, description, and scenario are required.")
-        if mission.get("day") and (not mission.get("lesson") or not mission.get("takeaway")):
-            errors.append(f"{mission_id}: academy lessons need a field guide lesson and takeaway.")
+        if mission.get("day") and any(not mission.get(field) for field in ("lesson", "takeaway", "practice")):
+            errors.append(f"{mission_id}: academy lessons need a field guide, takeaway, and safe practice task.")
         if not isinstance(mission.get("xp"), int) or mission["xp"] <= 0:
             errors.append(f"{mission_id}: XP must be a positive integer.")
         evidence = mission.get("evidence", [])
@@ -84,6 +84,16 @@ def main() -> int:
     for mission in missions:
         if mission.get("day") and mission["day"] <= declared_available and mission["id"] not in mapped_available:
             errors.append(f"Playable day {mission['day']} is missing from the course map.")
+    if declared_available == duration and len(mapped_available) != duration:
+        errors.append("Every day in a fully available course must map to one playable lesson.")
+    final_day = next((mission for mission in missions if mission.get("day") == duration), None)
+    if final_day is None or len(final_day.get("questions", [])) < 8:
+        errors.append("The final day must include a multi-domain assessment with at least eight decisions.")
+
+    promise = course.get("program", {}).get("promise", "").lower()
+    outcome = course.get("program", {}).get("outcome", "").lower()
+    if "guarantee" in promise or "expert" in promise or "expert" in outcome:
+        errors.append("Course copy must not promise expert status or a guaranteed outcome.")
 
     if errors:
         print("Content validation failed:")

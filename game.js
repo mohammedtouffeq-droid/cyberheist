@@ -350,6 +350,17 @@ class CyberHeistGame {
     const contextText = document.createElement('p');
     contextText.textContent = this.activeMission.scenario;
     scenario.append(context, contextText);
+    const practice = this.activeMission.practice ? document.createElement('section') : null;
+    if (practice) {
+      practice.className = 'practice-card';
+      const practiceHeading = document.createElement('strong');
+      practiceHeading.textContent = 'FIELD PRACTICE';
+      const practiceText = document.createElement('p');
+      practiceText.textContent = this.activeMission.practice;
+      const safety = document.createElement('small');
+      safety.textContent = 'Use only your own device/settings or the supplied fictional case. Never enter or share passwords or codes.';
+      practice.append(practiceHeading, practiceText, safety);
+    }
     const evidenceDesk = this.createEvidenceDesk(this.activeMission.evidence);
     const count = document.createElement('p');
     count.className = 'question-count';
@@ -370,6 +381,7 @@ class CyberHeistGame {
       list.append(button);
     });
     this.stage.append(title, intro, lesson, scenario);
+    if (practice) this.stage.append(practice);
     if (evidenceDesk) this.stage.append(evidenceDesk);
     this.stage.append(count, prompt, list);
     if (feedback) this.showFeedback(feedback.correct, feedback.explanation);
@@ -451,25 +463,29 @@ class CyberHeistGame {
 
   finishMission() {
     const alreadyCompleted = this.progress.completed.includes(this.activeMission.id);
-    const earnedXp = alreadyCompleted ? 0 : this.activeMission.xp;
-    if (!alreadyCompleted) this.progress.completed.push(this.activeMission.id);
-    this.progress.xp += earnedXp;
-    this.updateStreak();
-    this.saveProgress();
+    const requiredCorrect = Math.ceil(this.activeMission.questions.length * 2 / 3);
+    const passed = this.correctAnswers >= requiredCorrect;
+    const earnedXp = passed && !alreadyCompleted ? this.activeMission.xp : 0;
+    if (passed && !alreadyCompleted) this.progress.completed.push(this.activeMission.id);
+    if (earnedXp) this.progress.xp += earnedXp;
+    if (passed && !alreadyCompleted) this.updateStreak();
+    if (earnedXp || (passed && !alreadyCompleted)) this.saveProgress();
     this.stage.replaceChildren();
     const result = document.createElement('div');
     result.className = 'result-panel';
     const symbol = document.createElement('div');
     symbol.className = 'result-emoji';
-    symbol.textContent = '✦';
+    symbol.textContent = passed ? '✦' : '↺';
     const title = document.createElement('h2');
     title.id = 'dialogTitle';
-    title.textContent = 'Mission cleared!';
+    title.textContent = passed ? 'Mission cleared' : 'Review, then retry';
     const score = document.createElement('div');
     score.className = 'result-score';
     score.textContent = `${this.correctAnswers} / ${this.activeMission.questions.length}`;
     const copy = document.createElement('p');
-    copy.textContent = `${this.correctAnswers === this.activeMission.questions.length ? 'Excellent instincts.' : 'Every choice is a chance to learn.'} ${earnedXp ? `You earned ${earnedXp} XP.` : 'You already earned XP for this mission, so replaying is just for practice.'}`;
+    copy.textContent = passed
+      ? `${this.correctAnswers} of ${this.activeMission.questions.length} decisions met the ${requiredCorrect}-correct mastery check. ${earnedXp ? `You earned ${earnedXp} XP.` : alreadyCompleted ? 'This lesson was already cleared; replaying does not add XP.' : 'Your lesson is cleared.'}`
+      : `${this.correctAnswers} of ${this.activeMission.questions.length} correct; ${requiredCorrect} are needed to clear this lesson. Review the explanations and retry. This attempt does not count toward course progress.`;
     const noteBox = document.createElement('div');
     noteBox.className = 'lesson-note';
     const noteLabel = document.createElement('label');
@@ -488,6 +504,16 @@ class CyberHeistGame {
     saveNote.dataset.saveNote = 'true';
     saveNote.textContent = existingNote ? 'Update field note' : 'Save field note';
     noteBox.append(noteLabel, takeaway, noteInput, saveNote);
+    if (!passed) {
+      const retry = document.createElement('button');
+      retry.className = 'next-button';
+      retry.dataset.retry = 'true';
+      retry.textContent = 'Retry this case';
+      retry.addEventListener('click', () => this.startMission(this.activeMission));
+      result.append(symbol, title, score, copy, retry);
+      this.stage.append(result);
+      return;
+    }
     const finish = document.createElement('button');
     finish.className = 'next-button';
     finish.dataset.finish = 'true';

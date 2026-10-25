@@ -43,9 +43,9 @@ Use an investigative field-office language: warm paper, ink, deep forest green, 
 
 ### 60-day beginner field academy
 
-The first course path is 60 days. The design target is a short concept lesson, fictional decision simulation, recall questions, and a private field note each day; the currently playable prototype cases take about 3–6 minutes, while later lessons need more authored practice to meet a fuller daily-study target. The map is divided into digital-safety foundations, identity and access, networks, devices, privacy and trust, monitoring, secure configuration, incident response, and a final tabletop capstone.
+The course pack now contains a playable mission for each of the 60 mapped days. Each day combines a short concept lesson, a fictional decision scenario, a personal-safe practice task, recall questions, and an optional private field note; Day 60 includes a multi-domain defensive assessment. This is a foundation-building route, not a promise that a beginner will become an expert in 60 days.
 
-The learning outcome is a demonstrable foundation: explain core concepts, make sound personal-security choices, read a curated event timeline, write a factual case note, and complete a fictional defensive response exercise. The product must not promise expert status, employment, or professional certification after 60 days. Expertise depends on further study, supervised practice, assessment, and real experience. This prototype marks only authored days as playable; the rest of the map stays visibly planned, and all content needs qualified review before public release.
+The intended learning outcome is a demonstrable foundation: explain core concepts, make sound personal-security choices, read a curated event timeline, write a factual case note, and complete a fictional defensive response exercise. The product must not promise expert status, employment, or professional certification after 60 days. Expertise depends on further study, supervised practice, assessment, and real experience. All course content still needs qualified subject-matter review before public release.
 
 | Mode | Player experience | Safe simulation boundary | Release |
 |---|---|---|---|

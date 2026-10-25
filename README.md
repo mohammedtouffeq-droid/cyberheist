@@ -22,7 +22,7 @@ python -m http.server 8000
 Then visit [http://localhost:8000](http://localhost:8000).
 
 Check the authored course content with `python scripts/validate_content.py`.
-After editing the root course files, run `python scripts/sync_android_content.py` before validating or building Android.
+To regenerate the 60-day content pack, run `python scripts/build_course_pack.py`; after editing the root course files, run `python scripts/sync_android_content.py` before validating or building Android.
 
 ## Project structure
 
@@ -30,7 +30,8 @@ After editing the root course files, run `python scripts/sync_android_content.py
 - `style.css` — responsive visual design
 - `game.js` — mission flow, scoring, and local progress
 - `missions.json` — authored fictional learning scenarios and static case evidence
-- `curriculum.json` — 60-day course map; the first 7 lessons are playable in this slice
+- `curriculum.json` — 60-day beginner-to-foundation course map, with one playable mission for each day
+- `scripts/build_course_pack.py` — reproducibly builds the authored course pack and keeps the learning promise bounded
 - `scripts/validate_content.py` — checks course coverage, scenario structure, and answer references
 - `scripts/sync_android_content.py` — syncs the shared course files into the Android asset bundle
 - `android/` — early offline-first native Kotlin/Compose app foundation
@@ -43,7 +44,7 @@ This checkout does not currently have Java, Gradle, or the Android SDK installed
 
 ## Product direction
 
-The repository contains a working browser prototype and an early native Android project. It is not a finished Android app or Play Store release; device testing, complete course content, privacy disclosures, and store materials remain outstanding.
+The repository contains a working browser learning game and an early native Android project. It is not a finished Android app or Play Store release; Android compilation/device testing, qualified subject-matter review, accessibility review, privacy disclosures, and store materials remain outstanding. The course is designed to build beginner foundations; it cannot guarantee expert status in 60 days.
 
 The staged product roadmap is in [`docs/PRODUCT_PLAN.md`](docs/PRODUCT_PLAN.md), and the proposed native Android architecture is in [`docs/TECHNICAL_PLAN.md`](docs/TECHNICAL_PLAN.md). These documents distinguish planned work from features that have actually shipped.
 

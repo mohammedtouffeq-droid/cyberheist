@@ -18,23 +18,36 @@
       "questions": [
         {
           "prompt": "What is the safest first move?",
-          "options": ["Open the link to see what it asks for", "Use the delivery company’s official app or website to check independently", "Reply with your full name so support can find your parcel"],
+          "options": [
+            "Open the link to see what it asks for",
+            "Use the delivery company’s official app or website to check independently",
+            "Reply with your full name so support can find your parcel"
+          ],
           "answer": 1,
           "explanation": "Go to a service through a trusted route you choose yourself. Unexpected urgency and a payment link are reasons to pause."
         },
         {
           "prompt": "What should you do with the unexpected message?",
-          "options": ["Forward it to friends to ask if it looks real", "Report it as spam or phishing, then delete it", "Keep it and try the link later"],
+          "options": [
+            "Forward it to friends to ask if it looks real",
+            "Report it as spam or phishing, then delete it",
+            "Keep it and try the link later"
+          ],
           "answer": 1,
           "explanation": "Reporting helps your messaging provider improve filtering. You do not need to interact with a suspicious link."
         },
         {
           "prompt": "Which clue deserves extra scrutiny?",
-          "options": ["The message creates urgency and asks for payment through an unfamiliar link", "It arrived on a weekday", "It uses a short greeting"],
+          "options": [
+            "The message creates urgency and asks for payment through an unfamiliar link",
+            "It arrived on a weekday",
+            "It uses a short greeting"
+          ],
           "answer": 0,
           "explanation": "Unexpected payment requests, pressure, and unfamiliar domains are useful warning signs. Verify using a separate trusted channel."
         }
-      ]
+      ],
+      "practice": "On the fictional parcel message, mark the pressure cue and write the independent route you would use; do not open its link."
     },
     {
       "id": "password-power-up",
@@ -52,23 +65,36 @@
       "questions": [
         {
           "prompt": "What is the strongest password habit?",
-          "options": ["Reuse one memorable password everywhere", "Use a unique, long password for each account, ideally stored in a password manager", "Add “123” to your usual password"],
+          "options": [
+            "Reuse one memorable password everywhere",
+            "Use a unique, long password for each account, ideally stored in a password manager",
+            "Add “123” to your usual password"
+          ],
           "answer": 1,
           "explanation": "Unique passwords limit the damage if one service is breached. A reputable password manager can help create and store them."
         },
         {
           "prompt": "What extra protection should you turn on?",
-          "options": ["Multi-factor authentication (MFA), preferably a passkey or authenticator method", "A public profile so friends can confirm it is you", "The same password hint as your other accounts"],
+          "options": [
+            "Multi-factor authentication (MFA), preferably a passkey or authenticator method",
+            "A public profile so friends can confirm it is you",
+            "The same password hint as your other accounts"
+          ],
           "answer": 0,
           "explanation": "MFA asks for another proof of identity. Passkeys and authenticator methods are generally safer than relying on a password alone."
         },
         {
           "prompt": "A login alert arrives that you did not request. What now?",
-          "options": ["Approve it so the alert stops", "Deny it, change your password from the official app/site, and review account sessions", "Share the alert code with whoever contacts you"],
+          "options": [
+            "Approve it so the alert stops",
+            "Deny it, change your password from the official app/site, and review account sessions",
+            "Share the alert code with whoever contacts you"
+          ],
           "answer": 1,
           "explanation": "Never approve a sign-in you did not start or share a one-time code. Use the official service to secure the account and check active sessions."
         }
-      ]
+      ],
+      "practice": "Review the sign-in and recovery options on one of your own accounts; do not write down or share a password or code."
     },
     {
       "id": "public-wifi-check",
@@ -86,23 +112,36 @@
       "questions": [
         {
           "prompt": "Which network should you choose?",
-          "options": ["The strongest signal, even if you do not know who runs it", "Confirm the official network name with staff before connecting", "Both networks because public Wi-Fi is always encrypted"],
+          "options": [
+            "The strongest signal, even if you do not know who runs it",
+            "Confirm the official network name with staff before connecting",
+            "Both networks because public Wi-Fi is always encrypted"
+          ],
           "answer": 1,
           "explanation": "A familiar-looking network name can be imitated. Confirm the correct network with staff before joining."
         },
         {
           "prompt": "What is the safer way to check the bank notification?",
-          "options": ["Use your mobile connection and the official banking app", "Follow a banking link from a pop-up on the Wi-Fi page", "Install a certificate the network asks you to download"],
+          "options": [
+            "Use your mobile connection and the official banking app",
+            "Follow a banking link from a pop-up on the Wi-Fi page",
+            "Install a certificate the network asks you to download"
+          ],
           "answer": 0,
           "explanation": "For sensitive accounts, a trusted mobile connection and official app reduce exposure to untrusted networks and fake login pages."
         },
         {
           "prompt": "A page warns that your device is infected and offers a download. What should you do?",
-          "options": ["Install it immediately to stay protected", "Close the page and use your device’s trusted security settings or official support", "Enter your device password to dismiss the warning"],
+          "options": [
+            "Install it immediately to stay protected",
+            "Close the page and use your device’s trusted security settings or official support",
+            "Enter your device password to dismiss the warning"
+          ],
           "answer": 1,
           "explanation": "Unexpected security pop-ups can be scams. Do not install software or enter credentials from an unsolicited page."
         }
-      ]
+      ],
+      "practice": "Use the café scenario to list two checks you would make before connecting; do not join an unknown network for this exercise."
     },
     {
       "id": "privacy-footprint",
@@ -118,10 +157,38 @@
       "takeaway": "Share only information needed for the feature; keep optional permissions off until you need them.",
       "scenario": "A fictional event-planning app asks for your birthday, home address, contact list, and precise location before it will show a public schedule.",
       "questions": [
-        {"prompt": "What is the most useful first question?", "options": ["Which of these details are actually needed for the schedule?", "Can I enter a friend's address instead?", "Can I provide every detail to get through faster?"], "answer": 0, "explanation": "Check whether each requested detail is needed for the feature. Avoid sharing extra personal data just because a form asks for it."},
-        {"prompt": "The app says location is optional. What is a sensible choice?", "options": ["Allow always-on location just in case", "Leave it off unless you choose a feature that needs it", "Share your location publicly so the organizer can find you"], "answer": 1, "explanation": "Use the least data and access needed. If a feature needs location, review the choice and the app's explanation first."},
-        {"prompt": "You already submitted more information than needed. What next?", "options": ["Review privacy and account settings, remove optional details, and contact the service if needed", "Post the form publicly to warn people", "Send the same details to a second app for comparison"], "answer": 0, "explanation": "Reduce optional information where the service allows it. Use its official support route if you need help managing the data."}
-      ]
+        {
+          "prompt": "What is the most useful first question?",
+          "options": [
+            "Which of these details are actually needed for the schedule?",
+            "Can I enter a friend's address instead?",
+            "Can I provide every detail to get through faster?"
+          ],
+          "answer": 0,
+          "explanation": "Check whether each requested detail is needed for the feature. Avoid sharing extra personal data just because a form asks for it."
+        },
+        {
+          "prompt": "The app says location is optional. What is a sensible choice?",
+          "options": [
+            "Allow always-on location just in case",
+            "Leave it off unless you choose a feature that needs it",
+            "Share your location publicly so the organizer can find you"
+          ],
+          "answer": 1,
+          "explanation": "Use the least data and access needed. If a feature needs location, review the choice and the app's explanation first."
+        },
+        {
+          "prompt": "You already submitted more information than needed. What next?",
+          "options": [
+            "Review privacy and account settings, remove optional details, and contact the service if needed",
+            "Post the form publicly to warn people",
+            "Send the same details to a second app for comparison"
+          ],
+          "answer": 0,
+          "explanation": "Reduce optional information where the service allows it. Use its official support route if you need help managing the data."
+        }
+      ],
+      "practice": "Remove unnecessary fields from the supplied fictional sign-up form and explain what the service actually needs."
     },
     {
       "id": "update-routine",
@@ -137,10 +204,38 @@
       "takeaway": "Check and install updates through the device's built-in settings or official software channel.",
       "scenario": "Your phone shows a system update in Settings. Later, a pop-up on an unfamiliar page claims you must install a separate security update immediately.",
       "questions": [
-        {"prompt": "Where should you check for the real system update?", "options": ["Open the device's built-in Settings and update screen", "Download the file linked by the pop-up", "Search for a mirror that installs it faster"], "answer": 0, "explanation": "Use the device's built-in update settings or the software maker's official channel. An unexpected web pop-up is not a trusted update route."},
-        {"prompt": "What is a good routine for important updates?", "options": ["Install from the official update screen when ready, with enough battery and a backup for important data", "Ignore all updates forever", "Install every file a page labels urgent"], "answer": 0, "explanation": "Updates can fix security and reliability issues. Use official settings and practical preparation rather than an unsolicited download."},
-        {"prompt": "A device no longer receives security updates. What should you consider?", "options": ["Keep using it for every sensitive task because it still turns on", "Plan to move sensitive activity to a supported device and check the maker's options", "Install a random tool that promises lifetime support"], "answer": 1, "explanation": "Unsupported software may miss future fixes. Plan a supported replacement or follow the manufacturer's official guidance."}
-      ]
+        {
+          "prompt": "Where should you check for the real system update?",
+          "options": [
+            "Open the device's built-in Settings and update screen",
+            "Download the file linked by the pop-up",
+            "Search for a mirror that installs it faster"
+          ],
+          "answer": 0,
+          "explanation": "Use the device's built-in update settings or the software maker's official channel. An unexpected web pop-up is not a trusted update route."
+        },
+        {
+          "prompt": "What is a good routine for important updates?",
+          "options": [
+            "Install from the official update screen when ready, with enough battery and a backup for important data",
+            "Ignore all updates forever",
+            "Install every file a page labels urgent"
+          ],
+          "answer": 0,
+          "explanation": "Updates can fix security and reliability issues. Use official settings and practical preparation rather than an unsolicited download."
+        },
+        {
+          "prompt": "A device no longer receives security updates. What should you consider?",
+          "options": [
+            "Keep using it for every sensitive task because it still turns on",
+            "Plan to move sensitive activity to a supported device and check the maker's options",
+            "Install a random tool that promises lifetime support"
+          ],
+          "answer": 1,
+          "explanation": "Unsupported software may miss future fixes. Plan a supported replacement or follow the manufacturer's official guidance."
+        }
+      ],
+      "practice": "Check whether your own device has an official update waiting; do not install anything from a pop-up or unfamiliar page."
     },
     {
       "id": "backup-plan",
@@ -156,10 +251,38 @@
       "takeaway": "Keep a separate backup of important files and periodically test that you can restore one.",
       "scenario": "A student keeps a project, family photos, and account recovery codes on one laptop. They have never checked whether the files are backed up.",
       "questions": [
-        {"prompt": "What is a useful first step?", "options": ["Choose the important files and set up an automatic backup to a trusted, separate location", "Copy everything to another folder on the same laptop", "Wait until the laptop breaks"], "answer": 0, "explanation": "A backup should remain available if the original device is lost or damaged. Separate, trusted storage gives you a recovery option."},
-        {"prompt": "How do you know the backup will help?", "options": ["Check that the backup completed and periodically practice restoring a test file", "Assume it worked because a button was clicked once", "Share the recovery codes in a group chat"], "answer": 0, "explanation": "A small restore check confirms that files can be recovered. Keep account recovery information private and in a suitable secure place."},
-        {"prompt": "Which item should not be casually copied into a shared backup folder?", "options": ["A public class timetable", "One-time recovery codes or private identity documents", "A copy of a public brochure"], "answer": 1, "explanation": "Sensitive recovery material needs deliberate protection and limited access. Do not place it in a folder shared with other people."}
-      ]
+        {
+          "prompt": "What is a useful first step?",
+          "options": [
+            "Choose the important files and set up an automatic backup to a trusted, separate location",
+            "Copy everything to another folder on the same laptop",
+            "Wait until the laptop breaks"
+          ],
+          "answer": 0,
+          "explanation": "A backup should remain available if the original device is lost or damaged. Separate, trusted storage gives you a recovery option."
+        },
+        {
+          "prompt": "How do you know the backup will help?",
+          "options": [
+            "Check that the backup completed and periodically practice restoring a test file",
+            "Assume it worked because a button was clicked once",
+            "Share the recovery codes in a group chat"
+          ],
+          "answer": 0,
+          "explanation": "A small restore check confirms that files can be recovered. Keep account recovery information private and in a suitable secure place."
+        },
+        {
+          "prompt": "Which item should not be casually copied into a shared backup folder?",
+          "options": [
+            "A public class timetable",
+            "One-time recovery codes or private identity documents",
+            "A copy of a public brochure"
+          ],
+          "answer": 1,
+          "explanation": "Sensitive recovery material needs deliberate protection and limited access. Do not place it in a folder shared with other people."
+        }
+      ],
+      "practice": "If you have a backup, restore a harmless test file; otherwise make a simple plan for one important file."
     },
     {
       "id": "foundation-check",
@@ -175,14 +298,2595 @@
       "takeaway": "Verify unusual requests, deny sign-ins you did not start, and limit who can see personal information.",
       "scenario": "A fictional club account gets a parcel-fee message, an unfamiliar sign-in prompt, and a request to upload a member list to a public folder.",
       "evidence": [
-        {"time": "08:14", "label": "Unexpected delivery message", "detail": "An unsolicited text asks for a small payment at parcel-help.example. No delivery was expected."},
-        {"time": "08:17", "label": "Sign-in approval prompt", "detail": "A sign-in request appears. The account owner says they did not start it."},
-        {"time": "08:21", "label": "Shared folder setting", "detail": "A folder containing a fictional club member list is set to anyone-with-the-link access."}
+        {
+          "time": "08:14",
+          "label": "Unexpected delivery message",
+          "detail": "An unsolicited text asks for a small payment at parcel-help.example. No delivery was expected."
+        },
+        {
+          "time": "08:17",
+          "label": "Sign-in approval prompt",
+          "detail": "A sign-in request appears. The account owner says they did not start it."
+        },
+        {
+          "time": "08:21",
+          "label": "Shared folder setting",
+          "detail": "A folder containing a fictional club member list is set to anyone-with-the-link access."
+        }
       ],
       "questions": [
-        {"prompt": "Which step should happen before interacting with the parcel message?", "options": ["Check the delivery independently through its official app or site", "Open the payment link to discover who sent it", "Forward it with the club member list"], "answer": 0, "explanation": "Use a separate trusted route to verify an unexpected request. The link itself is not proof that the message is genuine."},
-        {"prompt": "An unfamiliar sign-in prompt appears. What is the safer response?", "options": ["Approve it so you can move on", "Deny it, then review the account through its official app or site", "Share any code with someone offering to help"], "answer": 1, "explanation": "Do not approve a sign-in you did not start or share a one-time code. Review the account through a trusted route."},
-        {"prompt": "What should happen before the member list is uploaded?", "options": ["Check who needs it, remove unnecessary details, and choose a restricted sharing setting", "Make the folder public so everyone can find it", "Upload it to a personal account without checking club rules"], "answer": 0, "explanation": "Use the smallest necessary data, confirm the intended recipients, and restrict access to people who need it."}
+        {
+          "prompt": "Which step should happen before interacting with the parcel message?",
+          "options": [
+            "Check the delivery independently through its official app or site",
+            "Open the payment link to discover who sent it",
+            "Forward it with the club member list"
+          ],
+          "answer": 0,
+          "explanation": "Use a separate trusted route to verify an unexpected request. The link itself is not proof that the message is genuine."
+        },
+        {
+          "prompt": "An unfamiliar sign-in prompt appears. What is the safer response?",
+          "options": [
+            "Approve it so you can move on",
+            "Deny it, then review the account through its official app or site",
+            "Share any code with someone offering to help"
+          ],
+          "answer": 1,
+          "explanation": "Do not approve a sign-in you did not start or share a one-time code. Review the account through a trusted route."
+        },
+        {
+          "prompt": "What should happen before the member list is uploaded?",
+          "options": [
+            "Check who needs it, remove unnecessary details, and choose a restricted sharing setting",
+            "Make the folder public so everyone can find it",
+            "Upload it to a personal account without checking club rules"
+          ],
+          "answer": 0,
+          "explanation": "Use the smallest necessary data, confirm the intended recipients, and restrict access to people who need it."
+        }
+      ],
+      "practice": "Annotate the supplied fictional evidence with time, source, and what remains unknown; do not add personal data."
+    },
+    {
+      "id": "day-08-identity",
+      "day": 8,
+      "title": "How sign-in proves identity",
+      "category": "IDENTITY & ACCESS",
+      "tone": "purple",
+      "difficulty": "Starter",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Separate identity claims from evidence used to verify them.",
+      "lesson": "A sign-in starts with an identity claim, such as an account name. Authentication checks evidence for that claim. Authorization is a separate decision about what the signed-in person may do.",
+      "takeaway": "A successful sign-in proves an account claim; a separate permission check must control each protected action.",
+      "practice": "On the supplied diagram, mark the sign-in check and the separate permission check before the member list can be edited.",
+      "scenario": "A fictional club dashboard shows the name of a volunteer who has just signed in. The dashboard has not yet checked whether that volunteer may edit the membership list.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: How sign-in proves identity?",
+          "options": [
+            "A recovery prompt or approval request should be accepted whenever it appears.",
+            "A display name or successful sign-in automatically grants every permission.",
+            "A successful sign-in proves an account claim; a separate permission check must control each protected action."
+          ],
+          "answer": 2,
+          "explanation": "A successful sign-in proves an account claim; a separate permission check must control each protected action. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "On the supplied diagram, mark the sign-in check and the separate permission check before the member list can be edited.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "On the supplied diagram, mark the sign-in check and the separate permission check before the member list can be edited. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Confirm the diagram has an authentication step and an authorization check on the edit action; do not treat the display name as permission.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Confirm the diagram has an authentication step and an authorization check on the edit action; do not treat the display name as permission. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-09-identity",
+      "day": 9,
+      "title": "Passkeys in plain language",
+      "category": "IDENTITY & ACCESS",
+      "tone": "green",
+      "difficulty": "Starter",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Explain how passkeys reduce reliance on shared secrets.",
+      "lesson": "A passkey uses a key pair: the service stores a public key, while the private key stays protected by your device or password manager. The sign-in is bound to the intended service, which helps resist look-alike login pages.",
+      "takeaway": "Create or use a passkey through the service’s verified app or website; never type an existing password into an unsolicited migration page.",
+      "practice": "Read the fictional setup choices and identify the route that stays inside the portal’s official account settings.",
+      "scenario": "A fictional learning portal offers passkeys. A message also links to a page that asks learners to type their existing password to ‘move’ it.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Passkeys in plain language?",
+          "options": [
+            "Create or use a passkey through the service’s verified app or website; never type an existing password into an unsolicited migration page.",
+            "A display name or successful sign-in automatically grants every permission.",
+            "A recovery prompt or approval request should be accepted whenever it appears."
+          ],
+          "answer": 0,
+          "explanation": "Create or use a passkey through the service’s verified app or website; never type an existing password into an unsolicited migration page. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Read the fictional setup choices and identify the route that stays inside the portal’s official account settings.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Read the fictional setup choices and identify the route that stays inside the portal’s official account settings. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check that the setup began inside the portal you opened yourself and that no password or recovery code was requested by the lesson."
+          ],
+          "answer": 2,
+          "explanation": "Check that the setup began inside the portal you opened yourself and that no password or recovery code was requested by the lesson. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-10-identity",
+      "day": 10,
+      "title": "MFA methods compared",
+      "category": "IDENTITY & ACCESS",
+      "tone": "orange",
+      "difficulty": "Starter",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Choose a second factor based on the account and available options.",
+      "lesson": "Multi-factor authentication combines different kinds of proof. A passkey or security key can resist phishing better than an approval prompt; never approve a request you did not start.",
+      "takeaway": "Deny unexpected prompts, secure the account through its official settings, and choose a strong available second factor.",
+      "practice": "In the mock account screen, compare the listed sign-in factors and select the strongest option the account actually supports.",
+      "scenario": "A fictional account receives repeated sign-in approval prompts while its owner is not trying to sign in.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: MFA methods compared?",
+          "options": [
+            "A display name or successful sign-in automatically grants every permission.",
+            "Deny unexpected prompts, secure the account through its official settings, and choose a strong available second factor.",
+            "A recovery prompt or approval request should be accepted whenever it appears."
+          ],
+          "answer": 1,
+          "explanation": "Deny unexpected prompts, secure the account through its official settings, and choose a strong available second factor. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "In the mock account screen, compare the listed sign-in factors and select the strongest option the account actually supports."
+          ],
+          "answer": 2,
+          "explanation": "In the mock account screen, compare the listed sign-in factors and select the strongest option the account actually supports. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Verify the mock setting shows the selected factor and that every unexpected prompt was denied, not approved.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Verify the mock setting shows the selected factor and that every unexpected prompt was denied, not approved. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-11-identity",
+      "day": 11,
+      "title": "Account recovery safely",
+      "category": "IDENTITY & ACCESS",
+      "tone": "purple",
+      "difficulty": "Starter",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Review recovery channels and protect the recovery process.",
+      "lesson": "Recovery channels can become an alternate route into an account. Keep them current, protected, and under your control; recovery codes should be stored privately and separately from the account they recover.",
+      "takeaway": "Review recovery methods from the service’s official settings and remove channels you no longer control.",
+      "practice": "Use the mock settings panel to identify which recovery channel is stale before choosing a safe update plan.",
+      "scenario": "A fictional student changes phone numbers but still has the old number listed for account recovery.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Account recovery safely?",
+          "options": [
+            "A recovery prompt or approval request should be accepted whenever it appears.",
+            "A display name or successful sign-in automatically grants every permission.",
+            "Review recovery methods from the service’s official settings and remove channels you no longer control."
+          ],
+          "answer": 2,
+          "explanation": "Review recovery methods from the service’s official settings and remove channels you no longer control. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Use the mock settings panel to identify which recovery channel is stale before choosing a safe update plan.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Use the mock settings panel to identify which recovery channel is stale before choosing a safe update plan. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check that the plan uses only a channel the account owner controls and does not expose recovery codes in notes or messages.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Check that the plan uses only a channel the account owner controls and does not expose recovery codes in notes or messages. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-12-identity",
+      "day": 12,
+      "title": "Least privilege",
+      "category": "IDENTITY & ACCESS",
+      "tone": "green",
+      "difficulty": "Starter",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Give a user or app only the access needed for its task.",
+      "lesson": "Least privilege gives each person or app only the access required for its task, for only as long as needed. A broad role is not a substitute for checking what the task actually requires.",
+      "takeaway": "Choose the narrowest permission that allows the approved task and review it when the task ends.",
+      "practice": "In the role cards, match the poster upload task to a limited upload permission rather than workspace administration.",
+      "scenario": "A fictional design volunteer needs to upload one approved poster but is offered administrator access to the entire club workspace.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Least privilege?",
+          "options": [
+            "Choose the narrowest permission that allows the approved task and review it when the task ends.",
+            "A display name or successful sign-in automatically grants every permission.",
+            "A recovery prompt or approval request should be accepted whenever it appears."
+          ],
+          "answer": 0,
+          "explanation": "Choose the narrowest permission that allows the approved task and review it when the task ends. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "In the role cards, match the poster upload task to a limited upload permission rather than workspace administration.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "In the role cards, match the poster upload task to a limited upload permission rather than workspace administration. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify that the chosen role cannot manage members, billing, or unrelated club files."
+          ],
+          "answer": 2,
+          "explanation": "Verify that the chosen role cannot manage members, billing, or unrelated club files. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-13-identity",
+      "day": 13,
+      "title": "Shared devices and sessions",
+      "category": "IDENTITY & ACCESS",
+      "tone": "orange",
+      "difficulty": "Starter",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Find and close sessions that should no longer be active.",
+      "lesson": "A session is an active sign-in on a device or browser. Review sessions after a lost device, suspicious alert, or shared-device use; sign out only sessions you recognize as no longer needed.",
+      "takeaway": "Use the service’s official session list to end sessions you no longer need, then secure the account if any session is unfamiliar.",
+      "practice": "In the mock session list, select only the expired shared-computer session for sign-out.",
+      "scenario": "A fictional account lists a current laptop session and an old library-computer session that the owner recognizes as finished.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Shared devices and sessions?",
+          "options": [
+            "A display name or successful sign-in automatically grants every permission.",
+            "Use the service’s official session list to end sessions you no longer need, then secure the account if any session is unfamiliar.",
+            "A recovery prompt or approval request should be accepted whenever it appears."
+          ],
+          "answer": 1,
+          "explanation": "Use the service’s official session list to end sessions you no longer need, then secure the account if any session is unfamiliar. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "In the mock session list, select only the expired shared-computer session for sign-out."
+          ],
+          "answer": 2,
+          "explanation": "In the mock session list, select only the expired shared-computer session for sign-out. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Confirm the expired session is no longer listed while the owner’s current trusted session remains available.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Confirm the expired session is no longer listed while the owner’s current trusted session remains available. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-14-identity",
+      "day": 14,
+      "title": "Identity review",
+      "category": "IDENTITY & ACCESS",
+      "tone": "purple",
+      "difficulty": "Starter",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Apply access and recovery habits in a fictional account review.",
+      "lesson": "An access review compares people, devices, roles, and current responsibilities. Remove access through the approved owner when it is no longer needed; do not infer misconduct from an unfamiliar name alone.",
+      "takeaway": "Confirm the person’s current role with the authorized owner, then request a proportionate access change and record the reason.",
+      "practice": "Review the supplied roster and flag only entries whose stated role no longer matches the access shown.",
+      "scenario": "A fictional team roster has one former volunteer whose project access was never reviewed after the project ended.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Identity review?",
+          "options": [
+            "A recovery prompt or approval request should be accepted whenever it appears.",
+            "A display name or successful sign-in automatically grants every permission.",
+            "Confirm the person’s current role with the authorized owner, then request a proportionate access change and record the reason."
+          ],
+          "answer": 2,
+          "explanation": "Confirm the person’s current role with the authorized owner, then request a proportionate access change and record the reason. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Review the supplied roster and flag only entries whose stated role no longer matches the access shown.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Review the supplied roster and flag only entries whose stated role no longer matches the access shown. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check every proposed change against the role owner and keep the reason factual and limited to the project.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Check every proposed change against the role owner and keep the reason factual and limited to the project. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-15-networks",
+      "day": 15,
+      "title": "A device joins a network",
+      "category": "NETWORKS & THE INTERNET",
+      "tone": "green",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Trace the basic path from a device to a service.",
+      "lesson": "A device usually sends traffic through a local network and router before it reaches an internet service. The path and controls depend on the network; a diagram helps separate each boundary.",
+      "takeaway": "Trace the route as device, local network/router, internet path, and destination service; do not treat the path as proof that a destination is trustworthy.",
+      "practice": "Label those four parts on the supplied blank network diagram.",
+      "scenario": "A fictional learner is asked to draw how a phone reaches a course website through a home router.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: A device joins a network?",
+          "options": [
+            "Trace the route as device, local network/router, internet path, and destination service; do not treat the path as proof that a destination is trustworthy.",
+            "A familiar name, strong signal, lock icon, or successful lookup proves the service is trustworthy.",
+            "The fastest route is always the safest route, even if the network owner is unknown."
+          ],
+          "answer": 0,
+          "explanation": "Trace the route as device, local network/router, internet path, and destination service; do not treat the path as proof that a destination is trustworthy. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Label those four parts on the supplied blank network diagram.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Label those four parts on the supplied blank network diagram. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify that the drawing distinguishes the local router from the destination service and includes no real addresses or targets."
+          ],
+          "answer": 2,
+          "explanation": "Verify that the drawing distinguishes the local router from the destination service and includes no real addresses or targets. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-16-networks",
+      "day": 16,
+      "title": "Addresses and names",
+      "category": "NETWORKS & THE INTERNET",
+      "tone": "orange",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Distinguish an address from a human-readable domain name.",
+      "lesson": "An IP address identifies a network endpoint for routing. A domain name is a human-readable name that is looked up through DNS; neither an address nor a familiar name proves that a service is legitimate.",
+      "takeaway": "Describe the domain as a human-readable service name and the IP address as a routing address; verify a service through a trusted route.",
+      "practice": "Sort the supplied fictional labels into ‘name’ and ‘network address’ without visiting any of them.",
+      "scenario": "A fictional browser history shows learn.example and a sample address 192.0.2.24 in a teaching diagram.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Addresses and names?",
+          "options": [
+            "A familiar name, strong signal, lock icon, or successful lookup proves the service is trustworthy.",
+            "Describe the domain as a human-readable service name and the IP address as a routing address; verify a service through a trusted route.",
+            "The fastest route is always the safest route, even if the network owner is unknown."
+          ],
+          "answer": 1,
+          "explanation": "Describe the domain as a human-readable service name and the IP address as a routing address; verify a service through a trusted route. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Sort the supplied fictional labels into ‘name’ and ‘network address’ without visiting any of them."
+          ],
+          "answer": 2,
+          "explanation": "Sort the supplied fictional labels into ‘name’ and ‘network address’ without visiting any of them. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Check that each label is classified by its role, not by whether it looks familiar or has a particular number pattern.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Check that each label is classified by its role, not by whether it looks familiar or has a particular number pattern. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-17-networks",
+      "day": 17,
+      "title": "DNS as a directory",
+      "category": "NETWORKS & THE INTERNET",
+      "tone": "purple",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Describe the role of name lookup without treating it as proof of trust.",
+      "lesson": "DNS helps a device look up the address associated with a domain name. A successful lookup answers a routing question; it does not authenticate the owner, safety, or intent of the destination.",
+      "takeaway": "Treat DNS as name lookup, then verify the request and service independently before sharing information.",
+      "practice": "On the provided flow card, place DNS between the domain name and the sample network address.",
+      "scenario": "A fictional support page loads after a name lookup, but the message that linked to it is still unexpected.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: DNS as a directory?",
+          "options": [
+            "The fastest route is always the safest route, even if the network owner is unknown.",
+            "A familiar name, strong signal, lock icon, or successful lookup proves the service is trustworthy.",
+            "Treat DNS as name lookup, then verify the request and service independently before sharing information."
+          ],
+          "answer": 2,
+          "explanation": "Treat DNS as name lookup, then verify the request and service independently before sharing information. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "On the provided flow card, place DNS between the domain name and the sample network address.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "On the provided flow card, place DNS between the domain name and the sample network address. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Confirm the flow labels DNS as a lookup step and does not label a successful lookup as a safety check.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Confirm the flow labels DNS as a lookup step and does not label a successful lookup as a safety check. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-18-networks",
+      "day": 18,
+      "title": "What encryption protects",
+      "category": "NETWORKS & THE INTERNET",
+      "tone": "green",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Explain what an encrypted connection does and does not guarantee.",
+      "lesson": "HTTPS uses TLS to protect a connection against some interception and tampering in transit. It does not prove the site’s claims are true, make a request appropriate, or guarantee that the site owner is trustworthy.",
+      "takeaway": "Use HTTPS as one connection signal, but independently verify the service and request before entering payment or account information.",
+      "practice": "Compare the page indicator with the message context and choose an independent verification route.",
+      "scenario": "A fictional urgent payment request opens a page with a lock icon and HTTPS in the address bar.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: What encryption protects?",
+          "options": [
+            "Use HTTPS as one connection signal, but independently verify the service and request before entering payment or account information.",
+            "A familiar name, strong signal, lock icon, or successful lookup proves the service is trustworthy.",
+            "The fastest route is always the safest route, even if the network owner is unknown."
+          ],
+          "answer": 0,
+          "explanation": "Use HTTPS as one connection signal, but independently verify the service and request before entering payment or account information. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Compare the page indicator with the message context and choose an independent verification route.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Compare the page indicator with the message context and choose an independent verification route. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check that your decision weighs both the connection indicator and the unexpected payment request."
+          ],
+          "answer": 2,
+          "explanation": "Check that your decision weighs both the connection indicator and the unexpected payment request. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-19-networks",
+      "day": 19,
+      "title": "Routers and network boundaries",
+      "category": "NETWORKS & THE INTERNET",
+      "tone": "orange",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Identify the purpose of a home router and guest network.",
+      "lesson": "Network segmentation separates groups of devices so that access can be limited between them. A guest network is useful for visitors, but it is not a replacement for updates, strong router settings, or careful sharing.",
+      "takeaway": "Use a supported guest network and review its isolation setting so visitor devices do not share the trusted device network.",
+      "practice": "On the mock router diagram, place visitor devices on the guest segment and personal devices on the trusted segment.",
+      "scenario": "A fictional household wants visitors to use Wi-Fi without reaching the family file-sharing devices.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Routers and network boundaries?",
+          "options": [
+            "A familiar name, strong signal, lock icon, or successful lookup proves the service is trustworthy.",
+            "Use a supported guest network and review its isolation setting so visitor devices do not share the trusted device network.",
+            "The fastest route is always the safest route, even if the network owner is unknown."
+          ],
+          "answer": 1,
+          "explanation": "Use a supported guest network and review its isolation setting so visitor devices do not share the trusted device network. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "On the mock router diagram, place visitor devices on the guest segment and personal devices on the trusted segment."
+          ],
+          "answer": 2,
+          "explanation": "On the mock router diagram, place visitor devices on the guest segment and personal devices on the trusted segment. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Confirm that the diagram marks the boundary and does not imply that guest Wi-Fi protects against every risk.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Confirm that the diagram marks the boundary and does not imply that guest Wi-Fi protects against every risk. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-20-networks",
+      "day": 20,
+      "title": "Wi-Fi settings that matter",
+      "category": "NETWORKS & THE INTERNET",
+      "tone": "purple",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Choose reasonable home Wi-Fi and guest-access settings.",
+      "lesson": "A safer home Wi-Fi setup uses current router firmware, a unique administrator password, modern encryption supported by your devices, and a separate guest network when useful.",
+      "takeaway": "Review the router’s official settings, update through its management interface when appropriate, and replace default access details with unique ones.",
+      "practice": "Prioritize the mock checklist items and mark the official router settings page as the only update route.",
+      "scenario": "A fictional router checklist shows an old firmware notice, a shared default administrator password, and an unused guest network.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Wi-Fi settings that matter?",
+          "options": [
+            "The fastest route is always the safest route, even if the network owner is unknown.",
+            "A familiar name, strong signal, lock icon, or successful lookup proves the service is trustworthy.",
+            "Review the router’s official settings, update through its management interface when appropriate, and replace default access details with unique ones."
+          ],
+          "answer": 2,
+          "explanation": "Review the router’s official settings, update through its management interface when appropriate, and replace default access details with unique ones. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Prioritize the mock checklist items and mark the official router settings page as the only update route.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Prioritize the mock checklist items and mark the official router settings page as the only update route. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify the plan addresses firmware, administrator access, and guest separation without exposing the router to the public internet.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Verify the plan addresses firmware, administrator access, and guest separation without exposing the router to the public internet. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-21-networks",
+      "day": 21,
+      "title": "Connection path review",
+      "category": "NETWORKS & THE INTERNET",
+      "tone": "green",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Read a fictional network diagram and identify safer choices.",
+      "lesson": "A network diagram is a scoped description of devices and paths, not a live scan. Good diagrams identify trust boundaries and explain which systems are intentionally included.",
+      "takeaway": "Use only the supplied diagram, label trust boundaries, and ask the diagram owner about any unclear connection.",
+      "practice": "Annotate the fictional diagram with device, guest network, router, and service labels.",
+      "scenario": "A fictional club asks a learner to review a supplied diagram containing a member laptop, guest Wi-Fi, router, and cloud mail service.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Connection path review?",
+          "options": [
+            "Use only the supplied diagram, label trust boundaries, and ask the diagram owner about any unclear connection.",
+            "A familiar name, strong signal, lock icon, or successful lookup proves the service is trustworthy.",
+            "The fastest route is always the safest route, even if the network owner is unknown."
+          ],
+          "answer": 0,
+          "explanation": "Use only the supplied diagram, label trust boundaries, and ask the diagram owner about any unclear connection. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Annotate the fictional diagram with device, guest network, router, and service labels.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Annotate the fictional diagram with device, guest network, router, and service labels. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check that every annotation refers to the supplied diagram and makes no claim about an unobserved real network."
+          ],
+          "answer": 2,
+          "explanation": "Check that every annotation refers to the supplied diagram and makes no claim about an unobserved real network. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-22-devices",
+      "day": 22,
+      "title": "Files and sensitive information",
+      "category": "DEVICES & OPERATING SYSTEMS",
+      "tone": "orange",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Classify common files and choose appropriate handling.",
+      "lesson": "Data classification helps people choose handling rules. Public material, internal working files, and sensitive records need different access and sharing decisions; collect and keep only what the task needs.",
+      "takeaway": "Classify each item before sharing and restrict sensitive material to people who need it for an approved task.",
+      "practice": "Sort the fictional sample files into public, internal, and sensitive groups using their contents rather than their folder names.",
+      "scenario": "A fictional project folder mixes a public poster, draft meeting notes, and a list containing private contact details.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Files and sensitive information?",
+          "options": [
+            "Grant every permission and install any update notice that appears in a pop-up.",
+            "Classify each item before sharing and restrict sensitive material to people who need it for an approved task.",
+            "A backup icon or working device proves recovery and support are available."
+          ],
+          "answer": 1,
+          "explanation": "Classify each item before sharing and restrict sensitive material to people who need it for an approved task. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Sort the fictional sample files into public, internal, and sensitive groups using their contents rather than their folder names."
+          ],
+          "answer": 2,
+          "explanation": "Sort the fictional sample files into public, internal, and sensitive groups using their contents rather than their folder names. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Confirm that the contact list is not placed in a public folder and that labels do not include unnecessary personal data.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Confirm that the contact list is not placed in a public folder and that labels do not include unnecessary personal data. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-23-devices",
+      "day": 23,
+      "title": "Apps and permissions",
+      "category": "DEVICES & OPERATING SYSTEMS",
+      "tone": "purple",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Match permissions to an app's real purpose.",
+      "lesson": "App permissions should match the feature being used. Review access to location, contacts, camera, and files in the operating system; deny or revoke access that is not needed.",
+      "takeaway": "Grant only permissions that make sense for the app’s purpose, and review or revoke unnecessary access in device settings.",
+      "practice": "Use the mock permission sheet to keep only the permission required for the stated feature.",
+      "scenario": "A fictional flashlight app asks for contacts and location access before it can turn on the light.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Apps and permissions?",
+          "options": [
+            "A backup icon or working device proves recovery and support are available.",
+            "Grant every permission and install any update notice that appears in a pop-up.",
+            "Grant only permissions that make sense for the app’s purpose, and review or revoke unnecessary access in device settings."
+          ],
+          "answer": 2,
+          "explanation": "Grant only permissions that make sense for the app’s purpose, and review or revoke unnecessary access in device settings. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Use the mock permission sheet to keep only the permission required for the stated feature.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Use the mock permission sheet to keep only the permission required for the stated feature. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check that every kept permission has a clear purpose and that no contact or location data is disclosed without need.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Check that every kept permission has a clear purpose and that no contact or location data is disclosed without need. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-24-devices",
+      "day": 24,
+      "title": "Updates and support windows",
+      "category": "DEVICES & OPERATING SYSTEMS",
+      "tone": "green",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Recognize when software is no longer receiving fixes.",
+      "lesson": "Security updates repair known weaknesses and improve reliability. Use the device or software’s built-in update settings or official publisher; ignore urgent download prompts from unexpected pages.",
+      "takeaway": "Close the unsolicited pop-up and review updates through the operating system’s built-in settings.",
+      "practice": "Choose the official update route on the mock device screen and note whether the device is still supported.",
+      "scenario": "A fictional browser pop-up claims a device is out of date and offers an installer, while the device’s settings show a normal update notice.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Updates and support windows?",
+          "options": [
+            "Close the unsolicited pop-up and review updates through the operating system’s built-in settings.",
+            "Grant every permission and install any update notice that appears in a pop-up.",
+            "A backup icon or working device proves recovery and support are available."
+          ],
+          "answer": 0,
+          "explanation": "Close the unsolicited pop-up and review updates through the operating system’s built-in settings. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Choose the official update route on the mock device screen and note whether the device is still supported.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Choose the official update route on the mock device screen and note whether the device is still supported. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify the update source is the device settings or publisher’s official channel, not the web pop-up."
+          ],
+          "answer": 2,
+          "explanation": "Verify the update source is the device settings or publisher’s official channel, not the web pop-up. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-25-devices",
+      "day": 25,
+      "title": "Browser safety controls",
+      "category": "DEVICES & OPERATING SYSTEMS",
+      "tone": "orange",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Use browser settings and site indicators with good judgment.",
+      "lesson": "Browser controls include site permissions, downloads, saved sign-ins, and security warnings. A lock icon protects the connection but does not prove a page is honest or appropriate.",
+      "takeaway": "Pause, check the page’s purpose and source, and deny permissions or downloads that are not necessary.",
+      "practice": "Review the mock browser permission list and allow only the permission required by the stated task.",
+      "scenario": "A fictional survey page asks for camera access and offers an unexpected file download before showing its questions.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Browser safety controls?",
+          "options": [
+            "Grant every permission and install any update notice that appears in a pop-up.",
+            "Pause, check the page’s purpose and source, and deny permissions or downloads that are not necessary.",
+            "A backup icon or working device proves recovery and support are available."
+          ],
+          "answer": 1,
+          "explanation": "Pause, check the page’s purpose and source, and deny permissions or downloads that are not necessary. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Review the mock browser permission list and allow only the permission required by the stated task."
+          ],
+          "answer": 2,
+          "explanation": "Review the mock browser permission list and allow only the permission required by the stated task. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Confirm there is no unexpected download and that the page did not receive unrelated camera, location, or file access.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Confirm there is no unexpected download and that the page did not receive unrelated camera, location, or file access. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-26-devices",
+      "day": 26,
+      "title": "Backups and restore checks",
+      "category": "DEVICES & OPERATING SYSTEMS",
+      "tone": "purple",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Plan a backup routine and confirm that recovery is possible.",
+      "lesson": "Backups help recover from loss, damage, or accidental changes. Keep a copy separate from the original device, protect access to it, and periodically restore a test file to confirm recovery works.",
+      "takeaway": "Keep a separate trusted backup and test restoring a harmless sample file before relying on it.",
+      "practice": "Use the mock recovery checklist to select a separate destination and a non-sensitive test file.",
+      "scenario": "A fictional student has project files on one laptop and sees a backup icon but has never checked a restore.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Backups and restore checks?",
+          "options": [
+            "A backup icon or working device proves recovery and support are available.",
+            "Grant every permission and install any update notice that appears in a pop-up.",
+            "Keep a separate trusted backup and test restoring a harmless sample file before relying on it."
+          ],
+          "answer": 2,
+          "explanation": "Keep a separate trusted backup and test restoring a harmless sample file before relying on it. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Use the mock recovery checklist to select a separate destination and a non-sensitive test file.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Use the mock recovery checklist to select a separate destination and a non-sensitive test file. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Confirm the sample file opens from the backup and that the original remains unchanged.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Confirm the sample file opens from the backup and that the original remains unchanged. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-27-devices",
+      "day": 27,
+      "title": "Device loss response",
+      "category": "DEVICES & OPERATING SYSTEMS",
+      "tone": "green",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Prioritize account protection and device recovery steps.",
+      "lesson": "If a device is lost, use the manufacturer’s or service’s official recovery route. Protect accounts, report the loss to the responsible owner, and use remote lock or erase only when authorized and appropriate.",
+      "takeaway": "Use the official device-recovery service, secure affected accounts, and follow the school’s reporting process.",
+      "practice": "Order the supplied lost-device actions by protecting access first and notifying the responsible owner promptly.",
+      "scenario": "A fictional learner leaves a tablet on a bus; the tablet had access to school mail and shared notes.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Device loss response?",
+          "options": [
+            "Use the official device-recovery service, secure affected accounts, and follow the school’s reporting process.",
+            "Grant every permission and install any update notice that appears in a pop-up.",
+            "A backup icon or working device proves recovery and support are available."
+          ],
+          "answer": 0,
+          "explanation": "Use the official device-recovery service, secure affected accounts, and follow the school’s reporting process. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Order the supplied lost-device actions by protecting access first and notifying the responsible owner promptly.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Order the supplied lost-device actions by protecting access first and notifying the responsible owner promptly. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify every step uses the owner’s official service and avoids sharing the device’s private contents in a public post."
+          ],
+          "answer": 2,
+          "explanation": "Verify every step uses the owner’s official service and avoids sharing the device’s private contents in a public post. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-28-devices",
+      "day": 28,
+      "title": "Personal device review",
+      "category": "DEVICES & OPERATING SYSTEMS",
+      "tone": "orange",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Review a fictional device setup for practical improvements.",
+      "lesson": "A device review checks support status, updates, screen lock, app permissions, backups, and recovery options. Small scheduled reviews are easier to complete than a rushed cleanup after a problem.",
+      "takeaway": "Review each device’s support and access separately, then prioritize the most important account and recovery gaps.",
+      "practice": "Complete the mock checklist for one device at a time and mark any unsupported device for a supported replacement plan.",
+      "scenario": "A fictional household has a supported phone, an old tablet, and a shared laptop with several saved sessions.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Personal device review?",
+          "options": [
+            "Grant every permission and install any update notice that appears in a pop-up.",
+            "Review each device’s support and access separately, then prioritize the most important account and recovery gaps.",
+            "A backup icon or working device proves recovery and support are available."
+          ],
+          "answer": 1,
+          "explanation": "Review each device’s support and access separately, then prioritize the most important account and recovery gaps. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Complete the mock checklist for one device at a time and mark any unsupported device for a supported replacement plan."
+          ],
+          "answer": 2,
+          "explanation": "Complete the mock checklist for one device at a time and mark any unsupported device for a supported replacement plan. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Check that the review includes updates, lock, permissions, backup, and recovery without collecting passwords.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Check that the review includes updates, lock, permissions, backup, and recovery without collecting passwords. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-29-people-data",
+      "day": 29,
+      "title": "Pressure and persuasion",
+      "category": "PEOPLE, PRIVACY & TRUST",
+      "tone": "purple",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Notice urgency, authority, and secrecy as decision-pressure cues.",
+      "lesson": "Social engineering uses pressure, authority, secrecy, or urgency to influence a person. These cues do not prove a request is fraudulent, but they are reasons to slow down and verify independently.",
+      "takeaway": "Pause when a request creates urgency or secrecy and verify it through a separate trusted contact route.",
+      "practice": "Mark the pressure cues in the fictional dialogue, then choose a neutral question that does not reveal private information.",
+      "scenario": "A fictional caller claims to be a senior club officer and asks a volunteer to keep a payment request secret until the end of the hour.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Pressure and persuasion?",
+          "options": [
+            "Public sharing is fine whenever a link is difficult to guess.",
+            "Urgency is proof that a request is authentic and should stay secret.",
+            "Pause when a request creates urgency or secrecy and verify it through a separate trusted contact route."
+          ],
+          "answer": 2,
+          "explanation": "Pause when a request creates urgency or secrecy and verify it through a separate trusted contact route. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Mark the pressure cues in the fictional dialogue, then choose a neutral question that does not reveal private information.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Mark the pressure cues in the fictional dialogue, then choose a neutral question that does not reveal private information. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify the request with the named person using contact details already known to the club.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Verify the request with the named person using contact details already known to the club. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-30-people-data",
+      "day": 30,
+      "title": "Verify a request out of band",
+      "category": "PEOPLE, PRIVACY & TRUST",
+      "tone": "green",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Confirm unusual requests through a separate trusted channel.",
+      "lesson": "Out-of-band verification uses a different trusted channel from the one that carried an unusual request. Do not reuse phone numbers, links, or contact details supplied only in the unexpected message.",
+      "takeaway": "Pause the change and contact the supplier through a previously verified number or established portal.",
+      "practice": "Select the contact method in the mock vendor record that was saved before the email arrived.",
+      "scenario": "A fictional supplier email asks for a bank-detail change and includes a new phone number for ‘confirmation’.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Verify a request out of band?",
+          "options": [
+            "Pause the change and contact the supplier through a previously verified number or established portal.",
+            "Urgency is proof that a request is authentic and should stay secret.",
+            "Public sharing is fine whenever a link is difficult to guess."
+          ],
+          "answer": 0,
+          "explanation": "Pause the change and contact the supplier through a previously verified number or established portal. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Select the contact method in the mock vendor record that was saved before the email arrived.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Select the contact method in the mock vendor record that was saved before the email arrived. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Confirm the request with the known contact and record who approved the change before proceeding."
+          ],
+          "answer": 2,
+          "explanation": "Confirm the request with the known contact and record who approved the change before proceeding. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-31-people-data",
+      "day": 31,
+      "title": "Personal data and consent",
+      "category": "PEOPLE, PRIVACY & TRUST",
+      "tone": "orange",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Minimize collection and explain a reasonable data choice.",
+      "lesson": "Data minimization means collecting and sharing only what is needed for a clear purpose. Consent should explain what is collected, why, who receives it, and how long it is kept.",
+      "takeaway": "Remove fields that are not needed to send the schedule and explain any remaining collection clearly.",
+      "practice": "Edit the fictional form to keep only the information required to deliver the schedule.",
+      "scenario": "A fictional event form asks for a birth date, home address, and identity document to send a public schedule.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Personal data and consent?",
+          "options": [
+            "Urgency is proof that a request is authentic and should stay secret.",
+            "Remove fields that are not needed to send the schedule and explain any remaining collection clearly.",
+            "Public sharing is fine whenever a link is difficult to guess."
+          ],
+          "answer": 1,
+          "explanation": "Remove fields that are not needed to send the schedule and explain any remaining collection clearly. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Edit the fictional form to keep only the information required to deliver the schedule."
+          ],
+          "answer": 2,
+          "explanation": "Edit the fictional form to keep only the information required to deliver the schedule. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Check that each remaining field has a stated purpose and that the form does not request sensitive data without need.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Check that each remaining field has a stated purpose and that the form does not request sensitive data without need. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-32-people-data",
+      "day": 32,
+      "title": "Safe sharing and permissions",
+      "category": "PEOPLE, PRIVACY & TRUST",
+      "tone": "purple",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Check recipients and access before sharing a file.",
+      "lesson": "File-sharing settings define who can view or edit information. Check the recipients, access level, and link scope before sharing; links that work for anyone can spread beyond the intended group.",
+      "takeaway": "Restrict the folder to named people who need it, choose the least access required, and review the recipient list.",
+      "practice": "Change the mock sharing card from public editing to named-reader access for the approved reviewers.",
+      "scenario": "A fictional team folder with draft membership notes is set to ‘anyone with the link can edit.’",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Safe sharing and permissions?",
+          "options": [
+            "Public sharing is fine whenever a link is difficult to guess.",
+            "Urgency is proof that a request is authentic and should stay secret.",
+            "Restrict the folder to named people who need it, choose the least access required, and review the recipient list."
+          ],
+          "answer": 2,
+          "explanation": "Restrict the folder to named people who need it, choose the least access required, and review the recipient list. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Change the mock sharing card from public editing to named-reader access for the approved reviewers.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Change the mock sharing card from public editing to named-reader access for the approved reviewers. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify the public link is disabled and only the intended people retain the access needed for their task.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Verify the public link is disabled and only the intended people retain the access needed for their task. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-33-people-data",
+      "day": 33,
+      "title": "Report a concern",
+      "category": "PEOPLE, PRIVACY & TRUST",
+      "tone": "green",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Choose a useful reporting route and include relevant facts.",
+      "lesson": "A useful report states what was observed, when it happened, and what action was taken. Use the organization’s approved reporting route; avoid accusations, speculation, and broad forwarding.",
+      "takeaway": "Use the service’s report or support route and include factual details without clicking the alert’s links.",
+      "practice": "Select the official report path in the mock service and draft a short report with the time and observed message.",
+      "scenario": "A fictional learner receives an unexpected sign-in alert and is unsure whether it belongs to their account.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Report a concern?",
+          "options": [
+            "Use the service’s report or support route and include factual details without clicking the alert’s links.",
+            "Urgency is proof that a request is authentic and should stay secret.",
+            "Public sharing is fine whenever a link is difficult to guess."
+          ],
+          "answer": 0,
+          "explanation": "Use the service’s report or support route and include factual details without clicking the alert’s links. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Select the official report path in the mock service and draft a short report with the time and observed message.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Select the official report path in the mock service and draft a short report with the time and observed message. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check that the report contains observable facts, no passwords or codes, and no unsupported claim about who caused it."
+          ],
+          "answer": 2,
+          "explanation": "Check that the report contains observable facts, no passwords or codes, and no unsupported claim about who caused it. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-34-people-data",
+      "day": 34,
+      "title": "Keep useful evidence",
+      "category": "PEOPLE, PRIVACY & TRUST",
+      "tone": "orange",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Preserve a clear timeline without spreading sensitive material.",
+      "lesson": "Useful evidence is relevant, factual, and handled with care. Preserve an original where policy allows, note the time and source, and limit access; do not alter or spread sensitive material casually.",
+      "takeaway": "Follow the platform’s approved reporting process and preserve only the minimum relevant record for the responsible reviewer.",
+      "practice": "Choose the mock report artifact that records time, source, and the relevant excerpt while hiding unrelated member details.",
+      "scenario": "A fictional moderator must document an inappropriate message in a private club space without forwarding it to the entire membership.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Keep useful evidence?",
+          "options": [
+            "Urgency is proof that a request is authentic and should stay secret.",
+            "Follow the platform’s approved reporting process and preserve only the minimum relevant record for the responsible reviewer.",
+            "Public sharing is fine whenever a link is difficult to guess."
+          ],
+          "answer": 1,
+          "explanation": "Follow the platform’s approved reporting process and preserve only the minimum relevant record for the responsible reviewer. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Choose the mock report artifact that records time, source, and the relevant excerpt while hiding unrelated member details."
+          ],
+          "answer": 2,
+          "explanation": "Choose the mock report artifact that records time, source, and the relevant excerpt while hiding unrelated member details. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Confirm the original remains unchanged and access is restricted to the people responsible for review.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Confirm the original remains unchanged and access is restricted to the people responsible for review. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-35-people-data",
+      "day": 35,
+      "title": "Trust and privacy case",
+      "category": "PEOPLE, PRIVACY & TRUST",
+      "tone": "purple",
+      "difficulty": "Explorer",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Resolve a fictional privacy concern with a measured response.",
+      "lesson": "A privacy response should reduce unnecessary exposure, notify the right owner, and preserve enough facts to understand what happened. Avoid blame until evidence and responsibilities are reviewed.",
+      "takeaway": "Restrict access through the authorized owner, record the scope and time, and follow the club’s privacy reporting process.",
+      "practice": "Use the mock incident form to capture the file, visibility setting, discovery time, and owner without copying the list.",
+      "scenario": "A fictional club member discovers that a sign-up spreadsheet was visible to more people than intended.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Trust and privacy case?",
+          "options": [
+            "Public sharing is fine whenever a link is difficult to guess.",
+            "Urgency is proof that a request is authentic and should stay secret.",
+            "Restrict access through the authorized owner, record the scope and time, and follow the club’s privacy reporting process."
+          ],
+          "answer": 2,
+          "explanation": "Restrict access through the authorized owner, record the scope and time, and follow the club’s privacy reporting process. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Use the mock incident form to capture the file, visibility setting, discovery time, and owner without copying the list.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Use the mock incident form to capture the file, visibility setting, discovery time, and owner without copying the list. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify access is narrowed, the owner is informed, and the note contains no unnecessary member data.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Verify access is narrowed, the owner is informed, and the note contains no unnecessary member data. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-36-monitoring",
+      "day": 36,
+      "title": "What an event log records",
+      "category": "SIGNALS & MONITORING",
+      "tone": "green",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Read timestamps, actors, actions, and outcomes in sample events.",
+      "lesson": "An event log can show a timestamp, actor, action, resource, and outcome. Logs describe recorded events; they may be incomplete and do not automatically explain intent.",
+      "takeaway": "Read each field separately and describe only what the record actually shows.",
+      "practice": "Label the timestamp, actor, action, resource, and outcome in the supplied sample log.",
+      "scenario": "A fictional sign-in log contains a time, a masked account label, an action, and a success or failure result.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: What an event log records?",
+          "options": [
+            "Read each field separately and describe only what the record actually shows.",
+            "One event proves intent, and an alert label gives the full context.",
+            "A guess can be written as a confirmed fact when a decision is needed quickly."
+          ],
+          "answer": 0,
+          "explanation": "Read each field separately and describe only what the record actually shows. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Label the timestamp, actor, action, resource, and outcome in the supplied sample log.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Label the timestamp, actor, action, resource, and outcome in the supplied sample log. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check that your summary distinguishes recorded facts from explanations that the log does not provide."
+          ],
+          "answer": 2,
+          "explanation": "Check that your summary distinguishes recorded facts from explanations that the log does not provide. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-37-monitoring",
+      "day": 37,
+      "title": "Normal activity and context",
+      "category": "SIGNALS & MONITORING",
+      "tone": "orange",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Use a baseline and context before deciding an event is unusual.",
+      "lesson": "A baseline is a reference for expected activity in a defined context. Compare like with like, consider schedule and role changes, and ask the account owner before treating an unusual event as malicious.",
+      "takeaway": "Compare the event with the person’s role and known context before deciding whether it needs escalation.",
+      "practice": "Sort the supplied sample events into expected, unusual-but-explained, and needs-review groups.",
+      "scenario": "A fictional staff member signs in earlier than usual during an announced schedule change.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Normal activity and context?",
+          "options": [
+            "One event proves intent, and an alert label gives the full context.",
+            "Compare the event with the person’s role and known context before deciding whether it needs escalation.",
+            "A guess can be written as a confirmed fact when a decision is needed quickly."
+          ],
+          "answer": 1,
+          "explanation": "Compare the event with the person’s role and known context before deciding whether it needs escalation. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Sort the supplied sample events into expected, unusual-but-explained, and needs-review groups."
+          ],
+          "answer": 2,
+          "explanation": "Sort the supplied sample events into expected, unusual-but-explained, and needs-review groups. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Verify that each classification has a stated context or is clearly marked as uncertain.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Verify that each classification has a stated context or is clearly marked as uncertain. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-38-monitoring",
+      "day": 38,
+      "title": "Sign-in alerts",
+      "category": "SIGNALS & MONITORING",
+      "tone": "purple",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Prioritize a sign-in alert using time, location context, and user report.",
+      "lesson": "A sign-in alert is one signal. Check whether the user recognizes the activity, whether a request was initiated, and whether the service provides a trusted way to review sessions.",
+      "takeaway": "Do not approve the request; contact the owner through an approved route and review the account using official settings.",
+      "practice": "Triage the mock alert by recording the user’s response, time, and official next step.",
+      "scenario": "A fictional account owner receives a sign-in alert while away from their usual devices and says they did not start it.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Sign-in alerts?",
+          "options": [
+            "A guess can be written as a confirmed fact when a decision is needed quickly.",
+            "One event proves intent, and an alert label gives the full context.",
+            "Do not approve the request; contact the owner through an approved route and review the account using official settings."
+          ],
+          "answer": 2,
+          "explanation": "Do not approve the request; contact the owner through an approved route and review the account using official settings. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Triage the mock alert by recording the user’s response, time, and official next step.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Triage the mock alert by recording the user’s response, time, and official next step. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Confirm the action is limited to the account owner’s service and that the alert was not approved.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Confirm the action is limited to the account owner’s service and that the alert was not approved. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-39-monitoring",
+      "day": 39,
+      "title": "Signal, noise, and confidence",
+      "category": "SIGNALS & MONITORING",
+      "tone": "green",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Record evidence and uncertainty separately.",
+      "lesson": "Signal quality depends on evidence, context, and uncertainty. Record confidence separately from impact, and seek another data point before making a high-impact conclusion.",
+      "takeaway": "Mark the evidence as incomplete, seek the approved context, and avoid presenting a guess as a confirmed incident.",
+      "practice": "For each supplied alert, write one observed fact and one unanswered question.",
+      "scenario": "A fictional monitoring queue contains one unfamiliar location label, but the event record is missing device and user context.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Signal, noise, and confidence?",
+          "options": [
+            "Mark the evidence as incomplete, seek the approved context, and avoid presenting a guess as a confirmed incident.",
+            "One event proves intent, and an alert label gives the full context.",
+            "A guess can be written as a confirmed fact when a decision is needed quickly."
+          ],
+          "answer": 0,
+          "explanation": "Mark the evidence as incomplete, seek the approved context, and avoid presenting a guess as a confirmed incident. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "For each supplied alert, write one observed fact and one unanswered question.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "For each supplied alert, write one observed fact and one unanswered question. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check that your confidence label matches the available evidence and records missing information explicitly."
+          ],
+          "answer": 2,
+          "explanation": "Check that your confidence label matches the available evidence and records missing information explicitly. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-40-monitoring",
+      "day": 40,
+      "title": "Triage a small queue",
+      "category": "SIGNALS & MONITORING",
+      "tone": "orange",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Rank fictional alerts by impact and urgency.",
+      "lesson": "Alert priority should reflect potential impact, urgency, scope, and confidence—not the number of alerts alone. Escalate through the team’s defined route when impact or authority exceeds your role.",
+      "takeaway": "Prioritize the event with the greater credible impact and follow the escalation rules for that role.",
+      "practice": "Rank the fictional queue using impact, urgency, scope, and confidence labels.",
+      "scenario": "A fictional queue shows one low-impact repeated reminder and one credible alert affecting an account with access to sensitive records.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Triage a small queue?",
+          "options": [
+            "One event proves intent, and an alert label gives the full context.",
+            "Prioritize the event with the greater credible impact and follow the escalation rules for that role.",
+            "A guess can be written as a confirmed fact when a decision is needed quickly."
+          ],
+          "answer": 1,
+          "explanation": "Prioritize the event with the greater credible impact and follow the escalation rules for that role. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Rank the fictional queue using impact, urgency, scope, and confidence labels."
+          ],
+          "answer": 2,
+          "explanation": "Rank the fictional queue using impact, urgency, scope, and confidence labels. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Verify that priority has a stated reason and does not rely only on alert volume or alarming wording.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Verify that priority has a stated reason and does not rely only on alert volume or alarming wording. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-41-monitoring",
+      "day": 41,
+      "title": "Write a useful incident note",
+      "category": "SIGNALS & MONITORING",
+      "tone": "purple",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Summarize observable facts, actions, and next owner.",
+      "lesson": "A concise incident note separates observed facts, actions, open questions, and the next owner. Use neutral wording, exact times where available, and only the minimum identifying information needed.",
+      "takeaway": "Write a factual handoff with the event time, verified action, current status, open question, and named next owner.",
+      "practice": "Complete the mock handoff template using only the facts supplied in the case.",
+      "scenario": "A fictional analyst needs to hand off an unresolved account alert to the next shift.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Write a useful incident note?",
+          "options": [
+            "A guess can be written as a confirmed fact when a decision is needed quickly.",
+            "One event proves intent, and an alert label gives the full context.",
+            "Write a factual handoff with the event time, verified action, current status, open question, and named next owner."
+          ],
+          "answer": 2,
+          "explanation": "Write a factual handoff with the event time, verified action, current status, open question, and named next owner. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Complete the mock handoff template using only the facts supplied in the case.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Complete the mock handoff template using only the facts supplied in the case. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check that the note avoids speculation and names a next action and owner.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Check that the note avoids speculation and names a next action and owner. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-42-monitoring",
+      "day": 42,
+      "title": "Monitoring desk exercise",
+      "category": "SIGNALS & MONITORING",
+      "tone": "green",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Triage a static, fictional event timeline.",
+      "lesson": "Triage combines evidence, context, impact, and a proportionate action. A single alert rarely answers every question; keep a clear record of what is known and what remains uncertain.",
+      "takeaway": "Record the facts, request the missing context through the approved owner, and choose an action within the analyst’s authority.",
+      "practice": "Sort the provided case cards into ‘known’, ‘needs confirmation’, and ‘next authorized action’ columns.",
+      "scenario": "A fictional exercise gives a sign-in event, a user response, and one missing context field for review.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Monitoring desk exercise?",
+          "options": [
+            "Record the facts, request the missing context through the approved owner, and choose an action within the analyst’s authority.",
+            "One event proves intent, and an alert label gives the full context.",
+            "A guess can be written as a confirmed fact when a decision is needed quickly."
+          ],
+          "answer": 0,
+          "explanation": "Record the facts, request the missing context through the approved owner, and choose an action within the analyst’s authority. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Sort the provided case cards into ‘known’, ‘needs confirmation’, and ‘next authorized action’ columns.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Sort the provided case cards into ‘known’, ‘needs confirmation’, and ‘next authorized action’ columns. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify each action is supported by a stated fact and a named owner."
+          ],
+          "answer": 2,
+          "explanation": "Verify each action is supported by a stated fact and a named owner. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-43-secure-build",
+      "day": 43,
+      "title": "Security goals for a feature",
+      "category": "BUILD & CONFIGURE CAREFULLY",
+      "tone": "orange",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Name the data, people, and failure outcomes a feature should protect.",
+      "lesson": "A threat model starts with a feature’s purpose, users, data, trust boundaries, and possible failures. It helps a team choose safeguards before building; it is not a recipe for attacking a real system.",
+      "takeaway": "Map the data, users, access boundary, and likely failure cases before choosing controls.",
+      "practice": "Fill in the supplied feature canvas with data, users, trust boundary, and one privacy or availability concern.",
+      "scenario": "A fictional club app will let members upload event photos and choose who can view them.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Security goals for a feature?",
+          "options": [
+            "A hidden client button replaces a permission check at the trusted service.",
+            "Map the data, users, access boundary, and likely failure cases before choosing controls.",
+            "A private-looking sample or log is a safe place to paste a real secret."
+          ],
+          "answer": 1,
+          "explanation": "Map the data, users, access boundary, and likely failure cases before choosing controls. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Fill in the supplied feature canvas with data, users, trust boundary, and one privacy or availability concern."
+          ],
+          "answer": 2,
+          "explanation": "Fill in the supplied feature canvas with data, users, trust boundary, and one privacy or availability concern. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Check that every proposed safeguard links to a stated risk and remains within the fictional design exercise.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Check that every proposed safeguard links to a stated risk and remains within the fictional design exercise. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-44-secure-build",
+      "day": 44,
+      "title": "Validate input as data",
+      "category": "BUILD & CONFIGURE CAREFULLY",
+      "tone": "purple",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Explain why apps check format, length, and allowed values.",
+      "lesson": "Input validation checks that data matches the feature’s expected format, length, and allowed values. Treat user input as data; validation helps prevent mistakes but does not replace authorization or safe output handling.",
+      "takeaway": "Define clear allowed formats and reject values outside the feature’s stated purpose with a helpful message.",
+      "practice": "Write validation rules for the mock title length, date format, and category choices.",
+      "scenario": "A fictional event form expects a date, a short title, and a category selected from three approved options.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Validate input as data?",
+          "options": [
+            "A private-looking sample or log is a safe place to paste a real secret.",
+            "A hidden client button replaces a permission check at the trusted service.",
+            "Define clear allowed formats and reject values outside the feature’s stated purpose with a helpful message."
+          ],
+          "answer": 2,
+          "explanation": "Define clear allowed formats and reject values outside the feature’s stated purpose with a helpful message. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Write validation rules for the mock title length, date format, and category choices.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Write validation rules for the mock title length, date format, and category choices. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check that each field has a boundary and that the lesson never asks you to submit the data to a real service.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Check that each field has a boundary and that the lesson never asks you to submit the data to a real service. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-45-secure-build",
+      "day": 45,
+      "title": "Access checks in an app",
+      "category": "BUILD & CONFIGURE CAREFULLY",
+      "tone": "green",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Match each action to an explicit permission check.",
+      "lesson": "Authentication identifies a signed-in account; authorization decides whether that account may perform a particular action on a particular resource. Protected actions need a permission check at the trusted service, not only a hidden button in the app.",
+      "takeaway": "Require the trusted service to verify the account’s permission for every protected action and resource.",
+      "practice": "On the supplied flow diagram, place an authorization check at the service boundary before the delete action.",
+      "scenario": "A fictional app hides its ‘delete event’ button for ordinary members, but the service still needs to check who makes a delete request.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Access checks in an app?",
+          "options": [
+            "Require the trusted service to verify the account’s permission for every protected action and resource.",
+            "A hidden client button replaces a permission check at the trusted service.",
+            "A private-looking sample or log is a safe place to paste a real secret."
+          ],
+          "answer": 0,
+          "explanation": "Require the trusted service to verify the account’s permission for every protected action and resource. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "On the supplied flow diagram, place an authorization check at the service boundary before the delete action.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "On the supplied flow diagram, place an authorization check at the service boundary before the delete action. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify the rule is enforced even if a client interface is changed or the button is not visible."
+          ],
+          "answer": 2,
+          "explanation": "Verify the rule is enforced even if a client interface is changed or the button is not visible. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-46-secure-build",
+      "day": 46,
+      "title": "Protect configuration values",
+      "category": "BUILD & CONFIGURE CAREFULLY",
+      "tone": "orange",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Keep private configuration out of public code and logs.",
+      "lesson": "Secrets such as API keys and signing credentials should not be placed in public code, sample screenshots, or logs. Use an approved secret store and restrict who or what can read each value.",
+      "takeaway": "Do not copy or use the value; remove it from the example, rotate it through the authorized owner if it was real, and use a secret store.",
+      "practice": "In the mock configuration, identify the field that must be replaced by a secret-store reference.",
+      "scenario": "A fictional code review finds a placeholder configuration file that contains a string labeled as a private service key.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Protect configuration values?",
+          "options": [
+            "A hidden client button replaces a permission check at the trusted service.",
+            "Do not copy or use the value; remove it from the example, rotate it through the authorized owner if it was real, and use a secret store.",
+            "A private-looking sample or log is a safe place to paste a real secret."
+          ],
+          "answer": 1,
+          "explanation": "Do not copy or use the value; remove it from the example, rotate it through the authorized owner if it was real, and use a secret store. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "In the mock configuration, identify the field that must be replaced by a secret-store reference."
+          ],
+          "answer": 2,
+          "explanation": "In the mock configuration, identify the field that must be replaced by a secret-store reference. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Check that no secret value appears in the example, logs, or public notes after the review.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Check that no secret value appears in the example, logs, or public notes after the review. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-47-secure-build",
+      "day": 47,
+      "title": "Cloud roles and storage",
+      "category": "BUILD & CONFIGURE CAREFULLY",
+      "tone": "purple",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Choose limited access for a fictional cloud service.",
+      "lesson": "Cloud identity and access management assigns roles to people or services. Give each role only the actions it needs, review inherited access, and keep storage private unless public access is intentional and approved.",
+      "takeaway": "Choose a narrow role scoped to the needed folder and confirm the storage policy with its authorized owner.",
+      "practice": "Match the mock service to the least-privilege role and resource scope in the access table.",
+      "scenario": "A fictional photo-processing service needs to read one upload folder but is offered administrator access to the entire cloud project.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Cloud roles and storage?",
+          "options": [
+            "A private-looking sample or log is a safe place to paste a real secret.",
+            "A hidden client button replaces a permission check at the trusted service.",
+            "Choose a narrow role scoped to the needed folder and confirm the storage policy with its authorized owner."
+          ],
+          "answer": 2,
+          "explanation": "Choose a narrow role scoped to the needed folder and confirm the storage policy with its authorized owner. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Match the mock service to the least-privilege role and resource scope in the access table.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Match the mock service to the least-privilege role and resource scope in the access table. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify the role cannot manage users, billing, or unrelated storage.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Verify the role cannot manage users, billing, or unrelated storage. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-48-secure-build",
+      "day": 48,
+      "title": "Secure defaults",
+      "category": "BUILD & CONFIGURE CAREFULLY",
+      "tone": "green",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Prefer settings that protect a user before customization.",
+      "lesson": "Secure defaults protect users before they customize an app. Private sharing, minimal permissions, and safe session behavior should be the starting state, with clear choices when a different setting is needed.",
+      "takeaway": "Set the default to named-member access and make any broader sharing an explicit, reviewable choice.",
+      "practice": "Choose the safer initial values on the mock setup screen before any member uploads a file.",
+      "scenario": "A fictional new workspace makes every uploaded file visible to anyone with a link unless a member changes it.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Secure defaults?",
+          "options": [
+            "Set the default to named-member access and make any broader sharing an explicit, reviewable choice.",
+            "A hidden client button replaces a permission check at the trusted service.",
+            "A private-looking sample or log is a safe place to paste a real secret."
+          ],
+          "answer": 0,
+          "explanation": "Set the default to named-member access and make any broader sharing an explicit, reviewable choice. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Choose the safer initial values on the mock setup screen before any member uploads a file.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Choose the safer initial values on the mock setup screen before any member uploads a file. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify a new workspace starts with restricted access and explains how an owner can deliberately change it."
+          ],
+          "answer": 2,
+          "explanation": "Verify a new workspace starts with restricted access and explains how an owner can deliberately change it. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-49-secure-build",
+      "day": 49,
+      "title": "Configuration review",
+      "category": "BUILD & CONFIGURE CAREFULLY",
+      "tone": "orange",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Improve a fictional app and cloud configuration.",
+      "lesson": "A configuration review checks settings against a stated purpose, owner, and approved baseline. Record the finding and rationale; avoid changing production settings unless the owner authorizes the change.",
+      "takeaway": "Document the mismatch, notify the owner, and follow the approved change process rather than editing an unknown environment.",
+      "practice": "Compare each mock setting with the supplied baseline and mark only evidence-backed differences.",
+      "scenario": "A fictional review checklist shows a public storage setting that conflicts with the project’s private-file requirement.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Configuration review?",
+          "options": [
+            "A hidden client button replaces a permission check at the trusted service.",
+            "Document the mismatch, notify the owner, and follow the approved change process rather than editing an unknown environment.",
+            "A private-looking sample or log is a safe place to paste a real secret."
+          ],
+          "answer": 1,
+          "explanation": "Document the mismatch, notify the owner, and follow the approved change process rather than editing an unknown environment. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Compare each mock setting with the supplied baseline and mark only evidence-backed differences."
+          ],
+          "answer": 2,
+          "explanation": "Compare each mock setting with the supplied baseline and mark only evidence-backed differences. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Confirm each recommendation names the setting, expected state, owner, and approval path.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Confirm each recommendation names the setting, expected state, owner, and approval path. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-50-response",
+      "day": 50,
+      "title": "Recognize and report",
+      "category": "RESPOND & RECOVER",
+      "tone": "purple",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Decide when to report and whom to contact.",
+      "lesson": "An incident response starts with recognizing a concern and using the approved reporting route. Do not investigate beyond your role; preserve basic facts and contact the person responsible for the system.",
+      "takeaway": "Report the observations promptly through the organization’s approved route and follow the owner’s instructions.",
+      "practice": "Choose the mock report form and record times, affected service, and the user’s statement.",
+      "scenario": "A fictional employee sees repeated account alerts and a file-sharing change they did not make.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Recognize and report?",
+          "options": [
+            "A timeline proves cause, and a public update should include every detail.",
+            "Responders may make any change or delete evidence if an alert looks serious.",
+            "Report the observations promptly through the organization’s approved route and follow the owner’s instructions."
+          ],
+          "answer": 2,
+          "explanation": "Report the observations promptly through the organization’s approved route and follow the owner’s instructions. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Choose the mock report form and record times, affected service, and the user’s statement.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Choose the mock report form and record times, affected service, and the user’s statement. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify the report includes observations rather than conclusions and is assigned to a responsible owner.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Verify the report includes observations rather than conclusions and is assigned to a responsible owner. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-51-response",
+      "day": 51,
+      "title": "Prioritize impact",
+      "category": "RESPOND & RECOVER",
+      "tone": "green",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Assess affected accounts, devices, and information.",
+      "lesson": "Impact assessment considers which accounts, people, data, and services may be affected, how severe the effect is, and what evidence supports that scope. Start with known facts and update the assessment as information changes.",
+      "takeaway": "Determine the known data and access scope with the folder owner before choosing a broader response.",
+      "practice": "Complete the mock impact table with affected resource, known users, potential data, and missing information.",
+      "scenario": "A fictional alert may affect one shared club folder, but the report does not yet identify who could view it.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Prioritize impact?",
+          "options": [
+            "Determine the known data and access scope with the folder owner before choosing a broader response.",
+            "Responders may make any change or delete evidence if an alert looks serious.",
+            "A timeline proves cause, and a public update should include every detail."
+          ],
+          "answer": 0,
+          "explanation": "Determine the known data and access scope with the folder owner before choosing a broader response. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Complete the mock impact table with affected resource, known users, potential data, and missing information.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Complete the mock impact table with affected resource, known users, potential data, and missing information. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check that impact is described proportionately and uncertain scope stays marked as unknown."
+          ],
+          "answer": 2,
+          "explanation": "Check that impact is described proportionately and uncertain scope stays marked as unknown. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-52-response",
+      "day": 52,
+      "title": "Contain with authority",
+      "category": "RESPOND & RECOVER",
+      "tone": "orange",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Choose a proportionate action within your role.",
+      "lesson": "Containment reduces ongoing harm but must respect authority and preserve needed evidence. Choose a reversible, proportionate action within your role and escalate changes that require an owner.",
+      "takeaway": "Use the approved temporary access control, preserve the relevant record, and notify the folder owner.",
+      "practice": "Select the least disruptive action available to the moderator in the supplied response options.",
+      "scenario": "A fictional moderator can temporarily disable a public share link but is not authorized to delete the project folder.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Contain with authority?",
+          "options": [
+            "Responders may make any change or delete evidence if an alert looks serious.",
+            "Use the approved temporary access control, preserve the relevant record, and notify the folder owner.",
+            "A timeline proves cause, and a public update should include every detail."
+          ],
+          "answer": 1,
+          "explanation": "Use the approved temporary access control, preserve the relevant record, and notify the folder owner. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Select the least disruptive action available to the moderator in the supplied response options."
+          ],
+          "answer": 2,
+          "explanation": "Select the least disruptive action available to the moderator in the supplied response options. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Verify the action is authorized, scoped to the exposed share, and recorded for the owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Verify the action is authorized, scoped to the exposed share, and recorded for the owner. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-53-response",
+      "day": 53,
+      "title": "Preserve a clear timeline",
+      "category": "RESPOND & RECOVER",
+      "tone": "purple",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Record what happened and when without guessing.",
+      "lesson": "A timeline orders observable events with timestamps and sources. Keep the original order and note gaps; do not fill missing times with guesses or assume that sequence alone proves causation.",
+      "takeaway": "Record confirmed times and sources, label the unknown time as unknown, and avoid inferring who caused the change.",
+      "practice": "Arrange the supplied event cards by confirmed timestamp and mark the undated event separately.",
+      "scenario": "A fictional case file contains a message at 09:10, a user report at 09:22, and an account setting change with no confirmed time.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Preserve a clear timeline?",
+          "options": [
+            "A timeline proves cause, and a public update should include every detail.",
+            "Responders may make any change or delete evidence if an alert looks serious.",
+            "Record confirmed times and sources, label the unknown time as unknown, and avoid inferring who caused the change."
+          ],
+          "answer": 2,
+          "explanation": "Record confirmed times and sources, label the unknown time as unknown, and avoid inferring who caused the change. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Arrange the supplied event cards by confirmed timestamp and mark the undated event separately.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Arrange the supplied event cards by confirmed timestamp and mark the undated event separately. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check that the final timeline preserves sources and explicitly labels gaps and uncertainty.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Check that the final timeline preserves sources and explicitly labels gaps and uncertainty. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-54-response",
+      "day": 54,
+      "title": "Restore and verify",
+      "category": "RESPOND & RECOVER",
+      "tone": "green",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Recover from a known-good state and confirm normal operation.",
+      "lesson": "Recovery restores a known-good service or data state and then verifies that normal operation and access controls work. Keep a backup or recovery copy protected and involve the owner for actions beyond your role.",
+      "takeaway": "Restore a test copy first, compare it with the expected content, then ask the owner to approve any production recovery.",
+      "practice": "Follow the mock recovery checklist from protected backup through test restore and owner verification.",
+      "scenario": "A fictional team restores a shared document from yesterday’s backup after an accidental edit.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Restore and verify?",
+          "options": [
+            "Restore a test copy first, compare it with the expected content, then ask the owner to approve any production recovery.",
+            "Responders may make any change or delete evidence if an alert looks serious.",
+            "A timeline proves cause, and a public update should include every detail."
+          ],
+          "answer": 0,
+          "explanation": "Restore a test copy first, compare it with the expected content, then ask the owner to approve any production recovery. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Follow the mock recovery checklist from protected backup through test restore and owner verification.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Follow the mock recovery checklist from protected backup through test restore and owner verification. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Confirm the restored copy is readable, permissions remain appropriate, and the source backup is retained safely."
+          ],
+          "answer": 2,
+          "explanation": "Confirm the restored copy is readable, permissions remain appropriate, and the source backup is retained safely. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-55-response",
+      "day": 55,
+      "title": "Communicate clearly",
+      "category": "RESPOND & RECOVER",
+      "tone": "orange",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Give affected people accurate next steps without speculation.",
+      "lesson": "Incident communication should be timely, factual, and appropriate for its audience. Share confirmed impact and next steps through approved channels; do not speculate, expose sensitive details, or promise an outcome that is not known.",
+      "takeaway": "State what is confirmed, what action is underway, where updates will appear, and what members should do now.",
+      "practice": "Draft a short mock update using only the facts supplied in the scenario.",
+      "scenario": "A fictional service team needs to tell members that a shared folder is temporarily restricted while its owner checks access history.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Communicate clearly?",
+          "options": [
+            "Responders may make any change or delete evidence if an alert looks serious.",
+            "State what is confirmed, what action is underway, where updates will appear, and what members should do now.",
+            "A timeline proves cause, and a public update should include every detail."
+          ],
+          "answer": 1,
+          "explanation": "State what is confirmed, what action is underway, where updates will appear, and what members should do now. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Draft a short mock update using only the facts supplied in the scenario."
+          ],
+          "answer": 2,
+          "explanation": "Draft a short mock update using only the facts supplied in the scenario. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Review the message for speculation, unnecessary personal data, and a clear next update owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Review the message for speculation, unnecessary personal data, and a clear next update owner. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-56-response",
+      "day": 56,
+      "title": "After-action learning",
+      "category": "RESPOND & RECOVER",
+      "tone": "purple",
+      "difficulty": "Analyst",
+      "duration": "8 min",
+      "xp": 50,
+      "description": "Turn a fictional incident into a small, owned improvement.",
+      "lesson": "An after-action review looks for contributing conditions and improvements, not a person to blame. Assign each improvement an owner and a check date so the lesson leads to a real process change.",
+      "takeaway": "Describe the process gap, agree on a practical change, assign an owner, and schedule a follow-up check.",
+      "practice": "Complete the mock review with one contributing condition, one improvement, one owner, and one due date.",
+      "scenario": "A fictional team discovers that shared-link settings were unclear and no one owned the access review.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: After-action learning?",
+          "options": [
+            "A timeline proves cause, and a public update should include every detail.",
+            "Responders may make any change or delete evidence if an alert looks serious.",
+            "Describe the process gap, agree on a practical change, assign an owner, and schedule a follow-up check."
+          ],
+          "answer": 2,
+          "explanation": "Describe the process gap, agree on a practical change, assign an owner, and schedule a follow-up check. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Complete the mock review with one contributing condition, one improvement, one owner, and one due date.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Complete the mock review with one contributing condition, one improvement, one owner, and one due date. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify the improvement is specific and the follow-up checks whether it actually worked.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Verify the improvement is specific and the follow-up checks whether it actually worked. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-57-capstone",
+      "day": 57,
+      "title": "Capstone briefing",
+      "category": "FIELD CAPSTONE",
+      "tone": "green",
+      "difficulty": "Checkpoint",
+      "duration": "8 min",
+      "xp": 80,
+      "description": "Review the scope and success criteria for a fictional case.",
+      "lesson": "A capstone begins with written scope, goals, roles, and stop conditions. A clear boundary keeps the exercise safe and makes the result measurable.",
+      "takeaway": "State the included artifacts, learning objective, decision owner, and explicit stop conditions before starting.",
+      "practice": "Fill in the mock exercise charter with scope, roles, success criteria, and what the exercise will not touch.",
+      "scenario": "A fictional tabletop exercise covers one mock club account, three sample alerts, and a response decision; no external system is involved.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Capstone briefing?",
+          "options": [
+            "State the included artifacts, learning objective, decision owner, and explicit stop conditions before starting.",
+            "A course score proves specialist expertise or authorizes work on real systems.",
+            "An unresolved question should be hidden so the final report sounds confident."
+          ],
+          "answer": 0,
+          "explanation": "State the included artifacts, learning objective, decision owner, and explicit stop conditions before starting. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Fill in the mock exercise charter with scope, roles, success criteria, and what the exercise will not touch.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Fill in the mock exercise charter with scope, roles, success criteria, and what the exercise will not touch. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Confirm every participant can identify the boundary and the person who can pause the simulation."
+          ],
+          "answer": 2,
+          "explanation": "Confirm every participant can identify the boundary and the person who can pause the simulation. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-58-capstone",
+      "day": 58,
+      "title": "Investigate the timeline",
+      "category": "FIELD CAPSTONE",
+      "tone": "orange",
+      "difficulty": "Checkpoint",
+      "duration": "8 min",
+      "xp": 80,
+      "description": "Connect message, account, and event clues without assuming facts.",
+      "lesson": "Investigation connects evidence only when sources and times support the relationship. Keep facts, interpretations, and open questions separate; a sequence of events alone does not prove cause.",
+      "takeaway": "Build a sourced timeline, identify what is confirmed, and list the questions that still need an authorized owner.",
+      "practice": "Place each supplied artifact on the timeline and attach its source and confidence label.",
+      "scenario": "The fictional capstone includes a payment message, a denied sign-in prompt, and a folder-sharing change reported by an owner.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Investigate the timeline?",
+          "options": [
+            "A course score proves specialist expertise or authorizes work on real systems.",
+            "Build a sourced timeline, identify what is confirmed, and list the questions that still need an authorized owner.",
+            "An unresolved question should be hidden so the final report sounds confident."
+          ],
+          "answer": 1,
+          "explanation": "Build a sourced timeline, identify what is confirmed, and list the questions that still need an authorized owner. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Place each supplied artifact on the timeline and attach its source and confidence label."
+          ],
+          "answer": 2,
+          "explanation": "Place each supplied artifact on the timeline and attach its source and confidence label. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Check that no event is attributed to a person without evidence and that missing context is visible.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 0,
+          "explanation": "Check that no event is attributed to a person without evidence and that missing context is visible. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-59-capstone",
+      "day": 59,
+      "title": "Choose and explain a response",
+      "category": "FIELD CAPSTONE",
+      "tone": "purple",
+      "difficulty": "Checkpoint",
+      "duration": "8 min",
+      "xp": 80,
+      "description": "Select proportionate defensive actions and explain trade-offs.",
+      "lesson": "A good response is proportionate to impact and authority. Protect people and information, preserve the relevant record, communicate through the right owner, and explain why each step is appropriate.",
+      "takeaway": "Restrict the confirmed share, report the unverified alert for review, and avoid claiming the events share a cause.",
+      "practice": "Choose and order the mock response actions, then write one sentence explaining the evidence for each.",
+      "scenario": "A fictional capstone owner confirms a share link was too broad, while the sign-in alert remains unverified.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Choose and explain a response?",
+          "options": [
+            "An unresolved question should be hidden so the final report sounds confident.",
+            "A course score proves specialist expertise or authorizes work on real systems.",
+            "Restrict the confirmed share, report the unverified alert for review, and avoid claiming the events share a cause."
+          ],
+          "answer": 2,
+          "explanation": "Restrict the confirmed share, report the unverified alert for review, and avoid claiming the events share a cause. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Choose and order the mock response actions, then write one sentence explaining the evidence for each.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 0,
+          "explanation": "Choose and order the mock response actions, then write one sentence explaining the evidence for each. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Verify that every action is within the assigned role and distinguishes the confirmed issue from the open question.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
+          ],
+          "answer": 1,
+          "explanation": "Verify that every action is within the assigned role and distinguishes the confirmed issue from the open question. A useful record distinguishes what was checked from what is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "day-60-capstone",
+      "day": 60,
+      "title": "Defender field review",
+      "category": "FIELD CAPSTONE",
+      "tone": "green",
+      "difficulty": "Checkpoint",
+      "duration": "8 min",
+      "xp": 80,
+      "description": "Demonstrate core habits in a reviewed, fictional tabletop case.",
+      "lesson": "A field review demonstrates habits, not expert status: explain core concepts, make a proportionate choice, keep a factual record, and recognize when to ask an authorized owner. A course score is not a professional certification.",
+      "takeaway": "Show your reasoning, identify uncertainty, choose safe defensive steps, and state when an owner or qualified specialist must take over.",
+      "practice": "Complete the final decision set and write a concise debrief with evidence, action, remaining uncertainty, and next owner.",
+      "scenario": "The final fictional case combines an unexpected request, an account alert, a shared-data concern, and a recovery decision.",
+      "questions": [
+        {
+          "prompt": "Which principle best fits: Defender field review?",
+          "options": [
+            "Show your reasoning, identify uncertainty, choose safe defensive steps, and state when an owner or qualified specialist must take over.",
+            "A course score proves specialist expertise or authorizes work on real systems.",
+            "An unresolved question should be hidden so the final report sounds confident."
+          ],
+          "answer": 0,
+          "explanation": "Show your reasoning, identify uncertainty, choose safe defensive steps, and state when an owner or qualified specialist must take over. This is the core idea to carry into the next case."
+        },
+        {
+          "prompt": "What is the safest next move in this situation?",
+          "options": [
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Complete the final decision set and write a concise debrief with evidence, action, remaining uncertainty, and next owner.",
+            "Share the full artifact publicly so other people can decide what to do."
+          ],
+          "answer": 1,
+          "explanation": "Complete the final decision set and write a concise debrief with evidence, action, remaining uncertainty, and next owner. Keep the decision within the stated personal or fictional scope."
+        },
+        {
+          "prompt": "How should you verify the task was handled responsibly?",
+          "options": [
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Review the debrief against those four parts; the course completion records demonstrated foundations, not expert or job readiness."
+          ],
+          "answer": 2,
+          "explanation": "Review the debrief against those four parts; the course completion records demonstrated foundations, not expert or job readiness. A useful record distinguishes what was checked from what is still unknown."
+        },
+        {
+          "prompt": "A message asks for an unexpected fee. What is the safest response?",
+          "options": [
+            "Verify through a service route you choose independently before taking action.",
+            "Open the message link because the logo looks familiar.",
+            "Forward it with personal details so others can decide."
+          ],
+          "answer": 0,
+          "explanation": "Independent verification avoids trusting a link supplied by the unexpected request."
+        },
+        {
+          "prompt": "A sign-in prompt appears that you did not start. What should you do?",
+          "options": [
+            "Approve it to clear the notification.",
+            "Deny it and review the account using its official settings.",
+            "Send its code to someone offering to help."
+          ],
+          "answer": 1,
+          "explanation": "Do not approve sign-ins you did not start or share one-time codes."
+        },
+        {
+          "prompt": "A shared folder contains more information than a reviewer needs. What is the safer action?",
+          "options": [
+            "Copy the full folder into a personal account.",
+            "Make the folder public so review is faster.",
+            "Ask the owner to restrict access and remove unnecessary information."
+          ],
+          "answer": 2,
+          "explanation": "Limit access and data to the approved task and intended people."
+        },
+        {
+          "prompt": "What belongs in a useful case note?",
+          "options": [
+            "Observed facts, source and time, actions taken, open questions, and a next owner.",
+            "A guess written as a confirmed cause.",
+            "Passwords and recovery codes for later review."
+          ],
+          "answer": 0,
+          "explanation": "A factual note distinguishes evidence from uncertainty and avoids secrets."
+        },
+        {
+          "prompt": "What does a passed 60-day course demonstrate?",
+          "options": [
+            "Guaranteed expert readiness for every cybersecurity role.",
+            "A checked foundation in beginner defensive decisions, not expert status or professional certification.",
+            "Authorization to inspect any network or account."
+          ],
+          "answer": 1,
+          "explanation": "The capstone records course learning; expertise and authorization require much more."
+        }
       ]
     }
   ]

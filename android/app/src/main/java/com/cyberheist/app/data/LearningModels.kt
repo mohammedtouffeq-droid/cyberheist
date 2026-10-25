@@ -35,6 +35,7 @@ data class Mission(
     val day: Int?,
     val lesson: String,
     val takeaway: String,
+    val practice: String,
     val scenario: String,
     val questions: List<DecisionQuestion>,
     val evidence: List<EvidenceArtifact>,
