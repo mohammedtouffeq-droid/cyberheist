@@ -8,7 +8,7 @@
 
 The repository has a static browser prototype (`index.html`, `style.css`, `game.js`) plus an initial native Android Compose app in `android/`. Both load the same bundled course map and playable mission pack. There is no product server, user account, analytics, or online multiplayer. The browser preview uses a local static web server because it loads mission data with `fetch()`.
 
-The browser prototype validates the learning loop and visual direction. The Android project now establishes the planned native architecture, but still requires an Android SDK build and device testing before it can be considered a working Android release.
+The browser prototype now includes a searchable 60-case library, four self-contained interactive practice simulations linked from the daily lessons, local notes, sequential Academy unlocks, and mastery-gated XP with shuffled answer presentation. These browser systems are still a prototype; the Android project requires practice-lab, filtering, and note-composer parity work, an Android SDK build, and device testing before it can be considered a working Android release.
 
 ## Android direction
 

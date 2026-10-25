@@ -29,21 +29,21 @@
         {
           "prompt": "What should you do with the unexpected message?",
           "options": [
-            "Forward it to friends to ask if it looks real",
             "Report it as spam or phishing, then delete it",
+            "Forward it to friends to ask if it looks real",
             "Keep it and try the link later"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Reporting helps your messaging provider improve filtering. You do not need to interact with a suspicious link."
         },
         {
           "prompt": "Which clue deserves extra scrutiny?",
           "options": [
-            "The message creates urgency and asks for payment through an unfamiliar link",
+            "It uses a short greeting",
             "It arrived on a weekday",
-            "It uses a short greeting"
+            "The message creates urgency and asks for payment through an unfamiliar link"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Unexpected payment requests, pressure, and unfamiliar domains are useful warning signs. Verify using a separate trusted channel."
         }
       ],
@@ -113,21 +113,21 @@
         {
           "prompt": "Which network should you choose?",
           "options": [
-            "The strongest signal, even if you do not know who runs it",
             "Confirm the official network name with staff before connecting",
+            "The strongest signal, even if you do not know who runs it",
             "Both networks because public Wi-Fi is always encrypted"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "A familiar-looking network name can be imitated. Confirm the correct network with staff before joining."
         },
         {
           "prompt": "What is the safer way to check the bank notification?",
           "options": [
-            "Use your mobile connection and the official banking app",
+            "Install a certificate the network asks you to download",
             "Follow a banking link from a pop-up on the Wi-Fi page",
-            "Install a certificate the network asks you to download"
+            "Use your mobile connection and the official banking app"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "For sensitive accounts, a trusted mobile connection and official app reduce exposure to untrusted networks and fake login pages."
         },
         {
@@ -160,31 +160,31 @@
         {
           "prompt": "What is the most useful first question?",
           "options": [
-            "Which of these details are actually needed for the schedule?",
             "Can I enter a friend's address instead?",
+            "Which of these details are actually needed for the schedule?",
             "Can I provide every detail to get through faster?"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Check whether each requested detail is needed for the feature. Avoid sharing extra personal data just because a form asks for it."
         },
         {
           "prompt": "The app says location is optional. What is a sensible choice?",
           "options": [
-            "Allow always-on location just in case",
             "Leave it off unless you choose a feature that needs it",
+            "Allow always-on location just in case",
             "Share your location publicly so the organizer can find you"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Use the least data and access needed. If a feature needs location, review the choice and the app's explanation first."
         },
         {
           "prompt": "You already submitted more information than needed. What next?",
           "options": [
-            "Review privacy and account settings, remove optional details, and contact the service if needed",
             "Post the form publicly to warn people",
+            "Review privacy and account settings, remove optional details, and contact the service if needed",
             "Send the same details to a second app for comparison"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Reduce optional information where the service allows it. Use its official support route if you need help managing the data."
         }
       ],
@@ -207,31 +207,31 @@
         {
           "prompt": "Where should you check for the real system update?",
           "options": [
-            "Open the device's built-in Settings and update screen",
+            "Search for a mirror that installs it faster",
             "Download the file linked by the pop-up",
-            "Search for a mirror that installs it faster"
+            "Open the device's built-in Settings and update screen"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Use the device's built-in update settings or the software maker's official channel. An unexpected web pop-up is not a trusted update route."
         },
         {
           "prompt": "What is a good routine for important updates?",
           "options": [
-            "Install from the official update screen when ready, with enough battery and a backup for important data",
+            "Install every file a page labels urgent",
             "Ignore all updates forever",
-            "Install every file a page labels urgent"
+            "Install from the official update screen when ready, with enough battery and a backup for important data"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Updates can fix security and reliability issues. Use official settings and practical preparation rather than an unsolicited download."
         },
         {
           "prompt": "A device no longer receives security updates. What should you consider?",
           "options": [
-            "Keep using it for every sensitive task because it still turns on",
             "Plan to move sensitive activity to a supported device and check the maker's options",
+            "Keep using it for every sensitive task because it still turns on",
             "Install a random tool that promises lifetime support"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Unsupported software may miss future fixes. Plan a supported replacement or follow the manufacturer's official guidance."
         }
       ],
@@ -264,21 +264,21 @@
         {
           "prompt": "How do you know the backup will help?",
           "options": [
-            "Check that the backup completed and periodically practice restoring a test file",
             "Assume it worked because a button was clicked once",
+            "Check that the backup completed and periodically practice restoring a test file",
             "Share the recovery codes in a group chat"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "A small restore check confirms that files can be recovered. Keep account recovery information private and in a suitable secure place."
         },
         {
           "prompt": "Which item should not be casually copied into a shared backup folder?",
           "options": [
-            "A public class timetable",
             "One-time recovery codes or private identity documents",
+            "A public class timetable",
             "A copy of a public brochure"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Sensitive recovery material needs deliberate protection and limited access. Do not place it in a folder shared with other people."
         }
       ],
@@ -318,11 +318,11 @@
         {
           "prompt": "Which step should happen before interacting with the parcel message?",
           "options": [
-            "Check the delivery independently through its official app or site",
+            "Forward it with the club member list",
             "Open the payment link to discover who sent it",
-            "Forward it with the club member list"
+            "Check the delivery independently through its official app or site"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Use a separate trusted route to verify an unexpected request. The link itself is not proof that the message is genuine."
         },
         {
@@ -338,11 +338,11 @@
         {
           "prompt": "What should happen before the member list is uploaded?",
           "options": [
-            "Check who needs it, remove unnecessary details, and choose a restricted sharing setting",
+            "Upload it to a personal account without checking club rules",
             "Make the folder public so everyone can find it",
-            "Upload it to a personal account without checking club rules"
+            "Check who needs it, remove unnecessary details, and choose a restricted sharing setting"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Use the smallest necessary data, confirm the intended recipients, and restrict access to people who need it."
         }
       ],
@@ -367,10 +367,10 @@
           "prompt": "Which principle best fits: How sign-in proves identity?",
           "options": [
             "A recovery prompt or approval request should be accepted whenever it appears.",
-            "A display name or successful sign-in automatically grants every permission.",
-            "A successful sign-in proves an account claim; a separate permission check must control each protected action."
+            "A successful sign-in proves an account claim; a separate permission check must control each protected action.",
+            "A display name or successful sign-in automatically grants every permission."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "A successful sign-in proves an account claim; a separate permission check must control each protected action. This is the core idea to carry into the next case."
         },
         {
@@ -387,10 +387,10 @@
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Confirm the diagram has an authentication step and an authorization check on the edit action; do not treat the display name as permission.",
-            "Write an assumption as a confirmed fact and skip the follow-up owner."
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Confirm the diagram has an authentication step and an authorization check on the edit action; do not treat the display name as permission."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Confirm the diagram has an authentication step and an authorization check on the edit action; do not treat the display name as permission. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -433,11 +433,11 @@
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Check that the setup began inside the portal you opened yourself and that no password or recovery code was requested by the lesson.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Check that the setup began inside the portal you opened yourself and that no password or recovery code was requested by the lesson."
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Check that the setup began inside the portal you opened yourself and that no password or recovery code was requested by the lesson. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -461,30 +461,30 @@
           "prompt": "Which principle best fits: MFA methods compared?",
           "options": [
             "A display name or successful sign-in automatically grants every permission.",
-            "Deny unexpected prompts, secure the account through its official settings, and choose a strong available second factor.",
-            "A recovery prompt or approval request should be accepted whenever it appears."
+            "A recovery prompt or approval request should be accepted whenever it appears.",
+            "Deny unexpected prompts, secure the account through its official settings, and choose a strong available second factor."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Deny unexpected prompts, secure the account through its official settings, and choose a strong available second factor. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Share the full artifact publicly so other people can decide what to do.",
+            "In the mock account screen, compare the listed sign-in factors and select the strongest option the account actually supports.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "In the mock account screen, compare the listed sign-in factors and select the strongest option the account actually supports."
+            "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "In the mock account screen, compare the listed sign-in factors and select the strongest option the account actually supports. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Verify the mock setting shows the selected factor and that every unexpected prompt was denied, not approved.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Write an assumption as a confirmed fact and skip the follow-up owner."
+            "Verify the mock setting shows the selected factor and that every unexpected prompt was denied, not approved."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Verify the mock setting shows the selected factor and that every unexpected prompt was denied, not approved. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -507,21 +507,21 @@
         {
           "prompt": "Which principle best fits: Account recovery safely?",
           "options": [
-            "A recovery prompt or approval request should be accepted whenever it appears.",
+            "Review recovery methods from the service’s official settings and remove channels you no longer control.",
             "A display name or successful sign-in automatically grants every permission.",
-            "Review recovery methods from the service’s official settings and remove channels you no longer control."
+            "A recovery prompt or approval request should be accepted whenever it appears."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Review recovery methods from the service’s official settings and remove channels you no longer control. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Use the mock settings panel to identify which recovery channel is stale before choosing a safe update plan.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Use the mock settings panel to identify which recovery channel is stale before choosing a safe update plan.",
             "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Use the mock settings panel to identify which recovery channel is stale before choosing a safe update plan. Keep the decision within the stated personal or fictional scope."
         },
         {
@@ -554,11 +554,11 @@
         {
           "prompt": "Which principle best fits: Least privilege?",
           "options": [
-            "Choose the narrowest permission that allows the approved task and review it when the task ends.",
+            "A recovery prompt or approval request should be accepted whenever it appears.",
             "A display name or successful sign-in automatically grants every permission.",
-            "A recovery prompt or approval request should be accepted whenever it appears."
+            "Choose the narrowest permission that allows the approved task and review it when the task ends."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Choose the narrowest permission that allows the approved task and review it when the task ends. This is the core idea to carry into the next case."
         },
         {
@@ -575,10 +575,10 @@
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
             "Write an assumption as a confirmed fact and skip the follow-up owner.",
-            "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Verify that the chosen role cannot manage members, billing, or unrelated club files."
+            "Verify that the chosen role cannot manage members, billing, or unrelated club files.",
+            "Assume the outcome succeeded because a button or instruction was displayed."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Verify that the chosen role cannot manage members, billing, or unrelated club files. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -602,10 +602,10 @@
           "prompt": "Which principle best fits: Shared devices and sessions?",
           "options": [
             "A display name or successful sign-in automatically grants every permission.",
-            "Use the service’s official session list to end sessions you no longer need, then secure the account if any session is unfamiliar.",
-            "A recovery prompt or approval request should be accepted whenever it appears."
+            "A recovery prompt or approval request should be accepted whenever it appears.",
+            "Use the service’s official session list to end sessions you no longer need, then secure the account if any session is unfamiliar."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Use the service’s official session list to end sessions you no longer need, then secure the account if any session is unfamiliar. This is the core idea to carry into the next case."
         },
         {
@@ -621,11 +621,11 @@
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Confirm the expired session is no longer listed while the owner’s current trusted session remains available.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Confirm the expired session is no longer listed while the owner’s current trusted session remains available.",
             "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Confirm the expired session is no longer listed while the owner’s current trusted session remains available. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -649,30 +649,30 @@
           "prompt": "Which principle best fits: Identity review?",
           "options": [
             "A recovery prompt or approval request should be accepted whenever it appears.",
-            "A display name or successful sign-in automatically grants every permission.",
-            "Confirm the person’s current role with the authorized owner, then request a proportionate access change and record the reason."
+            "Confirm the person’s current role with the authorized owner, then request a proportionate access change and record the reason.",
+            "A display name or successful sign-in automatically grants every permission."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Confirm the person’s current role with the authorized owner, then request a proportionate access change and record the reason. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Review the supplied roster and flag only entries whose stated role no longer matches the access shown.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Review the supplied roster and flag only entries whose stated role no longer matches the access shown.",
             "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Review the supplied roster and flag only entries whose stated role no longer matches the access shown. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Assume the outcome succeeded because a button or instruction was displayed.",
             "Check every proposed change against the role owner and keep the reason factual and limited to the project.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
             "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Check every proposed change against the role owner and keep the reason factual and limited to the project. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -695,21 +695,21 @@
         {
           "prompt": "Which principle best fits: A device joins a network?",
           "options": [
-            "Trace the route as device, local network/router, internet path, and destination service; do not treat the path as proof that a destination is trustworthy.",
+            "The fastest route is always the safest route, even if the network owner is unknown.",
             "A familiar name, strong signal, lock icon, or successful lookup proves the service is trustworthy.",
-            "The fastest route is always the safest route, even if the network owner is unknown."
+            "Trace the route as device, local network/router, internet path, and destination service; do not treat the path as proof that a destination is trustworthy."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Trace the route as device, local network/router, internet path, and destination service; do not treat the path as proof that a destination is trustworthy. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Follow the most urgent-looking prompt before checking its source or the owner.",
             "Label those four parts on the supplied blank network diagram.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
             "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Label those four parts on the supplied blank network diagram. Keep the decision within the stated personal or fictional scope."
         },
         {
@@ -753,20 +753,20 @@
           "prompt": "What is the safest next move in this situation?",
           "options": [
             "Share the full artifact publicly so other people can decide what to do.",
-            "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Sort the supplied fictional labels into ‘name’ and ‘network address’ without visiting any of them."
+            "Sort the supplied fictional labels into ‘name’ and ‘network address’ without visiting any of them.",
+            "Follow the most urgent-looking prompt before checking its source or the owner."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Sort the supplied fictional labels into ‘name’ and ‘network address’ without visiting any of them. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Check that each label is classified by its role, not by whether it looks familiar or has a particular number pattern.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check that each label is classified by its role, not by whether it looks familiar or has a particular number pattern.",
             "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Check that each label is classified by its role, not by whether it looks familiar or has a particular number pattern. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -790,20 +790,20 @@
           "prompt": "Which principle best fits: DNS as a directory?",
           "options": [
             "The fastest route is always the safest route, even if the network owner is unknown.",
-            "A familiar name, strong signal, lock icon, or successful lookup proves the service is trustworthy.",
-            "Treat DNS as name lookup, then verify the request and service independently before sharing information."
+            "Treat DNS as name lookup, then verify the request and service independently before sharing information.",
+            "A familiar name, strong signal, lock icon, or successful lookup proves the service is trustworthy."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Treat DNS as name lookup, then verify the request and service independently before sharing information. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "On the provided flow card, place DNS between the domain name and the sample network address.",
+            "Share the full artifact publicly so other people can decide what to do.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Share the full artifact publicly so other people can decide what to do."
+            "On the provided flow card, place DNS between the domain name and the sample network address."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "On the provided flow card, place DNS between the domain name and the sample network address. Keep the decision within the stated personal or fictional scope."
         },
         {
@@ -836,11 +836,11 @@
         {
           "prompt": "Which principle best fits: What encryption protects?",
           "options": [
-            "Use HTTPS as one connection signal, but independently verify the service and request before entering payment or account information.",
             "A familiar name, strong signal, lock icon, or successful lookup proves the service is trustworthy.",
+            "Use HTTPS as one connection signal, but independently verify the service and request before entering payment or account information.",
             "The fastest route is always the safest route, even if the network owner is unknown."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Use HTTPS as one connection signal, but independently verify the service and request before entering payment or account information. This is the core idea to carry into the next case."
         },
         {
@@ -884,20 +884,20 @@
           "prompt": "Which principle best fits: Routers and network boundaries?",
           "options": [
             "A familiar name, strong signal, lock icon, or successful lookup proves the service is trustworthy.",
-            "Use a supported guest network and review its isolation setting so visitor devices do not share the trusted device network.",
-            "The fastest route is always the safest route, even if the network owner is unknown."
+            "The fastest route is always the safest route, even if the network owner is unknown.",
+            "Use a supported guest network and review its isolation setting so visitor devices do not share the trusted device network."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Use a supported guest network and review its isolation setting so visitor devices do not share the trusted device network. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Share the full artifact publicly so other people can decide what to do.",
+            "On the mock router diagram, place visitor devices on the guest segment and personal devices on the trusted segment.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "On the mock router diagram, place visitor devices on the guest segment and personal devices on the trusted segment."
+            "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "On the mock router diagram, place visitor devices on the guest segment and personal devices on the trusted segment. Keep the decision within the stated personal or fictional scope."
         },
         {
@@ -930,11 +930,11 @@
         {
           "prompt": "Which principle best fits: Wi-Fi settings that matter?",
           "options": [
-            "The fastest route is always the safest route, even if the network owner is unknown.",
+            "Review the router’s official settings, update through its management interface when appropriate, and replace default access details with unique ones.",
             "A familiar name, strong signal, lock icon, or successful lookup proves the service is trustworthy.",
-            "Review the router’s official settings, update through its management interface when appropriate, and replace default access details with unique ones."
+            "The fastest route is always the safest route, even if the network owner is unknown."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Review the router’s official settings, update through its management interface when appropriate, and replace default access details with unique ones. This is the core idea to carry into the next case."
         },
         {
@@ -950,11 +950,11 @@
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Assume the outcome succeeded because a button or instruction was displayed.",
             "Verify the plan addresses firmware, administrator access, and guest separation without exposing the router to the public internet.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
             "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Verify the plan addresses firmware, administrator access, and guest separation without exposing the router to the public internet. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -977,31 +977,31 @@
         {
           "prompt": "Which principle best fits: Connection path review?",
           "options": [
-            "Use only the supplied diagram, label trust boundaries, and ask the diagram owner about any unclear connection.",
+            "The fastest route is always the safest route, even if the network owner is unknown.",
             "A familiar name, strong signal, lock icon, or successful lookup proves the service is trustworthy.",
-            "The fastest route is always the safest route, even if the network owner is unknown."
+            "Use only the supplied diagram, label trust boundaries, and ask the diagram owner about any unclear connection."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Use only the supplied diagram, label trust boundaries, and ask the diagram owner about any unclear connection. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Follow the most urgent-looking prompt before checking its source or the owner.",
             "Annotate the fictional diagram with device, guest network, router, and service labels.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
             "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Annotate the fictional diagram with device, guest network, router, and service labels. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Check that every annotation refers to the supplied diagram and makes no claim about an unobserved real network.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Check that every annotation refers to the supplied diagram and makes no claim about an unobserved real network."
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Check that every annotation refers to the supplied diagram and makes no claim about an unobserved real network. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1025,20 +1025,20 @@
           "prompt": "Which principle best fits: Files and sensitive information?",
           "options": [
             "Grant every permission and install any update notice that appears in a pop-up.",
-            "Classify each item before sharing and restrict sensitive material to people who need it for an approved task.",
-            "A backup icon or working device proves recovery and support are available."
+            "A backup icon or working device proves recovery and support are available.",
+            "Classify each item before sharing and restrict sensitive material to people who need it for an approved task."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Classify each item before sharing and restrict sensitive material to people who need it for an approved task. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Share the full artifact publicly so other people can decide what to do.",
+            "Sort the fictional sample files into public, internal, and sensitive groups using their contents rather than their folder names.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Sort the fictional sample files into public, internal, and sensitive groups using their contents rather than their folder names."
+            "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Sort the fictional sample files into public, internal, and sensitive groups using their contents rather than their folder names. Keep the decision within the stated personal or fictional scope."
         },
         {
@@ -1071,11 +1071,11 @@
         {
           "prompt": "Which principle best fits: Apps and permissions?",
           "options": [
-            "A backup icon or working device proves recovery and support are available.",
+            "Grant only permissions that make sense for the app’s purpose, and review or revoke unnecessary access in device settings.",
             "Grant every permission and install any update notice that appears in a pop-up.",
-            "Grant only permissions that make sense for the app’s purpose, and review or revoke unnecessary access in device settings."
+            "A backup icon or working device proves recovery and support are available."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Grant only permissions that make sense for the app’s purpose, and review or revoke unnecessary access in device settings. This is the core idea to carry into the next case."
         },
         {
@@ -1092,10 +1092,10 @@
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Check that every kept permission has a clear purpose and that no contact or location data is disclosed without need.",
-            "Write an assumption as a confirmed fact and skip the follow-up owner."
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Check that every kept permission has a clear purpose and that no contact or location data is disclosed without need."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Check that every kept permission has a clear purpose and that no contact or location data is disclosed without need. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1128,21 +1128,21 @@
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Follow the most urgent-looking prompt before checking its source or the owner.",
             "Choose the official update route on the mock device screen and note whether the device is still supported.",
+            "Follow the most urgent-looking prompt before checking its source or the owner.",
             "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Choose the official update route on the mock device screen and note whether the device is still supported. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
             "Write an assumption as a confirmed fact and skip the follow-up owner.",
-            "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Verify the update source is the device settings or publisher’s official channel, not the web pop-up."
+            "Verify the update source is the device settings or publisher’s official channel, not the web pop-up.",
+            "Assume the outcome succeeded because a button or instruction was displayed."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Verify the update source is the device settings or publisher’s official channel, not the web pop-up. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1165,11 +1165,11 @@
         {
           "prompt": "Which principle best fits: Browser safety controls?",
           "options": [
-            "Grant every permission and install any update notice that appears in a pop-up.",
             "Pause, check the page’s purpose and source, and deny permissions or downloads that are not necessary.",
+            "Grant every permission and install any update notice that appears in a pop-up.",
             "A backup icon or working device proves recovery and support are available."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Pause, check the page’s purpose and source, and deny permissions or downloads that are not necessary. This is the core idea to carry into the next case."
         },
         {
@@ -1213,30 +1213,30 @@
           "prompt": "Which principle best fits: Backups and restore checks?",
           "options": [
             "A backup icon or working device proves recovery and support are available.",
-            "Grant every permission and install any update notice that appears in a pop-up.",
-            "Keep a separate trusted backup and test restoring a harmless sample file before relying on it."
+            "Keep a separate trusted backup and test restoring a harmless sample file before relying on it.",
+            "Grant every permission and install any update notice that appears in a pop-up."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Keep a separate trusted backup and test restoring a harmless sample file before relying on it. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Use the mock recovery checklist to select a separate destination and a non-sensitive test file.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Use the mock recovery checklist to select a separate destination and a non-sensitive test file.",
             "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Use the mock recovery checklist to select a separate destination and a non-sensitive test file. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Confirm the sample file opens from the backup and that the original remains unchanged.",
-            "Write an assumption as a confirmed fact and skip the follow-up owner."
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Confirm the sample file opens from the backup and that the original remains unchanged."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Confirm the sample file opens from the backup and that the original remains unchanged. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1259,21 +1259,21 @@
         {
           "prompt": "Which principle best fits: Device loss response?",
           "options": [
-            "Use the official device-recovery service, secure affected accounts, and follow the school’s reporting process.",
             "Grant every permission and install any update notice that appears in a pop-up.",
+            "Use the official device-recovery service, secure affected accounts, and follow the school’s reporting process.",
             "A backup icon or working device proves recovery and support are available."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Use the official device-recovery service, secure affected accounts, and follow the school’s reporting process. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Order the supplied lost-device actions by protecting access first and notifying the responsible owner promptly.",
-            "Share the full artifact publicly so other people can decide what to do."
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Order the supplied lost-device actions by protecting access first and notifying the responsible owner promptly."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Order the supplied lost-device actions by protecting access first and notifying the responsible owner promptly. Keep the decision within the stated personal or fictional scope."
         },
         {
@@ -1316,11 +1316,11 @@
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Share the full artifact publicly so other people can decide what to do.",
+            "Complete the mock checklist for one device at a time and mark any unsupported device for a supported replacement plan.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Complete the mock checklist for one device at a time and mark any unsupported device for a supported replacement plan."
+            "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Complete the mock checklist for one device at a time and mark any unsupported device for a supported replacement plan. Keep the decision within the stated personal or fictional scope."
         },
         {
@@ -1363,21 +1363,21 @@
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Mark the pressure cues in the fictional dialogue, then choose a neutral question that does not reveal private information.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Mark the pressure cues in the fictional dialogue, then choose a neutral question that does not reveal private information.",
             "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Mark the pressure cues in the fictional dialogue, then choose a neutral question that does not reveal private information. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Assume the outcome succeeded because a button or instruction was displayed.",
             "Verify the request with the named person using contact details already known to the club.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
             "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Verify the request with the named person using contact details already known to the club. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1400,31 +1400,31 @@
         {
           "prompt": "Which principle best fits: Verify a request out of band?",
           "options": [
-            "Pause the change and contact the supplier through a previously verified number or established portal.",
+            "Public sharing is fine whenever a link is difficult to guess.",
             "Urgency is proof that a request is authentic and should stay secret.",
-            "Public sharing is fine whenever a link is difficult to guess."
+            "Pause the change and contact the supplier through a previously verified number or established portal."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Pause the change and contact the supplier through a previously verified number or established portal. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Select the contact method in the mock vendor record that was saved before the email arrived.",
-            "Share the full artifact publicly so other people can decide what to do."
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Select the contact method in the mock vendor record that was saved before the email arrived."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Select the contact method in the mock vendor record that was saved before the email arrived. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
             "Write an assumption as a confirmed fact and skip the follow-up owner.",
-            "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Confirm the request with the known contact and record who approved the change before proceeding."
+            "Confirm the request with the known contact and record who approved the change before proceeding.",
+            "Assume the outcome succeeded because a button or instruction was displayed."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Confirm the request with the known contact and record who approved the change before proceeding. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1447,11 +1447,11 @@
         {
           "prompt": "Which principle best fits: Personal data and consent?",
           "options": [
-            "Urgency is proof that a request is authentic and should stay secret.",
             "Remove fields that are not needed to send the schedule and explain any remaining collection clearly.",
+            "Urgency is proof that a request is authentic and should stay secret.",
             "Public sharing is fine whenever a link is difficult to guess."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Remove fields that are not needed to send the schedule and explain any remaining collection clearly. This is the core idea to carry into the next case."
         },
         {
@@ -1467,11 +1467,11 @@
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Check that each remaining field has a stated purpose and that the form does not request sensitive data without need.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Check that each remaining field has a stated purpose and that the form does not request sensitive data without need.",
             "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Check that each remaining field has a stated purpose and that the form does not request sensitive data without need. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1504,21 +1504,21 @@
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Change the mock sharing card from public editing to named-reader access for the approved reviewers.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Change the mock sharing card from public editing to named-reader access for the approved reviewers.",
             "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Change the mock sharing card from public editing to named-reader access for the approved reviewers. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Verify the public link is disabled and only the intended people retain the access needed for their task.",
-            "Write an assumption as a confirmed fact and skip the follow-up owner."
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Verify the public link is disabled and only the intended people retain the access needed for their task."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Verify the public link is disabled and only the intended people retain the access needed for their task. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1562,10 +1562,10 @@
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
             "Write an assumption as a confirmed fact and skip the follow-up owner.",
-            "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Check that the report contains observable facts, no passwords or codes, and no unsupported claim about who caused it."
+            "Check that the report contains observable facts, no passwords or codes, and no unsupported claim about who caused it.",
+            "Assume the outcome succeeded because a button or instruction was displayed."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Check that the report contains observable facts, no passwords or codes, and no unsupported claim about who caused it. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1608,11 +1608,11 @@
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Confirm the original remains unchanged and access is restricted to the people responsible for review.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Confirm the original remains unchanged and access is restricted to the people responsible for review.",
             "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Confirm the original remains unchanged and access is restricted to the people responsible for review. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1636,30 +1636,30 @@
           "prompt": "Which principle best fits: Trust and privacy case?",
           "options": [
             "Public sharing is fine whenever a link is difficult to guess.",
-            "Urgency is proof that a request is authentic and should stay secret.",
-            "Restrict access through the authorized owner, record the scope and time, and follow the club’s privacy reporting process."
+            "Restrict access through the authorized owner, record the scope and time, and follow the club’s privacy reporting process.",
+            "Urgency is proof that a request is authentic and should stay secret."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Restrict access through the authorized owner, record the scope and time, and follow the club’s privacy reporting process. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Use the mock incident form to capture the file, visibility setting, discovery time, and owner without copying the list.",
+            "Share the full artifact publicly so other people can decide what to do.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Share the full artifact publicly so other people can decide what to do."
+            "Use the mock incident form to capture the file, visibility setting, discovery time, and owner without copying the list."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Use the mock incident form to capture the file, visibility setting, discovery time, and owner without copying the list. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Assume the outcome succeeded because a button or instruction was displayed.",
             "Verify access is narrowed, the owner is informed, and the note contains no unnecessary member data.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
             "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Verify access is narrowed, the owner is informed, and the note contains no unnecessary member data. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1702,11 +1702,11 @@
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Check that your summary distinguishes recorded facts from explanations that the log does not provide.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Check that your summary distinguishes recorded facts from explanations that the log does not provide."
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Check that your summary distinguishes recorded facts from explanations that the log does not provide. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1739,11 +1739,11 @@
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Share the full artifact publicly so other people can decide what to do.",
+            "Sort the supplied sample events into expected, unusual-but-explained, and needs-review groups.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Sort the supplied sample events into expected, unusual-but-explained, and needs-review groups."
+            "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Sort the supplied sample events into expected, unusual-but-explained, and needs-review groups. Keep the decision within the stated personal or fictional scope."
         },
         {
@@ -1786,11 +1786,11 @@
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Triage the mock alert by recording the user’s response, time, and official next step.",
+            "Share the full artifact publicly so other people can decide what to do.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Share the full artifact publicly so other people can decide what to do."
+            "Triage the mock alert by recording the user’s response, time, and official next step."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Triage the mock alert by recording the user’s response, time, and official next step. Keep the decision within the stated personal or fictional scope."
         },
         {
@@ -1823,31 +1823,31 @@
         {
           "prompt": "Which principle best fits: Signal, noise, and confidence?",
           "options": [
-            "Mark the evidence as incomplete, seek the approved context, and avoid presenting a guess as a confirmed incident.",
             "One event proves intent, and an alert label gives the full context.",
+            "Mark the evidence as incomplete, seek the approved context, and avoid presenting a guess as a confirmed incident.",
             "A guess can be written as a confirmed fact when a decision is needed quickly."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Mark the evidence as incomplete, seek the approved context, and avoid presenting a guess as a confirmed incident. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "For each supplied alert, write one observed fact and one unanswered question.",
-            "Share the full artifact publicly so other people can decide what to do."
+            "Share the full artifact publicly so other people can decide what to do.",
+            "For each supplied alert, write one observed fact and one unanswered question."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "For each supplied alert, write one observed fact and one unanswered question. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Check that your confidence label matches the available evidence and records missing information explicitly.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Check that your confidence label matches the available evidence and records missing information explicitly."
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Check that your confidence label matches the available evidence and records missing information explicitly. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1870,31 +1870,31 @@
         {
           "prompt": "Which principle best fits: Triage a small queue?",
           "options": [
-            "One event proves intent, and an alert label gives the full context.",
             "Prioritize the event with the greater credible impact and follow the escalation rules for that role.",
+            "One event proves intent, and an alert label gives the full context.",
             "A guess can be written as a confirmed fact when a decision is needed quickly."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Prioritize the event with the greater credible impact and follow the escalation rules for that role. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Share the full artifact publicly so other people can decide what to do.",
+            "Rank the fictional queue using impact, urgency, scope, and confidence labels.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Rank the fictional queue using impact, urgency, scope, and confidence labels."
+            "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Rank the fictional queue using impact, urgency, scope, and confidence labels. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Verify that priority has a stated reason and does not rely only on alert volume or alarming wording.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Write an assumption as a confirmed fact and skip the follow-up owner."
+            "Verify that priority has a stated reason and does not rely only on alert volume or alarming wording."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Verify that priority has a stated reason and does not rely only on alert volume or alarming wording. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1917,31 +1917,31 @@
         {
           "prompt": "Which principle best fits: Write a useful incident note?",
           "options": [
-            "A guess can be written as a confirmed fact when a decision is needed quickly.",
+            "Write a factual handoff with the event time, verified action, current status, open question, and named next owner.",
             "One event proves intent, and an alert label gives the full context.",
-            "Write a factual handoff with the event time, verified action, current status, open question, and named next owner."
+            "A guess can be written as a confirmed fact when a decision is needed quickly."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Write a factual handoff with the event time, verified action, current status, open question, and named next owner. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Complete the mock handoff template using only the facts supplied in the case.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Complete the mock handoff template using only the facts supplied in the case.",
             "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Complete the mock handoff template using only the facts supplied in the case. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Assume the outcome succeeded because a button or instruction was displayed.",
             "Check that the note avoids speculation and names a next action and owner.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
             "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Check that the note avoids speculation and names a next action and owner. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -1964,21 +1964,21 @@
         {
           "prompt": "Which principle best fits: Monitoring desk exercise?",
           "options": [
-            "Record the facts, request the missing context through the approved owner, and choose an action within the analyst’s authority.",
+            "A guess can be written as a confirmed fact when a decision is needed quickly.",
             "One event proves intent, and an alert label gives the full context.",
-            "A guess can be written as a confirmed fact when a decision is needed quickly."
+            "Record the facts, request the missing context through the approved owner, and choose an action within the analyst’s authority."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Record the facts, request the missing context through the approved owner, and choose an action within the analyst’s authority. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Sort the provided case cards into ‘known’, ‘needs confirmation’, and ‘next authorized action’ columns.",
-            "Share the full artifact publicly so other people can decide what to do."
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Sort the provided case cards into ‘known’, ‘needs confirmation’, and ‘next authorized action’ columns."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Sort the provided case cards into ‘known’, ‘needs confirmation’, and ‘next authorized action’ columns. Keep the decision within the stated personal or fictional scope."
         },
         {
@@ -2022,20 +2022,20 @@
           "prompt": "What is the safest next move in this situation?",
           "options": [
             "Share the full artifact publicly so other people can decide what to do.",
-            "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Fill in the supplied feature canvas with data, users, trust boundary, and one privacy or availability concern."
+            "Fill in the supplied feature canvas with data, users, trust boundary, and one privacy or availability concern.",
+            "Follow the most urgent-looking prompt before checking its source or the owner."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Fill in the supplied feature canvas with data, users, trust boundary, and one privacy or availability concern. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Check that every proposed safeguard links to a stated risk and remains within the fictional design exercise.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Write an assumption as a confirmed fact and skip the follow-up owner."
+            "Check that every proposed safeguard links to a stated risk and remains within the fictional design exercise."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Check that every proposed safeguard links to a stated risk and remains within the fictional design exercise. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -2068,11 +2068,11 @@
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Write validation rules for the mock title length, date format, and category choices.",
+            "Share the full artifact publicly so other people can decide what to do.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Share the full artifact publicly so other people can decide what to do."
+            "Write validation rules for the mock title length, date format, and category choices."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Write validation rules for the mock title length, date format, and category choices. Keep the decision within the stated personal or fictional scope."
         },
         {
@@ -2105,31 +2105,31 @@
         {
           "prompt": "Which principle best fits: Access checks in an app?",
           "options": [
-            "Require the trusted service to verify the account’s permission for every protected action and resource.",
+            "A private-looking sample or log is a safe place to paste a real secret.",
             "A hidden client button replaces a permission check at the trusted service.",
-            "A private-looking sample or log is a safe place to paste a real secret."
+            "Require the trusted service to verify the account’s permission for every protected action and resource."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Require the trusted service to verify the account’s permission for every protected action and resource. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "On the supplied flow diagram, place an authorization check at the service boundary before the delete action.",
-            "Share the full artifact publicly so other people can decide what to do."
+            "Share the full artifact publicly so other people can decide what to do.",
+            "On the supplied flow diagram, place an authorization check at the service boundary before the delete action."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "On the supplied flow diagram, place an authorization check at the service boundary before the delete action. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Verify the rule is enforced even if a client interface is changed or the button is not visible.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Verify the rule is enforced even if a client interface is changed or the button is not visible."
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Verify the rule is enforced even if a client interface is changed or the button is not visible. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -2153,10 +2153,10 @@
           "prompt": "Which principle best fits: Protect configuration values?",
           "options": [
             "A hidden client button replaces a permission check at the trusted service.",
-            "Do not copy or use the value; remove it from the example, rotate it through the authorized owner if it was real, and use a secret store.",
-            "A private-looking sample or log is a safe place to paste a real secret."
+            "A private-looking sample or log is a safe place to paste a real secret.",
+            "Do not copy or use the value; remove it from the example, rotate it through the authorized owner if it was real, and use a secret store."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Do not copy or use the value; remove it from the example, rotate it through the authorized owner if it was real, and use a secret store. This is the core idea to carry into the next case."
         },
         {
@@ -2172,11 +2172,11 @@
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Check that no secret value appears in the example, logs, or public notes after the review.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Write an assumption as a confirmed fact and skip the follow-up owner."
+            "Check that no secret value appears in the example, logs, or public notes after the review."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Check that no secret value appears in the example, logs, or public notes after the review. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -2209,21 +2209,21 @@
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Match the mock service to the least-privilege role and resource scope in the access table.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
+            "Match the mock service to the least-privilege role and resource scope in the access table.",
             "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Match the mock service to the least-privilege role and resource scope in the access table. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Assume the outcome succeeded because a button or instruction was displayed.",
             "Verify the role cannot manage users, billing, or unrelated storage.",
+            "Assume the outcome succeeded because a button or instruction was displayed.",
             "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Verify the role cannot manage users, billing, or unrelated storage. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -2246,31 +2246,31 @@
         {
           "prompt": "Which principle best fits: Secure defaults?",
           "options": [
-            "Set the default to named-member access and make any broader sharing an explicit, reviewable choice.",
             "A hidden client button replaces a permission check at the trusted service.",
+            "Set the default to named-member access and make any broader sharing an explicit, reviewable choice.",
             "A private-looking sample or log is a safe place to paste a real secret."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Set the default to named-member access and make any broader sharing an explicit, reviewable choice. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Choose the safer initial values on the mock setup screen before any member uploads a file.",
-            "Share the full artifact publicly so other people can decide what to do."
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Choose the safer initial values on the mock setup screen before any member uploads a file."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Choose the safer initial values on the mock setup screen before any member uploads a file. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
             "Write an assumption as a confirmed fact and skip the follow-up owner.",
-            "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Verify a new workspace starts with restricted access and explains how an owner can deliberately change it."
+            "Verify a new workspace starts with restricted access and explains how an owner can deliberately change it.",
+            "Assume the outcome succeeded because a button or instruction was displayed."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Verify a new workspace starts with restricted access and explains how an owner can deliberately change it. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -2293,11 +2293,11 @@
         {
           "prompt": "Which principle best fits: Configuration review?",
           "options": [
-            "A hidden client button replaces a permission check at the trusted service.",
             "Document the mismatch, notify the owner, and follow the approved change process rather than editing an unknown environment.",
+            "A hidden client button replaces a permission check at the trusted service.",
             "A private-looking sample or log is a safe place to paste a real secret."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Document the mismatch, notify the owner, and follow the approved change process rather than editing an unknown environment. This is the core idea to carry into the next case."
         },
         {
@@ -2313,11 +2313,11 @@
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Confirm each recommendation names the setting, expected state, owner, and approval path.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
+            "Confirm each recommendation names the setting, expected state, owner, and approval path.",
             "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Confirm each recommendation names the setting, expected state, owner, and approval path. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -2341,10 +2341,10 @@
           "prompt": "Which principle best fits: Recognize and report?",
           "options": [
             "A timeline proves cause, and a public update should include every detail.",
-            "Responders may make any change or delete evidence if an alert looks serious.",
-            "Report the observations promptly through the organization’s approved route and follow the owner’s instructions."
+            "Report the observations promptly through the organization’s approved route and follow the owner’s instructions.",
+            "Responders may make any change or delete evidence if an alert looks serious."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Report the observations promptly through the organization’s approved route and follow the owner’s instructions. This is the core idea to carry into the next case."
         },
         {
@@ -2361,10 +2361,10 @@
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Verify the report includes observations rather than conclusions and is assigned to a responsible owner.",
-            "Write an assumption as a confirmed fact and skip the follow-up owner."
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Verify the report includes observations rather than conclusions and is assigned to a responsible owner."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Verify the report includes observations rather than conclusions and is assigned to a responsible owner. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -2387,11 +2387,11 @@
         {
           "prompt": "Which principle best fits: Prioritize impact?",
           "options": [
-            "Determine the known data and access scope with the folder owner before choosing a broader response.",
+            "A timeline proves cause, and a public update should include every detail.",
             "Responders may make any change or delete evidence if an alert looks serious.",
-            "A timeline proves cause, and a public update should include every detail."
+            "Determine the known data and access scope with the folder owner before choosing a broader response."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Determine the known data and access scope with the folder owner before choosing a broader response. This is the core idea to carry into the next case."
         },
         {
@@ -2407,11 +2407,11 @@
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Check that impact is described proportionately and uncertain scope stays marked as unknown.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Check that impact is described proportionately and uncertain scope stays marked as unknown."
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Check that impact is described proportionately and uncertain scope stays marked as unknown. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -2435,20 +2435,20 @@
           "prompt": "Which principle best fits: Contain with authority?",
           "options": [
             "Responders may make any change or delete evidence if an alert looks serious.",
-            "Use the approved temporary access control, preserve the relevant record, and notify the folder owner.",
-            "A timeline proves cause, and a public update should include every detail."
+            "A timeline proves cause, and a public update should include every detail.",
+            "Use the approved temporary access control, preserve the relevant record, and notify the folder owner."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Use the approved temporary access control, preserve the relevant record, and notify the folder owner. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Share the full artifact publicly so other people can decide what to do.",
+            "Select the least disruptive action available to the moderator in the supplied response options.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Select the least disruptive action available to the moderator in the supplied response options."
+            "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Select the least disruptive action available to the moderator in the supplied response options. Keep the decision within the stated personal or fictional scope."
         },
         {
@@ -2482,30 +2482,30 @@
           "prompt": "Which principle best fits: Preserve a clear timeline?",
           "options": [
             "A timeline proves cause, and a public update should include every detail.",
-            "Responders may make any change or delete evidence if an alert looks serious.",
-            "Record confirmed times and sources, label the unknown time as unknown, and avoid inferring who caused the change."
+            "Record confirmed times and sources, label the unknown time as unknown, and avoid inferring who caused the change.",
+            "Responders may make any change or delete evidence if an alert looks serious."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Record confirmed times and sources, label the unknown time as unknown, and avoid inferring who caused the change. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Arrange the supplied event cards by confirmed timestamp and mark the undated event separately.",
+            "Share the full artifact publicly so other people can decide what to do.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Share the full artifact publicly so other people can decide what to do."
+            "Arrange the supplied event cards by confirmed timestamp and mark the undated event separately."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Arrange the supplied event cards by confirmed timestamp and mark the undated event separately. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Check that the final timeline preserves sources and explicitly labels gaps and uncertainty.",
-            "Write an assumption as a confirmed fact and skip the follow-up owner."
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Check that the final timeline preserves sources and explicitly labels gaps and uncertainty."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Check that the final timeline preserves sources and explicitly labels gaps and uncertainty. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -2548,11 +2548,11 @@
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Confirm the restored copy is readable, permissions remain appropriate, and the source backup is retained safely.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Confirm the restored copy is readable, permissions remain appropriate, and the source backup is retained safely."
+            "Write an assumption as a confirmed fact and skip the follow-up owner."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Confirm the restored copy is readable, permissions remain appropriate, and the source backup is retained safely. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -2575,21 +2575,21 @@
         {
           "prompt": "Which principle best fits: Communicate clearly?",
           "options": [
-            "Responders may make any change or delete evidence if an alert looks serious.",
             "State what is confirmed, what action is underway, where updates will appear, and what members should do now.",
+            "Responders may make any change or delete evidence if an alert looks serious.",
             "A timeline proves cause, and a public update should include every detail."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "State what is confirmed, what action is underway, where updates will appear, and what members should do now. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Share the full artifact publicly so other people can decide what to do.",
+            "Draft a short mock update using only the facts supplied in the scenario.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Draft a short mock update using only the facts supplied in the scenario."
+            "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Draft a short mock update using only the facts supplied in the scenario. Keep the decision within the stated personal or fictional scope."
         },
         {
@@ -2623,20 +2623,20 @@
           "prompt": "Which principle best fits: After-action learning?",
           "options": [
             "A timeline proves cause, and a public update should include every detail.",
-            "Responders may make any change or delete evidence if an alert looks serious.",
-            "Describe the process gap, agree on a practical change, assign an owner, and schedule a follow-up check."
+            "Describe the process gap, agree on a practical change, assign an owner, and schedule a follow-up check.",
+            "Responders may make any change or delete evidence if an alert looks serious."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Describe the process gap, agree on a practical change, assign an owner, and schedule a follow-up check. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Complete the mock review with one contributing condition, one improvement, one owner, and one due date.",
+            "Share the full artifact publicly so other people can decide what to do.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Share the full artifact publicly so other people can decide what to do."
+            "Complete the mock review with one contributing condition, one improvement, one owner, and one due date."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Complete the mock review with one contributing condition, one improvement, one owner, and one due date. Keep the decision within the stated personal or fictional scope."
         },
         {
@@ -2669,11 +2669,11 @@
         {
           "prompt": "Which principle best fits: Capstone briefing?",
           "options": [
-            "State the included artifacts, learning objective, decision owner, and explicit stop conditions before starting.",
             "A course score proves specialist expertise or authorizes work on real systems.",
+            "State the included artifacts, learning objective, decision owner, and explicit stop conditions before starting.",
             "An unresolved question should be hidden so the final report sounds confident."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "State the included artifacts, learning objective, decision owner, and explicit stop conditions before starting. This is the core idea to carry into the next case."
         },
         {
@@ -2690,10 +2690,10 @@
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
             "Write an assumption as a confirmed fact and skip the follow-up owner.",
-            "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Confirm every participant can identify the boundary and the person who can pause the simulation."
+            "Confirm every participant can identify the boundary and the person who can pause the simulation.",
+            "Assume the outcome succeeded because a button or instruction was displayed."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Confirm every participant can identify the boundary and the person who can pause the simulation. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -2716,31 +2716,31 @@
         {
           "prompt": "Which principle best fits: Investigate the timeline?",
           "options": [
-            "A course score proves specialist expertise or authorizes work on real systems.",
             "Build a sourced timeline, identify what is confirmed, and list the questions that still need an authorized owner.",
+            "A course score proves specialist expertise or authorizes work on real systems.",
             "An unresolved question should be hidden so the final report sounds confident."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Build a sourced timeline, identify what is confirmed, and list the questions that still need an authorized owner. This is the core idea to carry into the next case."
         },
         {
           "prompt": "What is the safest next move in this situation?",
           "options": [
-            "Share the full artifact publicly so other people can decide what to do.",
+            "Place each supplied artifact on the timeline and attach its source and confidence label.",
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Place each supplied artifact on the timeline and attach its source and confidence label."
+            "Share the full artifact publicly so other people can decide what to do."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Place each supplied artifact on the timeline and attach its source and confidence label. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
-            "Check that no event is attributed to a person without evidence and that missing context is visible.",
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Write an assumption as a confirmed fact and skip the follow-up owner."
+            "Check that no event is attributed to a person without evidence and that missing context is visible."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Check that no event is attributed to a person without evidence and that missing context is visible. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -2763,11 +2763,11 @@
         {
           "prompt": "Which principle best fits: Choose and explain a response?",
           "options": [
-            "An unresolved question should be hidden so the final report sounds confident.",
+            "Restrict the confirmed share, report the unverified alert for review, and avoid claiming the events share a cause.",
             "A course score proves specialist expertise or authorizes work on real systems.",
-            "Restrict the confirmed share, report the unverified alert for review, and avoid claiming the events share a cause."
+            "An unresolved question should be hidden so the final report sounds confident."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Restrict the confirmed share, report the unverified alert for review, and avoid claiming the events share a cause. This is the core idea to carry into the next case."
         },
         {
@@ -2784,10 +2784,10 @@
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
             "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Verify that every action is within the assigned role and distinguishes the confirmed issue from the open question.",
-            "Write an assumption as a confirmed fact and skip the follow-up owner."
+            "Write an assumption as a confirmed fact and skip the follow-up owner.",
+            "Verify that every action is within the assigned role and distinguishes the confirmed issue from the open question."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Verify that every action is within the assigned role and distinguishes the confirmed issue from the open question. A useful record distinguishes what was checked from what is still unknown."
         }
       ]
@@ -2821,30 +2821,30 @@
           "prompt": "What is the safest next move in this situation?",
           "options": [
             "Follow the most urgent-looking prompt before checking its source or the owner.",
-            "Complete the final decision set and write a concise debrief with evidence, action, remaining uncertainty, and next owner.",
-            "Share the full artifact publicly so other people can decide what to do."
+            "Share the full artifact publicly so other people can decide what to do.",
+            "Complete the final decision set and write a concise debrief with evidence, action, remaining uncertainty, and next owner."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Complete the final decision set and write a concise debrief with evidence, action, remaining uncertainty, and next owner. Keep the decision within the stated personal or fictional scope."
         },
         {
           "prompt": "How should you verify the task was handled responsibly?",
           "options": [
             "Write an assumption as a confirmed fact and skip the follow-up owner.",
-            "Assume the outcome succeeded because a button or instruction was displayed.",
-            "Review the debrief against those four parts; the course completion records demonstrated foundations, not expert or job readiness."
+            "Review the debrief against those four parts; the course completion records demonstrated foundations, not expert or job readiness.",
+            "Assume the outcome succeeded because a button or instruction was displayed."
           ],
-          "answer": 2,
+          "answer": 1,
           "explanation": "Review the debrief against those four parts; the course completion records demonstrated foundations, not expert or job readiness. A useful record distinguishes what was checked from what is still unknown."
         },
         {
           "prompt": "A message asks for an unexpected fee. What is the safest response?",
           "options": [
-            "Verify through a service route you choose independently before taking action.",
+            "Forward it with personal details so others can decide.",
             "Open the message link because the logo looks familiar.",
-            "Forward it with personal details so others can decide."
+            "Verify through a service route you choose independently before taking action."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Independent verification avoids trusting a link supplied by the unexpected request."
         },
         {
@@ -2860,21 +2860,21 @@
         {
           "prompt": "A shared folder contains more information than a reviewer needs. What is the safer action?",
           "options": [
-            "Copy the full folder into a personal account.",
+            "Ask the owner to restrict access and remove unnecessary information.",
             "Make the folder public so review is faster.",
-            "Ask the owner to restrict access and remove unnecessary information."
+            "Copy the full folder into a personal account."
           ],
-          "answer": 2,
+          "answer": 0,
           "explanation": "Limit access and data to the approved task and intended people."
         },
         {
           "prompt": "What belongs in a useful case note?",
           "options": [
-            "Observed facts, source and time, actions taken, open questions, and a next owner.",
+            "Passwords and recovery codes for later review.",
             "A guess written as a confirmed cause.",
-            "Passwords and recovery codes for later review."
+            "Observed facts, source and time, actions taken, open questions, and a next owner."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "A factual note distinguishes evidence from uncertainty and avoids secrets."
         },
         {

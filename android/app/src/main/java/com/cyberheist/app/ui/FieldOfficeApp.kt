@@ -31,6 +31,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontFamily
@@ -317,6 +318,9 @@ private fun MissionRoute(
     onNoteChange: (String) -> Unit,
     onSaveNote: () -> Unit,
 ) {
+    val optionOrder = remember(mission.id, state.questionIndex) {
+        question?.options?.indices?.shuffled().orEmpty()
+    }
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 18.dp, vertical = 10.dp)) {
         TextButton(onClick = onBack) { Text("← BACK TO CASES") }
         if (state.missionFinished) {
@@ -366,11 +370,12 @@ private fun MissionRoute(
                 Spacer(Modifier.height(9.dp))
                 Text("DECISION ${state.questionIndex + 1} OF ${mission.questions.size}", fontSize = 8.sp, letterSpacing = 1.sp, fontWeight = FontWeight.Bold, color = androidx.compose.material3.MaterialTheme.colorScheme.secondary)
                 Text(current.prompt, Modifier.padding(top = 5.dp, bottom = 7.dp), fontWeight = FontWeight.Bold, fontSize = 15.sp, lineHeight = 20.sp)
-                current.options.forEachIndexed { index, option ->
-                    val selected = state.selectedAnswer == index
-                    val correct = state.selectedAnswer != null && index == current.answer
+                optionOrder.forEach { answerIndex ->
+                    val option = current.options[answerIndex]
+                    val selected = state.selectedAnswer == answerIndex
+                    val correct = state.selectedAnswer != null && answerIndex == current.answer
                     OutlinedButton(
-                        onClick = { onAnswer(index) },
+                        onClick = { onAnswer(answerIndex) },
                         modifier = Modifier.fillMaxWidth().padding(vertical = 3.dp),
                         enabled = state.selectedAnswer == null,
                         border = BorderStroke(1.dp, when {

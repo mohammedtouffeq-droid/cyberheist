@@ -1,5 +1,59 @@
 /* CyberHeist is a local-only learning game. All actions run against fictional scenarios. */
 const STORAGE_KEY = 'cyberheist.learning.v1';
+const LABS = {
+  'signal-hunt': {
+    title: 'Signal Hunt',
+    category: 'MESSAGE ANALYSIS',
+    brief: 'Inspect the fictional service message. Mark the details that deserve verification before you act.',
+    artifact: 'Fictional message: “Your club membership will close in 10 minutes. Confirm your account at club-help.example and pay a reactivation fee.”',
+    items: [
+      { label: 'Unexpected reactivation fee', clue: true },
+      { label: 'A deadline designed to rush the reader', clue: true },
+      { label: 'A sign-in link supplied inside the message', clue: true },
+      { label: 'The message mentions a club membership', clue: false },
+    ],
+    debrief: 'Pressure, unexpected payment, and a message-provided sign-in route are clues to verify separately. The club name alone is not proof either way.',
+  },
+  'permission-desk': {
+    title: 'Permission Desk',
+    category: 'ACCESS DESIGN',
+    brief: 'A fictional flashlight utility needs to turn its light on. Select only the permission needed for that job.',
+    artifact: 'Toy app request: Camera (controls the light), Contacts, Location, Microphone.',
+    items: [
+      { label: 'Camera', clue: true },
+      { label: 'Contacts', clue: false },
+      { label: 'Location', clue: false },
+      { label: 'Microphone', clue: false },
+    ],
+    debrief: 'Grant only the access the feature needs, and revisit it if the feature changes. A permission prompt is not a reason to approve everything.',
+  },
+  'packet-route': {
+    title: 'Packet Route',
+    category: 'NETWORK CONCEPTS',
+    brief: 'Put the fictional connection path in order. This is a paper model; it sends no packets and uses no real addresses.',
+    artifact: 'Arrange the components from the learner’s device toward the requested service.',
+    items: [
+      { label: 'Learner device', clue: true },
+      { label: 'Local router / access point', clue: true },
+      { label: 'Internet service path', clue: true },
+      { label: 'Destination service', clue: true },
+    ],
+    debrief: 'The route is a simplified model. DNS lookup helps resolve a domain name separately; it is not a router hop on every packet. A path also does not prove the service is trustworthy.',
+  },
+  'response-runbook': {
+    title: 'Response Runbook',
+    category: 'INCIDENT RESPONSE',
+    brief: 'Order a calm response for a fictional account alert. Stay within the account owner’s authority.',
+    artifact: 'A person reports an unexpected sign-in alert. No one has confirmed whether the account was accessed.',
+    items: [
+      { label: 'Confirm the report and record observable facts', clue: true },
+      { label: 'Use the official account route to secure access; involve the account owner', clue: true },
+      { label: 'Review active sessions and recovery options with the owner', clue: true },
+      { label: 'Document what changed and what remains unknown', clue: true },
+    ],
+    debrief: 'A useful response preserves facts, acts through an authorized route, checks recovery and sessions, then records outcomes and uncertainty. Never collect or share the person’s password or codes.',
+  },
+};
 
 const fallbackMissions = [
   {
@@ -47,11 +101,12 @@ function readProgress() {
       xp: Number.isFinite(parsed.xp) ? Math.max(0, parsed.xp) : 0,
       completed: Array.isArray(parsed.completed) ? parsed.completed.filter((id) => typeof id === 'string') : [],
       notes: Array.isArray(parsed.notes) ? parsed.notes.filter((note) => note && typeof note.missionId === 'string' && typeof note.text === 'string').slice(0, 100) : [],
+      labsCompleted: Array.isArray(parsed.labsCompleted) ? parsed.labsCompleted.filter((id) => typeof id === 'string') : [],
       lastPlayed: typeof parsed.lastPlayed === 'string' ? parsed.lastPlayed : null,
       streak: Number.isFinite(parsed.streak) ? Math.max(0, parsed.streak) : 0
     };
   } catch {
-    return { xp: 0, completed: [], notes: [], lastPlayed: null, streak: 0 };
+    return { xp: 0, completed: [], notes: [], labsCompleted: [], lastPlayed: null, streak: 0 };
   }
 }
 
@@ -64,8 +119,17 @@ class CyberHeistGame {
     this.questionIndex = 0;
     this.correctAnswers = 0;
     this.answered = false;
+    this.displayOrder = [];
+    this.displayAnswerIndex = -1;
+    this.activeLab = null;
+    this.returnMission = null;
+    this.labSelection = new Set();
+    this.labOrder = [];
     this.toastTimer = null;
     this.grid = document.getElementById('missionGrid');
+    this.labGrid = document.getElementById('labGrid');
+    this.caseSearch = document.getElementById('caseSearch');
+    this.caseCategory = document.getElementById('caseCategory');
     this.dialog = document.getElementById('missionDialog');
     this.academyDialog = document.getElementById('academyDialog');
     this.notesDialog = document.getElementById('notesDialog');
@@ -85,10 +149,59 @@ class CyberHeistGame {
     ['notesButton', 'notesRailButton', 'notesMobileButton'].forEach((id) => {
       document.getElementById(id).addEventListener('click', () => this.openNotes());
     });
+    this.caseSearch.addEventListener('input', () => this.renderCases());
+    this.caseCategory.addEventListener('change', () => this.renderCases());
+    this.labGrid.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-lab-id]');
+      if (button) this.startLab(button.dataset.labId);
+    });
+    this.stage.addEventListener('click', (event) => {
+      const clue = event.target.closest('[data-lab-choice]');
+      if (clue) {
+        const index = Number(clue.dataset.labChoice);
+        if (this.labSelection.has(index)) this.labSelection.delete(index);
+        else this.labSelection.add(index);
+        clue.classList.toggle('selected', this.labSelection.has(index));
+        return;
+      }
+      const relatedLab = event.target.closest('[data-related-lab]');
+      if (relatedLab) {
+        this.startLab(relatedLab.dataset.relatedLab, true);
+        return;
+      }
+      const move = event.target.closest('[data-lab-move]');
+      if (move) {
+        const index = Number(move.dataset.labMove);
+        const next = index + Number(move.dataset.direction);
+        if (next >= 0 && next < this.labOrder.length) {
+          [this.labOrder[index], this.labOrder[next]] = [this.labOrder[next], this.labOrder[index]];
+          this.renderLab();
+        }
+        return;
+      }
+      if (event.target.closest('[data-lab-check]')) this.checkLab();
+      if (event.target.closest('[data-lab-retry]')) return;
+    });
+    document.getElementById('manualNoteInput').addEventListener('input', (event) => {
+      document.getElementById('manualNoteCount').textContent = `${event.target.value.length} / 280`;
+    });
+    document.getElementById('manualNoteForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      this.saveManualNote();
+    });
     document.querySelectorAll('.nav-link, .mobile-link').forEach((link) => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (event) => {
+        const href = link.getAttribute('href');
+        if (href?.startsWith('#')) {
+          const destination = document.querySelector(href);
+          if (destination) {
+            event.preventDefault();
+            history.replaceState(null, '', href);
+            destination.scrollIntoView({ behavior: 'auto', block: 'start' });
+          }
+        }
         document.querySelectorAll('.nav-link, .mobile-link').forEach((item) => item.classList.remove('active'));
-        document.querySelectorAll(`[href="${link.getAttribute('href')}"]`).forEach((item) => item.classList.add('active'));
+        if (href) document.querySelectorAll(`[href="${href}"]`).forEach((item) => item.classList.add('active'));
       });
     });
     this.dialog.addEventListener('click', (event) => {
@@ -143,13 +256,13 @@ class CyberHeistGame {
   }
 
   render() {
-    const completed = new Set(this.progress.completed);
-    const completedCount = this.missions.filter((mission) => completed.has(mission.id)).length;
+    const completedCount = this.missions.filter((mission) => this.progress.completed.includes(mission.id)).length;
     const level = this.getLevel(this.progress.xp);
     document.getElementById('levelValue').textContent = level.name;
     document.getElementById('xpValue').textContent = `${this.progress.xp} XP`;
     document.getElementById('xpProgress').style.width = `${level.progress}%`;
     document.getElementById('completedValue').textContent = `${completedCount} / ${this.missions.length}`;
+    document.getElementById('recordMark').textContent = `${this.progress.labsCompleted.length} / ${Object.keys(LABS).length} LABS`;
     document.getElementById('missionCount').textContent = `${String(this.missions.length).padStart(2, '0')} CASES  /  AVAILABLE`;
     const streakValue = document.getElementById('streakValue');
     const dayLabel = document.createElement('small');
@@ -172,7 +285,45 @@ class CyberHeistGame {
       const mission = this.getDailyMission();
       if (mission) this.startMission(mission);
     };
-    this.grid.replaceChildren(...this.missions.map((mission) => this.createMissionCard(mission, completed.has(mission.id))));
+    this.renderCategoryOptions();
+    this.renderCases();
+    this.renderLabs();
+  }
+
+  renderCategoryOptions() {
+    const categories = [...new Set(this.missions.map((mission) => mission.category).filter(Boolean))].sort();
+    const selected = this.caseCategory.value || 'all';
+    this.caseCategory.replaceChildren(new Option('All areas', 'all'));
+    categories.forEach((category) => this.caseCategory.add(new Option(category, category)));
+    this.caseCategory.value = categories.includes(selected) ? selected : 'all';
+  }
+
+  renderCases() {
+    const query = this.caseSearch.value.trim().toLocaleLowerCase();
+    const category = this.caseCategory.value;
+    const visible = this.missions.filter((mission) => {
+      const matchesCategory = category === 'all' || mission.category === category;
+      const searchable = `${mission.title} ${mission.category} ${mission.description} ${mission.day || ''}`.toLocaleLowerCase();
+      return matchesCategory && (!query || searchable.includes(query));
+    });
+    const completed = new Set(this.progress.completed);
+    const cards = visible.map((mission) => this.createMissionCard(mission, completed.has(mission.id)));
+    if (!cards.length) {
+      const empty = document.createElement('div');
+      empty.className = 'loading-card';
+      empty.textContent = 'No cases match. Try another title or learning area.';
+      cards.push(empty);
+    }
+    this.grid.replaceChildren(...cards);
+    document.getElementById('missionCount').textContent = `${visible.length} OF ${this.missions.length} CASES`;
+  }
+
+  renderLabs() {
+    Object.entries(LABS).forEach(([id, lab]) => {
+      const button = this.labGrid.querySelector(`[data-lab-id="${id}"]`);
+      if (button) button.textContent = this.progress.labsCompleted.includes(id) ? 'Replay simulation  ✓' : 'Open simulation  ↗';
+      if (button) button.setAttribute('aria-label', `${lab.title}: ${this.progress.labsCompleted.includes(id) ? 'completed, replay' : 'open simulation'}`);
+    });
   }
 
   getDailyMission() {
@@ -199,8 +350,12 @@ class CyberHeistGame {
     const allDays = this.curriculum.modules.flatMap((module) => module.days);
     const finishedDays = allDays.filter((day) => day.mission_id && completed.has(day.mission_id)).length;
     const availableDays = allDays.filter((day) => day.mission_id && this.missions.some((mission) => mission.id === day.mission_id)).length;
+    const nextSequenceDay = allDays.find((day) => day.mission_id && !completed.has(day.mission_id))?.day;
+    const isUnlocked = (day) => Boolean(day.mission_id && (completed.has(day.mission_id) || day.day === nextSequenceDay));
     document.getElementById('academyProgressText').textContent = `${finishedDays} / 60 DAYS`;
-    document.getElementById('academyAvailability').textContent = `${availableDays} of 60 lessons ready to play`;
+    document.getElementById('academyAvailability').textContent = nextSequenceDay
+      ? `${availableDays} lessons built · next in order: day ${String(nextSequenceDay).padStart(2, '0')}`
+      : `${availableDays} lessons built · all cleared, replay any day`;
     document.getElementById('academyProgressBar').style.width = `${Math.round((finishedDays / 60) * 100)}%`;
     const modules = this.curriculum.modules.map((module, moduleIndex) => {
       const panel = document.createElement('section');
@@ -220,26 +375,30 @@ class CyberHeistGame {
       titleBlock.append(week, title, subtitle);
       const status = document.createElement('span');
       status.className = 'module-status';
-      status.textContent = moduleAvailable ? `${module.days.filter((day) => day.mission_id && this.missions.some((mission) => mission.id === day.mission_id)).length} READY` : 'COURSE MAP';
+      const moduleUnlocked = module.days.filter(isUnlocked).length;
+      status.textContent = moduleAvailable ? `${moduleUnlocked} / ${module.days.length} UNLOCKED` : 'COURSE MAP';
       heading.append(titleBlock, status);
       const days = document.createElement('div');
       days.className = 'module-days';
       module.days.forEach((day) => {
         const mission = day.mission_id ? this.missions.find((item) => item.id === day.mission_id) : null;
         const isDone = mission && completed.has(mission.id);
-        const dayCard = mission ? document.createElement('button') : document.createElement('div');
-        dayCard.className = `academy-day ${mission ? (isDone ? 'done' : 'available') : 'planned'}`;
-        if (mission) {
+        const unlocked = mission && isUnlocked(day);
+        const dayCard = unlocked ? document.createElement('button') : document.createElement('div');
+        dayCard.className = `academy-day ${mission ? (isDone ? 'done' : unlocked ? 'available' : 'locked') : 'planned'}`;
+        if (unlocked) {
           dayCard.type = 'button';
           dayCard.dataset.dayMission = mission.id;
           dayCard.setAttribute('aria-label', `Day ${day.day}: ${day.title}${isDone ? ', completed' : ''}`);
+        } else if (mission) {
+          dayCard.setAttribute('aria-label', `Day ${day.day}: ${day.title}, locked; clear day ${String(nextSequenceDay).padStart(2, '0')} first`);
         } else {
           dayCard.setAttribute('aria-label', `Day ${day.day}: ${day.title}, planned`);
         }
         const number = document.createElement('strong');
         number.textContent = String(day.day).padStart(2, '0');
         const state = document.createElement('span');
-        state.textContent = mission ? (isDone ? 'DONE' : 'PLAY') : 'PLAN';
+        state.textContent = mission ? (isDone ? 'DONE' : unlocked ? 'PLAY' : 'LOCKED') : 'PLAN';
         dayCard.append(number, state);
         days.append(dayCard);
       });
@@ -252,6 +411,155 @@ class CyberHeistGame {
   openNotes() {
     this.renderNotes();
     this.notesDialog.showModal();
+  }
+
+  saveManualNote() {
+    const input = document.getElementById('manualNoteInput');
+    const text = input.value.trim();
+    if (!text) {
+      this.showToast('Write a short note before saving.');
+      input.focus();
+      return;
+    }
+    const now = new Date();
+    const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    this.progress.notes.unshift({ missionId: `manual-${Date.now()}`, title: 'Personal study note', text, date });
+    this.progress.notes = this.progress.notes.slice(0, 100);
+    input.value = '';
+    document.getElementById('manualNoteCount').textContent = '0 / 280';
+    this.saveProgress();
+    this.renderNotes();
+    this.showToast('Note saved on this device.');
+  }
+
+  startLab(id, returnToMission = false) {
+    const lab = LABS[id];
+    if (!lab) return;
+    this.returnMission = returnToMission && this.activeMission
+      ? { mission: this.activeMission, questionIndex: this.questionIndex, correctAnswers: this.correctAnswers }
+      : null;
+    this.activeLab = { id, ...lab };
+    this.labSelection = new Set();
+    this.labOrder = lab.items.map((_, index) => index).reverse();
+    document.getElementById('dialogCategory').textContent = lab.category;
+    this.renderLab();
+    this.dialog.showModal();
+  }
+
+  renderLab() {
+    const lab = this.activeLab;
+    if (!lab) return;
+    this.stage.replaceChildren();
+    const heading = document.createElement('h2');
+    heading.id = 'dialogTitle';
+    heading.textContent = lab.title;
+    const intro = document.createElement('p');
+    intro.className = 'dialog-intro';
+    intro.textContent = lab.brief;
+    const artifact = document.createElement('section');
+    artifact.className = 'scenario-box';
+    const label = document.createElement('strong');
+    label.textContent = 'FICTIONAL ARTIFACT';
+    const description = document.createElement('p');
+    description.textContent = lab.artifact;
+    artifact.append(label, description);
+    const workbench = document.createElement('section');
+    workbench.className = 'lab-workbench';
+    const caption = document.createElement('strong');
+    caption.textContent = lab.id === 'signal-hunt' ? 'MARK THE SIGNALS' : lab.id === 'permission-desk' ? 'CHOOSE THE MINIMUM ACCESS' : 'ARRANGE THE STEPS';
+    workbench.append(caption);
+    if (lab.id === 'signal-hunt' || lab.id === 'permission-desk') {
+      lab.items.forEach((item, index) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = `lab-choice${this.labSelection.has(index) ? ' selected' : ''}`;
+        button.dataset.labChoice = String(index);
+        button.setAttribute('aria-pressed', String(this.labSelection.has(index)));
+        button.textContent = item.label;
+        workbench.append(button);
+      });
+    } else {
+      this.labOrder.forEach((itemIndex, position) => {
+        const row = document.createElement('div');
+        row.className = 'lab-order-row';
+        const name = document.createElement('span');
+        name.textContent = `${position + 1}. ${lab.items[itemIndex].label}`;
+        row.append(name);
+        const up = document.createElement('button');
+        up.type = 'button'; up.dataset.labMove = String(position); up.dataset.direction = '-1';
+        up.textContent = 'Move up'; up.disabled = position === 0; up.setAttribute('aria-label', `Move ${lab.items[itemIndex].label} up`);
+        const down = document.createElement('button');
+        down.type = 'button'; down.dataset.labMove = String(position); down.dataset.direction = '1';
+        down.textContent = 'Move down'; down.disabled = position === this.labOrder.length - 1; down.setAttribute('aria-label', `Move ${lab.items[itemIndex].label} down`);
+        row.append(up, down);
+        workbench.append(row);
+      });
+    }
+    const note = document.createElement('small');
+    note.className = 'practice-note';
+    note.textContent = 'Sandbox only: this exercise makes no network requests and does not inspect your device.';
+    const check = document.createElement('button');
+    check.type = 'button'; check.className = 'next-button'; check.dataset.labCheck = 'true'; check.textContent = 'Check my work';
+    workbench.append(note, check);
+    this.stage.append(heading, intro, artifact, workbench);
+  }
+
+  checkLab() {
+    const lab = this.activeLab;
+    if (!lab) return;
+    let passed = false;
+    if (lab.id === 'signal-hunt' || lab.id === 'permission-desk') {
+      const expected = new Set(lab.items.flatMap((item, index) => item.clue ? [index] : []));
+      passed = expected.size === this.labSelection.size && [...expected].every((index) => this.labSelection.has(index));
+    } else {
+      passed = this.labOrder.every((itemIndex, index) => itemIndex === index);
+    }
+    this.stage.replaceChildren();
+    const result = document.createElement('div');
+    result.className = `result-panel ${passed ? 'lab-pass' : 'lab-review'}`;
+    const title = document.createElement('h2');
+    title.id = 'dialogTitle'; title.textContent = passed ? 'Exercise complete' : 'Adjust your work';
+    const body = document.createElement('p');
+    body.textContent = passed ? lab.debrief : 'Compare the artifact with the goal, change your selections or order, then check again.';
+    result.append(title, body);
+    if (passed) {
+      const firstCompletion = !this.progress.labsCompleted.includes(lab.id);
+      if (firstCompletion) {
+        this.progress.labsCompleted.push(lab.id);
+        this.progress.xp += 25;
+        this.updateStreak();
+        this.saveProgress();
+      }
+      const reward = document.createElement('p');
+      reward.className = 'lab-reward';
+      reward.textContent = firstCompletion ? 'First completion · 25 XP' : 'Replay complete · no repeat XP';
+      result.append(reward);
+      this.renderLabs();
+    }
+    const action = document.createElement('button');
+    action.type = 'button'; action.className = 'next-button'; action.dataset.labRetry = 'true';
+    action.textContent = passed ? (this.returnMission ? 'Return to lesson' : 'Back to field office') : 'Try again';
+    action.addEventListener('click', () => {
+      if (passed) this.returnFromLab();
+      else this.renderLab();
+    });
+    result.append(action);
+    this.stage.append(result);
+  }
+
+  returnFromLab() {
+    const snapshot = this.returnMission;
+    this.activeLab = null;
+    this.returnMission = null;
+    if (!snapshot) {
+      this.dialog.close();
+      return;
+    }
+    this.activeMission = snapshot.mission;
+    this.questionIndex = snapshot.questionIndex;
+    this.correctAnswers = snapshot.correctAnswers;
+    document.getElementById('dialogCategory').textContent = snapshot.mission.category;
+    this.renderQuestion();
   }
 
   renderNotes() {
@@ -318,6 +626,8 @@ class CyberHeistGame {
       return;
     }
     this.activeMission = mission;
+    this.activeLab = null;
+    this.returnMission = null;
     this.questionIndex = 0;
     this.correctAnswers = 0;
     this.answered = false;
@@ -329,6 +639,12 @@ class CyberHeistGame {
   renderQuestion(feedback = null) {
     const question = this.activeMission.questions[this.questionIndex];
     this.answered = false;
+    this.displayOrder = question.options.map((_, index) => index);
+    for (let index = this.displayOrder.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [this.displayOrder[index], this.displayOrder[swapIndex]] = [this.displayOrder[swapIndex], this.displayOrder[index]];
+    }
+    this.displayAnswerIndex = this.displayOrder.indexOf(question.answer);
     this.stage.replaceChildren();
     const title = document.createElement('h2');
     title.id = 'dialogTitle';
@@ -357,9 +673,14 @@ class CyberHeistGame {
       practiceHeading.textContent = 'FIELD PRACTICE';
       const practiceText = document.createElement('p');
       practiceText.textContent = this.activeMission.practice;
+      const relatedLabButton = document.createElement('button');
+      relatedLabButton.type = 'button';
+      relatedLabButton.className = 'practice-launch';
+      relatedLabButton.dataset.relatedLab = this.getRelatedLabId(this.activeMission);
+      relatedLabButton.textContent = `Open related hands-on simulation: ${LABS[relatedLabButton.dataset.relatedLab].title}  →`;
       const safety = document.createElement('small');
       safety.textContent = 'Use only your own device/settings or the supplied fictional case. Never enter or share passwords or codes.';
-      practice.append(practiceHeading, practiceText, safety);
+      practice.append(practiceHeading, practiceText, relatedLabButton, safety);
     }
     const evidenceDesk = this.createEvidenceDesk(this.activeMission.evidence);
     const count = document.createElement('p');
@@ -372,12 +693,12 @@ class CyberHeistGame {
     list.className = 'answer-list';
     list.setAttribute('role', 'group');
     list.setAttribute('aria-label', 'Choose your answer');
-    question.options.forEach((option, index) => {
+    this.displayOrder.forEach((sourceIndex, index) => {
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'answer-button';
       button.dataset.answerIndex = String(index);
-      button.textContent = option;
+      button.textContent = question.options[sourceIndex];
       list.append(button);
     });
     this.stage.append(title, intro, lesson, scenario);
@@ -424,12 +745,12 @@ class CyberHeistGame {
 
   answerQuestion(selectedIndex) {
     const question = this.activeMission.questions[this.questionIndex];
-    const correct = selectedIndex === question.answer;
+    const correct = selectedIndex === this.displayAnswerIndex;
     this.answered = true;
     const buttons = [...this.stage.querySelectorAll('[data-answer-index]')];
     buttons.forEach((button, index) => {
       button.disabled = true;
-      if (index === question.answer) button.classList.add('correct');
+      if (index === this.displayAnswerIndex) button.classList.add('correct');
       else if (index === selectedIndex) button.classList.add('incorrect');
     });
     if (correct) this.correctAnswers += 1;
@@ -437,6 +758,11 @@ class CyberHeistGame {
   }
 
   showFeedback(correct, explanation) {
+    const practiceLaunch = this.stage.querySelector('[data-related-lab]');
+    if (practiceLaunch) {
+      practiceLaunch.disabled = true;
+      practiceLaunch.textContent = 'Finish this decision to open practice';
+    }
     const feedback = document.createElement('div');
     feedback.className = `feedback ${correct ? 'good' : 'try-again'}`;
     const heading = document.createElement('strong');
@@ -449,6 +775,14 @@ class CyberHeistGame {
     feedback.append(document.createElement('br'), next);
     this.stage.append(feedback);
     next.focus();
+  }
+
+  getRelatedLabId(mission) {
+    const category = String(mission.category || '').toLowerCase();
+    if (category.includes('network')) return 'packet-route';
+    if (category.includes('identity') || category.includes('account') || category.includes('build') || category.includes('device')) return 'permission-desk';
+    if (category.includes('monitoring') || category.includes('respond') || category.includes('capstone') || category.includes('field check')) return 'response-runbook';
+    return 'signal-hunt';
   }
 
   nextStep() {

@@ -28,7 +28,8 @@
         <button class="nav-link course-nav" id="academyRailButton"><span class="nav-number">02</span> 60-day academy</button>
         <a class="nav-link" href="#cases"><span class="nav-number">03</span> Case files</a>
         <button class="nav-link notes-nav" id="notesRailButton"><span class="nav-number">04</span> Field notes</button>
-        <a class="nav-link" href="#record"><span class="nav-number">05</span> Your record</a>
+        <a class="nav-link" href="#labs"><span class="nav-number">05</span> Lab arcade</a>
+        <a class="nav-link" href="#record"><span class="nav-number">06</span> Your record</a>
         <div class="rail-spacer"></div>
         <div class="rail-note"><span class="note-rule"></span><p>Every case is fictional.<br>Every skill is real.</p></div>
         <span class="rail-version">FIELD MANUAL <b>01—A</b></span>
@@ -53,22 +54,33 @@
           <div class="record-heading"><span class="record-icon">↗</span><div><span class="record-label">YOUR RECORD</span><strong id="levelValue">Rookie</strong></div></div>
           <div class="record-progress"><div class="record-progress-top"><span>FIELD EXPERIENCE</span><span id="xpValue">0 XP</span></div><div class="progress-track"><span id="xpProgress"></span></div></div>
           <div class="record-cleared"><span class="record-label">CASES CLEARED</span><strong id="completedValue">0 <small>/ 3</small></strong></div>
-          <div class="record-mark" aria-hidden="true">CH—01</div>
+          <div class="record-mark" id="recordMark" aria-label="Practice labs completed">0 / 4 LABS</div>
+        </section>
+
+        <section id="labs" class="lab-section" aria-labelledby="labTitle">
+          <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-rule"></span> THE PRACTICE FLOOR</p><h2 id="labTitle">Work the problem, not a quiz.</h2><p class="section-copy">Hands-on toy exercises. Every artifact is fictional; nothing touches a real account or network.</p></div><span class="library-index">04 SAFE SIMULATIONS</span></div>
+          <div id="labGrid" class="lab-grid">
+            <article class="lab-card"><span class="lab-index">01 / MESSAGE ANALYSIS</span><h3>Signal Hunt</h3><p>Mark the clues that make a fictional service message unsafe to trust.</p><button type="button" class="mission-button" data-lab-id="signal-hunt">Open simulation <span>↗</span></button></article>
+            <article class="lab-card"><span class="lab-index">02 / ACCESS DESIGN</span><h3>Permission Desk</h3><p>Give a pretend utility app only the access its job needs.</p><button type="button" class="mission-button" data-lab-id="permission-desk">Open simulation <span>↗</span></button></article>
+            <article class="lab-card"><span class="lab-index">03 / NETWORK CONCEPTS</span><h3>Packet Route</h3><p>Arrange a fictional connection path and learn what each stop does.</p><button type="button" class="mission-button" data-lab-id="packet-route">Open simulation <span>↗</span></button></article>
+            <article class="lab-card"><span class="lab-index">04 / INCIDENT RESPONSE</span><h3>Response Runbook</h3><p>Put a calm, authorized response in a useful order.</p><button type="button" class="mission-button" data-lab-id="response-runbook">Open simulation <span>↗</span></button></article>
+          </div>
         </section>
 
         <section id="cases" class="case-section">
           <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-rule"></span> THE CASE LIBRARY</p><h2>Choose what to investigate.</h2></div><span id="missionCount" class="library-index">01—03&nbsp; / &nbsp;AVAILABLE</span></div>
+          <div class="case-tools"><label for="caseSearch">Search cases</label><input id="caseSearch" type="search" placeholder="Title or learning area" autocomplete="off"><label for="caseCategory">Area</label><select id="caseCategory"><option value="all">All areas</option></select></div>
           <div id="missionGrid" class="mission-grid" aria-live="polite"><div class="loading-card">Opening case files…</div></div>
         </section>
         <footer><span>CYBERHEIST&nbsp; / &nbsp;FIELD OFFICE <i>—</i> LEARN THE SIGNAL. BUILD THE INSTINCT.</span><span>PROGRESS SAVED ON THIS DEVICE</span></footer>
       </main>
     </div>
-      <nav class="mobile-nav" aria-label="Main navigation"><a class="mobile-link active" href="#home"><span>01</span>Briefing</a><button class="mobile-link" id="academyMobileButton"><span>60</span>Academy</button><a class="mobile-link" href="#cases"><span>02</span>Cases</a><button class="mobile-link" id="notesMobileButton"><span id="mobileNoteCount">00</span>Notes</button></nav>
+      <nav class="mobile-nav" aria-label="Main navigation"><a class="mobile-link active" href="#home"><span>01</span>Briefing</a><button class="mobile-link" id="academyMobileButton"><span>60</span>Academy</button><a class="mobile-link" href="#cases"><span>02</span>Cases</a><a class="mobile-link" href="#labs"><span>03</span>Labs</a><button class="mobile-link" id="notesMobileButton"><span id="mobileNoteCount">00</span>Notes</button></nav>
   </div>
 
-  <dialog id="missionDialog" class="mission-dialog" aria-labelledby="dialogTitle"><div class="dialog-top"><span class="dialog-chip" id="dialogCategory">CASE FILE</span><button id="closeDialog" class="close-button" aria-label="Close mission">×</button></div><div id="missionStage"></div></dialog>
-  <dialog id="academyDialog" class="academy-dialog" aria-labelledby="academyTitle"><div class="academy-head"><div><p class="eyebrow"><span class="eyebrow-rule"></span> THE FIELD ACADEMY</p><h2 id="academyTitle">A 60-day route to strong foundations.</h2><p class="academy-summary">Short daily study, a safe simulation, and a field note. Build skills step by step; the capstone checks what you can demonstrate.</p></div><button id="closeAcademy" class="close-button" aria-label="Close academy route">×</button></div><div class="academy-progress"><div><strong id="academyProgressText">0 / 60 DAYS</strong><span id="academyAvailability">60 daily lessons ready</span></div><div class="academy-track"><span id="academyProgressBar"></span></div></div><div id="academyModules" class="academy-modules"></div><p class="academy-disclaimer">This is a learning path, not a professional certification or a promise of expertise. All lessons require qualified subject-matter review before public release.</p></dialog>
-  <dialog id="notesDialog" class="notes-dialog" aria-labelledby="notesTitle"><div class="dialog-top"><div><p class="eyebrow"><span class="eyebrow-rule"></span> OPERATOR JOURNAL</p><h2 id="notesTitle">Field notes</h2></div><button id="closeNotes" class="close-button" aria-label="Close field notes">×</button></div><p class="notes-intro">Your notes are saved on this device. Write only what you want to remember.</p><div id="savedNotes" class="saved-notes"></div></dialog>
+  <dialog id="missionDialog" class="mission-dialog" aria-labelledby="dialogTitle"><div class="dialog-top"><span class="dialog-chip" id="dialogCategory">CASE FILE</span><button id="closeDialog" class="close-button" aria-label="Exit case and return to the field office">Exit ×</button></div><div id="missionStage"></div></dialog>
+  <dialog id="academyDialog" class="academy-dialog" aria-labelledby="academyTitle"><div class="academy-head"><div><p class="eyebrow"><span class="eyebrow-rule"></span> THE FIELD ACADEMY</p><h2 id="academyTitle">A 60-day route to strong foundations.</h2><p class="academy-summary">Short daily study, a safe simulation, and a field note. Complete each day to unlock the next; the capstone checks what you can demonstrate.</p></div><button id="closeAcademy" class="close-button" aria-label="Done with the academy map">Done ×</button></div><div class="academy-progress"><div><strong id="academyProgressText">0 / 60 DAYS</strong><span id="academyAvailability">60 lessons mapped</span></div><div class="academy-track"><span id="academyProgressBar"></span></div></div><div id="academyModules" class="academy-modules"></div><p class="academy-disclaimer">This is a learning path, not a professional certification or a promise of expertise. All lessons require qualified subject-matter review before public release.</p></dialog>
+  <dialog id="notesDialog" class="notes-dialog" aria-labelledby="notesTitle"><div class="dialog-top"><div><p class="eyebrow"><span class="eyebrow-rule"></span> OPERATOR JOURNAL</p><h2 id="notesTitle">Field notes</h2></div><button id="closeNotes" class="close-button" aria-label="Done with field notes">Done ×</button></div><p class="notes-intro">Your notes are saved on this device. Do not write passwords, one-time codes, or private account details.</p><form id="manualNoteForm" class="manual-note-form"><label for="manualNoteInput">Add a note from your own study</label><textarea id="manualNoteInput" maxlength="280" placeholder="A concept, question, or habit to revisit…"></textarea><div class="note-form-foot"><span id="manualNoteCount">0 / 280</span><button type="submit" class="start-button">Save note <b aria-hidden="true">↗</b></button></div></form><div id="savedNotes" class="saved-notes"></div></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="game.js" defer></script>
 </body>

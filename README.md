@@ -26,9 +26,9 @@ To regenerate the 60-day content pack, run `python scripts/build_course_pack.py`
 
 ## Project structure
 
-- `index.html` — accessible page structure and mission dialog
+- `index.html` — responsive briefing, searchable case library, practice floor, and private notes
 - `style.css` — responsive visual design
-- `game.js` — mission flow, scoring, and local progress
+- `game.js` — case flow, shuffled answer presentation, four interactive safe simulations, notes, and local progress
 - `missions.json` — authored fictional learning scenarios and static case evidence
 - `curriculum.json` — 60-day beginner-to-foundation course map, with one playable mission for each day
 - `scripts/build_course_pack.py` — reproducibly builds the authored course pack and keeps the learning promise bounded
@@ -38,7 +38,7 @@ To regenerate the 60-day content pack, run `python scripts/build_course_pack.py`
 
 ## Native Android foundation
 
-The `android/` folder contains the first native Kotlin/Jetpack Compose app foundation. Open that folder in Android Studio with JDK 17 and Android SDK 37 installed, allow Gradle to sync, then run the `app` configuration on an emulator or Android device. Its offline Academy, cases, progress, and field notes are built from bundled course JSON; the app requests no network permission. The package ID is provisional until the Play Store identity is confirmed. The Gradle wrapper pins Gradle 9.6.0 and verifies its distribution checksum.
+The `android/` folder contains the first native Kotlin/Jetpack Compose app foundation. Open that folder in Android Studio with JDK 17 and Android SDK 37 installed, allow Gradle to sync, then run the `app` configuration on an emulator or Android device. Its offline Academy, cases, progress, and field notes are built from bundled course JSON; the app requests no network permission. The browser Practice Arcade, case filters, and direct note composer still need to be ported to Android. The package ID is provisional until the Play Store identity is confirmed. The Gradle wrapper pins Gradle 9.6.0 and verifies its distribution checksum.
 
 This checkout does not currently have Java, Gradle, or the Android SDK installed, so the Android project has not yet been compiled or run on a device here. The browser preview instructions above remain separate.
 

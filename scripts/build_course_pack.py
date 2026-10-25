@@ -3,6 +3,7 @@
 
 import json
 from pathlib import Path
+import random
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -460,6 +461,26 @@ def question(prompt: str, correct: str, distractors: tuple[str, str], explanatio
     return {"prompt": prompt, "options": options, "answer": answer, "explanation": explanation}
 
 
+def rebalance_answer_positions(missions: list[dict]) -> None:
+    questions = [
+        question_item
+        for mission in sorted(missions, key=lambda item: item.get("id", ""))
+        for question_item in mission.get("questions", [])
+    ]
+    targets = [index % 3 for index in range(len(questions))]
+    random.Random("cyberheist-course-answer-order-v1").shuffle(targets)
+    for question_item, target in zip(questions, targets):
+        options = question_item.get("options", [])
+        if not options:
+            continue
+        target %= len(options)
+        current = question_item.get("answer", 0)
+        if not isinstance(current, int) or current not in range(len(options)):
+            continue
+        options[current], options[target] = options[target], options[current]
+        question_item["answer"] = target
+
+
 def main() -> None:
     course = json.loads(COURSE_PATH.read_text(encoding="utf-8"))
     pack = json.loads(MISSION_PATH.read_text(encoding="utf-8"))
@@ -534,6 +555,7 @@ def main() -> None:
         existing[day["mission_id"]].setdefault("practice", practice)
 
     pack["missions"] = sorted(existing.values(), key=lambda mission: mission.get("day", 0))
+    rebalance_answer_positions(pack["missions"])
     course["program"]["available_days"] = 60
     course["program"]["daily_minutes"] = 15
     course["program"]["promise"] = (

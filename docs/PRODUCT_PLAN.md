@@ -35,8 +35,8 @@ Use an investigative field-office language: warm paper, ink, deep forest green, 
 
 1. **Briefing:** a short fictional incident establishes the context and learning objective.
 2. **Investigate:** the player reviews safe artifacts such as a mock message, event log, policy, or toy network diagram.
-3. **Decide:** the player selects a response or completes a constrained puzzle.
-4. **Debrief:** the game explains what was strong, what was risky, and why.
+3. **Practice:** a linked, hands-on toy lab lets the player mark clues, scope permissions, arrange a route, or order a response.
+4. **Decide and debrief:** the player makes a case decision and gets an explanation of what was strong, what was risky, and why.
 5. **Progress:** mastery, badges, story chapters, and optional challenge ratings reward learning rather than speed alone.
 
 ## 3. Game modes and content map
@@ -53,6 +53,7 @@ The intended learning outcome is a demonstrable foundation: explain core concept
 | Account Defense | Build better account habits and respond to login warnings | Password examples are never collected or checked; choices use toy accounts | MVP |
 | Defender Desk | Triage a fictional incident using a timeline and short log excerpts | Static, curated logs with fake hosts, identities, and data | V1 |
 | Secure Builder | Find risky choices in toy app, cloud, and device configurations | Constrained visual puzzles; no deployment or external requests | V1 |
+| Practice Arcade | Inspect a fictional message, scope toy permissions, arrange a network path, and order a response runbook | All exercises are local static scenarios; no real account, device inspection, or network traffic | Browser prototype |
 | Story Campaign | Follow a connected incident-response storyline across chapters | Fictional organizations and sanitized artifacts | V1 |
 | Cyber League | Compete in rotating knowledge and defense challenges | Deterministic challenges; verified scoring and no open-ended attack input | V2, after backend and abuse review |
 | Lab Arcade | Replay focused puzzles for networking concepts, cryptography, and secure coding | Purpose-built toy environments with no access to the host device or internet | V2, module by module |
@@ -61,7 +62,7 @@ The intended learning outcome is a demonstrable foundation: explain core concept
 
 ## 4. Progression and free model
 
-- XP is earned for completing lessons and reviewing explanations; replay does not farm XP.
+- XP is earned for passing a lesson mastery check or completing one of four local practice simulations; replay does not farm XP.
 - Chapters, cosmetic badges, and league tiers can reward consistency and mastery.
 - League scoring should prioritize accuracy and improvement. Speed is a small optional tie-breaker, never the only measure.
 - No paid currency, loot boxes, pay-to-win boosts, or subscription gates.
@@ -131,12 +132,12 @@ A feature is done only when its user flow is implemented, content and safety bou
 
 ## 7. Immediate backlog
 
-1. Review the current browser MVP in the local browser and fix interaction or layout issues found.
-2. Add progress reset/export controls with clear confirmation and privacy copy.
-3. Add a content-schema validator and readable authoring guide.
-4. Improve question feedback to support retrying before showing the answer where pedagogically appropriate.
-5. Add the next defensive game mode: Defender Desk, using static fictional event logs.
-6. Create the Android project only after the player flow and minimum content set are agreed in this plan.
+1. Validate browser navigation, notes, search/filter, simulation flows, and answer-order balance at phone and desktop sizes.
+2. Replace the first four reusable Practice Arcade drills with deeper module-specific labs and branching exercises.
+3. Add progress reset/export controls with clear confirmation and privacy copy.
+4. Write a detailed authoring guide and commission qualified reviewers for the 60-day pack.
+5. Port the tested Practice Arcade flows into the native Android app and verify them on a device.
+6. Add Defender Desk with static, fictional event logs and staged triage decisions.
 
 ## 8. Product decisions still to verify
 

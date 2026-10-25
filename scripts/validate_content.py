@@ -65,6 +65,15 @@ def main() -> int:
             if not question.get("explanation"):
                 errors.append(f"{mission_id} question {index}: explain the safer decision.")
 
+    answer_positions: dict[int, int] = {}
+    for mission in missions:
+        for question in mission.get("questions", []):
+            answer = question.get("answer")
+            if isinstance(answer, int):
+                answer_positions[answer] = answer_positions.get(answer, 0) + 1
+    if answer_positions and max(answer_positions.values()) - min(answer_positions.values()) > 2:
+        errors.append("Correct answer positions are too uneven; rebalance the content pack.")
+
     mapped_available: set[str] = set()
     for day in days:
         mission_id = day.get("mission_id")
