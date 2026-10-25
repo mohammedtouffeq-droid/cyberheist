@@ -1,856 +1,97 @@
 {
-  "version": "1.0.0",
-  "last_updated": "2026-10-24T18:26:38.746630+00:00",
-  "architect": "Mohammed Ahmed & Google Gemini 2.5 Pro",
+  "schema_version": 1,
+  "content_note": "Fictional, defensive cybersecurity awareness scenarios. This content performs no network actions.",
   "missions": [
     {
-      "id": "M01",
-      "title": "Proxy Infiltration: OmniCorp Port 443",
-      "target": "OmniCorp Local Relays",
-      "difficulty": "Novice",
-      "reward_credits": 250,
-      "reward_exp": 120,
-      "desc": "Infiltrate OmniCorp's outer proxy network to harvest encryption seeds.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL"
-      ],
-      "solution_commands": [
+      "id": "phishing-first-look",
+      "title": "The too-good-to-be-true parcel",
+      "category": "SPOT THE SCAM",
+      "tone": "orange",
+      "difficulty": "Starter",
+      "duration": "3 min",
+      "xp": 60,
+      "description": "Learn to slow down and verify a message before you click.",
+      "scenario": "A fictional delivery company texts you: “Your package is paused. Pay a small fee now at parcel-help.example.” You were not expecting a delivery.",
+      "questions": [
         {
-          "cmd": "scan",
-          "output": "[SCAN] Target OmniCorp port 443 exposed. Vulnerability found: CVE-2026-NEURAL."
+          "prompt": "What is the safest first move?",
+          "options": ["Open the link to see what it asks for", "Use the delivery company’s official app or website to check independently", "Reply with your full name so support can find your parcel"],
+          "answer": 1,
+          "explanation": "Go to a service through a trusted route you choose yourself. Unexpected urgency and a payment link are reasons to pause."
         },
         {
-          "cmd": "crack",
-          "output": "[CRACK] Key handshake cracked: SEED_0x89F. Firewall weakened."
+          "prompt": "What should you do with the unexpected message?",
+          "options": ["Forward it to friends to ask if it looks real", "Report it as spam or phishing, then delete it", "Keep it and try the link later"],
+          "answer": 1,
+          "explanation": "Reporting helps your messaging provider improve filtering. You do not need to interact with a suspicious link."
         },
         {
-          "cmd": "breach",
-          "output": "[BREACH SUCCESS] Proxy node seized! Harvested \u20bf 250 credits and 120 EXP."
+          "prompt": "Which clue deserves extra scrutiny?",
+          "options": ["The message creates urgency and asks for payment through an unfamiliar link", "It arrived on a weekday", "It uses a short greeting"],
+          "answer": 0,
+          "explanation": "Unexpected payment requests, pressure, and unfamiliar domains are useful warning signs. Verify using a separate trusted channel."
         }
       ]
     },
     {
-      "id": "M02",
-      "title": "The Dark Ledger: Black Market Node",
-      "target": "Aegis Syndicate Databank",
-      "difficulty": "Adept",
-      "reward_credits": 600,
-      "reward_exp": 300,
-      "desc": "Bypass Aegis Syndicate multi-tier cryptographic vault and siphon offshore logs.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE"
-      ],
-      "solution_commands": [
+      "id": "password-power-up",
+      "title": "Lock down your account",
+      "category": "ACCOUNT DEFENSE",
+      "tone": "purple",
+      "difficulty": "Starter",
+      "duration": "4 min",
+      "xp": 70,
+      "description": "Build a stronger password and add a second layer of protection.",
+      "scenario": "You are setting up a new fictional gaming account. A friend suggests reusing the password you use for email because it is easy to remember.",
+      "questions": [
         {
-          "cmd": "scan",
-          "output": "[SCAN] Aegis Syndicate subnets detected. 3 nodes online. Intrusion countermeasures active."
+          "prompt": "What is the strongest password habit?",
+          "options": ["Reuse one memorable password everywhere", "Use a unique, long password for each account, ideally stored in a password manager", "Add “123” to your usual password"],
+          "answer": 1,
+          "explanation": "Unique passwords limit the damage if one service is breached. A reputable password manager can help create and store them."
         },
         {
-          "cmd": "nmap",
-          "output": "[NMAP] Open ports: 22 (SSH-Weak), 3306 (SQL-Vulnerable), 8443 (Firewall)."
+          "prompt": "What extra protection should you turn on?",
+          "options": ["Multi-factor authentication (MFA), preferably a passkey or authenticator method", "A public profile so friends can confirm it is you", "The same password hint as your other accounts"],
+          "answer": 0,
+          "explanation": "MFA asks for another proof of identity. Passkeys and authenticator methods are generally safer than relying on a password alone."
         },
         {
-          "cmd": "crack",
-          "output": "[CRACK] Brute-forcing quantum salt... Decryption key generated: AEGIS_779_ALPHA."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH SUCCESS] Aegis Database extracted! Ledger captured. +\u20bf 600 CREDITS!"
+          "prompt": "A login alert arrives that you did not request. What now?",
+          "options": ["Approve it so the alert stops", "Deny it, change your password from the official app/site, and review account sessions", "Share the alert code with whoever contacts you"],
+          "answer": 1,
+          "explanation": "Never approve a sign-in you did not start or share a one-time code. Use the official service to secure the account and check active sessions."
         }
       ]
     },
     {
-      "id": "M03",
-      "title": "Deep Neural Vault: Sentinel AI Core",
-      "target": "GovNet Sovereign Quantum Cluster",
-      "difficulty": "Master",
-      "reward_credits": 1500,
-      "reward_exp": 850,
-      "desc": "Infiltrate GovNet core sovereign server protected by Sentinel AI counter-intrusion algorithms.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN WARNING] Sentinel AI detected scan vector. Counter-trace initiated!"
-        },
-        {
-          "cmd": "trace-shield",
-          "output": "[DEFENSE] Spoofed IP routing through 12 orbital nodes. Corp trace suppressed."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK] Neural hash injection successful. Overriding firewall rulesets."
-        },
-        {
-          "cmd": "breach",
-          "output": "[HEIST MASTERED] Sovereign Quantum Cluster completely cracked! You are now an Elite Shadow Operator!"
-        }
-      ]
-    },
-    {
-      "id": "M04",
-      "title": "Operation Ghost Signal #4",
-      "target": "Sub-Orbital Relay Grid 51",
-      "difficulty": "Master",
-      "reward_credits": 1450,
-      "reward_exp": 740,
-      "desc": "Automated cloud generator deployed deep orbital infiltration protocols.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN] Orbital Grid M04 frequencies located."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP] Quantum port 9022 unshielded."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK] Decrypting military satellite cipher... Complete."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH SUCCESS] Mission M04 conquered! Vault captured."
-        }
-      ]
-    },
-    {
-      "id": "M05",
-      "title": "Operation BlackOut: Hyperion Incursion",
-      "target": "Hyperion Bio-Quantum Labs",
-      "difficulty": "Master",
-      "reward_credits": 2079,
-      "reward_exp": 945,
-      "desc": "High-frequency biometric authentication grid with cryogenic cooling nodes.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN] Telemetry mapped for Hyperion Bio-Quantum Labs. Quantum subnets located."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP] Vulnerable entry vector: Port 9802 (Zero-Day Exploitable)."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK] Cipher 569-ALPHA neutralized. Bypass token issued."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH SUCCESS] Vault penetrated! Exfiltrated \u20bf 2079 and 945 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M06",
-      "title": "Operation Overdrive: Specter Bio-Cybernetics",
-      "target": "Specter Bio-Cybernetics",
-      "difficulty": "Master",
-      "reward_credits": 2885,
-      "reward_exp": 1317,
-      "desc": "Illegal military-grade cyberware schematics encrypted in biological memory chips.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // SPECTER] Quantum subnets mapped. Target: Specter Bio-Cybernetics. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 5823 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: SPECTER_861_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ H Y P E R I O N ]\n    <*[[ BIO-NEURAL ]]*>\n    <<==GEN-CORE-v4==>>\n\nVault siphoned! Harvested \u20bf 2885 Credits & 1317 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M07",
-      "title": "Operation Overdrive: Nakamoto Shadow DAO",
-      "target": "Nakamoto Shadow DAO",
-      "difficulty": "Neural-Ghost",
-      "reward_credits": 2960,
-      "reward_exp": 1330,
-      "desc": "Self-governed autonomous AI liquidity pool hidden behind zero-knowledge proofs.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // NAKAMOTO] Quantum subnets mapped. Target: Nakamoto Shadow DAO. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 7392 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: NAKAMOTO_590_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ A E T H E R I U S ]\n    /\\===[QUANTUM]===/\\\n    \\/===ORBIT-NET===\\/\n\nVault siphoned! Harvested \u20bf 2960 Credits & 1330 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M08",
-      "title": "Operation Overdrive: Specter Bio-Cybernetics",
-      "target": "Specter Bio-Cybernetics",
-      "difficulty": "Cyber-Lord",
-      "reward_credits": 3116,
-      "reward_exp": 1448,
-      "desc": "Illegal military-grade cyberware schematics encrypted in biological memory chips.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // SPECTER] Quantum subnets mapped. Target: Specter Bio-Cybernetics. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 7860 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: SPECTER_297_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ K U R O S H I O ]\n    ~~~[DEEP-SEA-NET]~~~\n    ===// NEXUS 4000 //===\n\nVault siphoned! Harvested \u20bf 3116 Credits & 1448 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M09",
-      "title": "Operation Overdrive: Hyperion Bio-Neural Core",
-      "target": "Hyperion Bio-Neural Core",
-      "difficulty": "Cyber-Lord",
-      "reward_credits": 3476,
-      "reward_exp": 1621,
-      "desc": "Synthetic human neural link testing facility holding genetic decryption keys.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // HYPERION] Quantum subnets mapped. Target: Hyperion Bio-Neural Core. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 9314 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: HYPERION_170_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ H Y P E R I O N ]\n    <*[[ BIO-NEURAL ]]*>\n    <<==GEN-CORE-v4==>>\n\nVault siphoned! Harvested \u20bf 3476 Credits & 1621 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M10",
-      "title": "Operation Overdrive: Valkyrie Sovereign Defense",
-      "target": "Valkyrie Sovereign Defense",
-      "difficulty": "Adept",
-      "reward_credits": 3743,
-      "reward_exp": 1725,
-      "desc": "Autonomous swarm drone intelligence network with counter-intrusion lethal firewalls.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // VALKYRIE] Quantum subnets mapped. Target: Valkyrie Sovereign Defense. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 6585 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: VALKYRIE_816_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ A E T H E R I U S ]\n    /\\===[QUANTUM]===/\\\n    \\/===ORBIT-NET===\\/\n\nVault siphoned! Harvested \u20bf 3743 Credits & 1725 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M11",
-      "title": "Operation Overdrive: Valkyrie Sovereign Defense",
-      "target": "Valkyrie Sovereign Defense",
-      "difficulty": "Cyber-Lord",
-      "reward_credits": 4114,
-      "reward_exp": 1851,
-      "desc": "Autonomous swarm drone intelligence network with counter-intrusion lethal firewalls.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // VALKYRIE] Quantum subnets mapped. Target: Valkyrie Sovereign Defense. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 4240 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: VALKYRIE_517_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ K U R O S H I O ]\n    ~~~[DEEP-SEA-NET]~~~\n    ===// NEXUS 4000 //===\n\nVault siphoned! Harvested \u20bf 4114 Credits & 1851 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M12",
-      "title": "Operation Overdrive: Specter Bio-Cybernetics",
-      "target": "Specter Bio-Cybernetics",
-      "difficulty": "Cyber-Lord",
-      "reward_credits": 4076,
-      "reward_exp": 1921,
-      "desc": "Illegal military-grade cyberware schematics encrypted in biological memory chips.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // SPECTER] Quantum subnets mapped. Target: Specter Bio-Cybernetics. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 4304 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: SPECTER_329_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ K U R O S H I O ]\n    ~~~[DEEP-SEA-NET]~~~\n    ===// NEXUS 4000 //===\n\nVault siphoned! Harvested \u20bf 4076 Credits & 1921 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M13",
-      "title": "Operation Overdrive: Nakamoto Shadow DAO",
-      "target": "Nakamoto Shadow DAO",
-      "difficulty": "Adept",
-      "reward_credits": 4429,
-      "reward_exp": 2080,
-      "desc": "Self-governed autonomous AI liquidity pool hidden behind zero-knowledge proofs.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // NAKAMOTO] Quantum subnets mapped. Target: Nakamoto Shadow DAO. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 4609 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: NAKAMOTO_160_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ K U R O S H I O ]\n    ~~~[DEEP-SEA-NET]~~~\n    ===// NEXUS 4000 //===\n\nVault siphoned! Harvested \u20bf 4429 Credits & 2080 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M14",
-      "title": "Operation Overdrive: Valkyrie Sovereign Defense",
-      "target": "Valkyrie Sovereign Defense",
-      "difficulty": "Master",
-      "reward_credits": 4852,
-      "reward_exp": 2219,
-      "desc": "Autonomous swarm drone intelligence network with counter-intrusion lethal firewalls.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // VALKYRIE] Quantum subnets mapped. Target: Valkyrie Sovereign Defense. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 8237 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: VALKYRIE_886_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ A E T H E R I U S ]\n    /\\===[QUANTUM]===/\\\n    \\/===ORBIT-NET===\\/\n\nVault siphoned! Harvested \u20bf 4852 Credits & 2219 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M15",
-      "title": "Operation Overdrive: Hyperion Bio-Neural Core",
-      "target": "Hyperion Bio-Neural Core",
-      "difficulty": "Master",
-      "reward_credits": 5079,
-      "reward_exp": 2314,
-      "desc": "Synthetic human neural link testing facility holding genetic decryption keys.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // HYPERION] Quantum subnets mapped. Target: Hyperion Bio-Neural Core. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 4905 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: HYPERION_799_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ A E T H E R I U S ]\n    /\\===[QUANTUM]===/\\\n    \\/===ORBIT-NET===\\/\n\nVault siphoned! Harvested \u20bf 5079 Credits & 2314 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M16",
-      "title": "Operation Overdrive: Valkyrie Sovereign Defense",
-      "target": "Valkyrie Sovereign Defense",
-      "difficulty": "Cyber-Lord",
-      "reward_credits": 5341,
-      "reward_exp": 2421,
-      "desc": "Autonomous swarm drone intelligence network with counter-intrusion lethal firewalls.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // VALKYRIE] Quantum subnets mapped. Target: Valkyrie Sovereign Defense. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 7551 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: VALKYRIE_209_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ K U R O S H I O ]\n    ~~~[DEEP-SEA-NET]~~~\n    ===// NEXUS 4000 //===\n\nVault siphoned! Harvested \u20bf 5341 Credits & 2421 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M17",
-      "title": "Operation Overdrive: Kuroshio DeepSea Nexus",
-      "target": "Kuroshio DeepSea Nexus",
-      "difficulty": "Adept",
-      "reward_credits": 5424,
-      "reward_exp": 2473,
-      "desc": "Underwater fiber hub at 4,000m depth laundering decentralized trillion-dollar yields.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // KUROSHIO] Quantum subnets mapped. Target: Kuroshio DeepSea Nexus. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 9155 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: KUROSHIO_321_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ N A K A M O T O ]\n    \u20bf [ SHADOW-DAO ] \u20bf\n    ===ZK-PROOF-CORE===\n\nVault siphoned! Harvested \u20bf 5424 Credits & 2473 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M18",
-      "title": "Operation Overdrive: Nakamoto Shadow DAO",
-      "target": "Nakamoto Shadow DAO",
-      "difficulty": "Neural-Ghost",
-      "reward_credits": 5844,
-      "reward_exp": 2532,
-      "desc": "Self-governed autonomous AI liquidity pool hidden behind zero-knowledge proofs.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // NAKAMOTO] Quantum subnets mapped. Target: Nakamoto Shadow DAO. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 7963 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: NAKAMOTO_975_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ H Y P E R I O N ]\n    <*[[ BIO-NEURAL ]]*>\n    <<==GEN-CORE-v4==>>\n\nVault siphoned! Harvested \u20bf 5844 Credits & 2532 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M19",
-      "title": "Operation Overdrive: Aetherius Orbital Array",
-      "target": "Aetherius Orbital Array",
-      "difficulty": "Adept",
-      "reward_credits": 6015,
-      "reward_exp": 2741,
-      "desc": "High-orbit quantum communication satellites controlling trans-Pacific defense grids.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // AETHERIUS] Quantum subnets mapped. Target: Aetherius Orbital Array. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 5935 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: AETHERIUS_293_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ H Y P E R I O N ]\n    <*[[ BIO-NEURAL ]]*>\n    <<==GEN-CORE-v4==>>\n\nVault siphoned! Harvested \u20bf 6015 Credits & 2741 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M20",
-      "title": "Operation Overdrive: Kuroshio DeepSea Nexus",
-      "target": "Kuroshio DeepSea Nexus",
-      "difficulty": "Adept",
-      "reward_credits": 6414,
-      "reward_exp": 2804,
-      "desc": "Underwater fiber hub at 4,000m depth laundering decentralized trillion-dollar yields.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // KUROSHIO] Quantum subnets mapped. Target: Kuroshio DeepSea Nexus. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 6553 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: KUROSHIO_551_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ N A K A M O T O ]\n    \u20bf [ SHADOW-DAO ] \u20bf\n    ===ZK-PROOF-CORE===\n\nVault siphoned! Harvested \u20bf 6414 Credits & 2804 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M21",
-      "title": "Operation Overdrive: Valkyrie Sovereign Defense",
-      "target": "Valkyrie Sovereign Defense",
-      "difficulty": "Cyber-Lord",
-      "reward_credits": 6662,
-      "reward_exp": 2900,
-      "desc": "Autonomous swarm drone intelligence network with counter-intrusion lethal firewalls.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // VALKYRIE] Quantum subnets mapped. Target: Valkyrie Sovereign Defense. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 7021 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: VALKYRIE_383_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ N A K A M O T O ]\n    \u20bf [ SHADOW-DAO ] \u20bf\n    ===ZK-PROOF-CORE===\n\nVault siphoned! Harvested \u20bf 6662 Credits & 2900 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M22",
-      "title": "Operation Overdrive: Valkyrie Sovereign Defense",
-      "target": "Valkyrie Sovereign Defense",
-      "difficulty": "Master",
-      "reward_credits": 6849,
-      "reward_exp": 3096,
-      "desc": "Autonomous swarm drone intelligence network with counter-intrusion lethal firewalls.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // VALKYRIE] Quantum subnets mapped. Target: Valkyrie Sovereign Defense. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 6190 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: VALKYRIE_949_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ H Y P E R I O N ]\n    <*[[ BIO-NEURAL ]]*>\n    <<==GEN-CORE-v4==>>\n\nVault siphoned! Harvested \u20bf 6849 Credits & 3096 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M23",
-      "title": "Operation Overdrive: Specter Bio-Cybernetics",
-      "target": "Specter Bio-Cybernetics",
-      "difficulty": "Neural-Ghost",
-      "reward_credits": 6904,
-      "reward_exp": 3115,
-      "desc": "Illegal military-grade cyberware schematics encrypted in biological memory chips.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // SPECTER] Quantum subnets mapped. Target: Specter Bio-Cybernetics. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 6326 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: SPECTER_441_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ K U R O S H I O ]\n    ~~~[DEEP-SEA-NET]~~~\n    ===// NEXUS 4000 //===\n\nVault siphoned! Harvested \u20bf 6904 Credits & 3115 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M24",
-      "title": "Operation Overdrive: Nakamoto Shadow DAO",
-      "target": "Nakamoto Shadow DAO",
-      "difficulty": "Master",
-      "reward_credits": 7094,
-      "reward_exp": 3271,
-      "desc": "Self-governed autonomous AI liquidity pool hidden behind zero-knowledge proofs.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // NAKAMOTO] Quantum subnets mapped. Target: Nakamoto Shadow DAO. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 5039 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: NAKAMOTO_324_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ K U R O S H I O ]\n    ~~~[DEEP-SEA-NET]~~~\n    ===// NEXUS 4000 //===\n\nVault siphoned! Harvested \u20bf 7094 Credits & 3271 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M25",
-      "title": "Operation Overdrive: Hyperion Bio-Neural Core",
-      "target": "Hyperion Bio-Neural Core",
-      "difficulty": "Cyber-Lord",
-      "reward_credits": 7367,
-      "reward_exp": 3402,
-      "desc": "Synthetic human neural link testing facility holding genetic decryption keys.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // HYPERION] Quantum subnets mapped. Target: Hyperion Bio-Neural Core. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 4863 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: HYPERION_852_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ H Y P E R I O N ]\n    <*[[ BIO-NEURAL ]]*>\n    <<==GEN-CORE-v4==>>\n\nVault siphoned! Harvested \u20bf 7367 Credits & 3402 EXP!"
-        }
-      ]
-    },
-    {
-      "id": "M26",
-      "title": "Operation Overdrive: Specter Bio-Cybernetics",
-      "target": "Specter Bio-Cybernetics",
-      "difficulty": "Master",
-      "reward_credits": 7590,
-      "reward_exp": 3510,
-      "desc": "Illegal military-grade cyberware schematics encrypted in biological memory chips.",
-      "nodes": [
-        "PROXY",
-        "FIREWALL",
-        "DATABASE",
-        "VAULT"
-      ],
-      "solution_commands": [
-        {
-          "cmd": "scan",
-          "output": "[SCAN // SPECTER] Quantum subnets mapped. Target: Specter Bio-Cybernetics. Firewall integrity at 100%."
-        },
-        {
-          "cmd": "nmap",
-          "output": "[NMAP // VULN] Port 4124 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
-        },
-        {
-          "cmd": "crack",
-          "output": "[CRACK // CIPHER] Quantum salt broken: SPECTER_116_SIG. Root authorization acquired."
-        },
-        {
-          "cmd": "breach",
-          "output": "[BREACH ACCOMPLISHED]\n\n    [ A E T H E R I U S ]\n    /\\===[QUANTUM]===/\\\n    \\/===ORBIT-NET===\\/\n\nVault siphoned! Harvested \u20bf 7590 Credits & 3510 EXP!"
+      "id": "public-wifi-check",
+      "title": "The café Wi-Fi check",
+      "category": "SAFE CONNECTIONS",
+      "tone": "green",
+      "difficulty": "Explorer",
+      "duration": "4 min",
+      "xp": 70,
+      "description": "Make safer choices when connecting on a public network.",
+      "scenario": "At a café, two networks appear: “Cafe Guest” on the menu and “Cafe_Free_Fast” with a stronger signal. You need to check a bank notification.",
+      "questions": [
+        {
+          "prompt": "Which network should you choose?",
+          "options": ["The strongest signal, even if you do not know who runs it", "Confirm the official network name with staff before connecting", "Both networks because public Wi-Fi is always encrypted"],
+          "answer": 1,
+          "explanation": "A familiar-looking network name can be imitated. Confirm the correct network with staff before joining."
+        },
+        {
+          "prompt": "What is the safer way to check the bank notification?",
+          "options": ["Use your mobile connection and the official banking app", "Follow a banking link from a pop-up on the Wi-Fi page", "Install a certificate the network asks you to download"],
+          "answer": 0,
+          "explanation": "For sensitive accounts, a trusted mobile connection and official app reduce exposure to untrusted networks and fake login pages."
+        },
+        {
+          "prompt": "A page warns that your device is infected and offers a download. What should you do?",
+          "options": ["Install it immediately to stay protected", "Close the page and use your device’s trusted security settings or official support", "Enter your device password to dismiss the warning"],
+          "answer": 1,
+          "explanation": "Unexpected security pop-ups can be scams. Do not install software or enter credentials from an unsolicited page."
         }
       ]
     }

@@ -1,326 +1,303 @@
-// ==========================================
-// CYBERHEIST: NEURAL INFILTRATION GAME ENGINE
-// ARCHITECT: MOHAMMED AHMED
-// ==========================================
+/* CyberHeist is a local-only learning game. All actions run against fictional scenarios. */
+const STORAGE_KEY = 'cyberheist.learning.v1';
 
-// --- AUDIO SYNTHESIZER (ZERO ASSETS / NATIVE WEB AUDIO API) ---
-class SoundEngine {
-  constructor() {
-    this.ctx = null;
-    this.enabled = true;
+const fallbackMissions = [
+  {
+    id: 'phishing-first-look', title: 'The too-good-to-be-true parcel', category: 'SPOT THE SCAM', tone: 'orange', difficulty: 'Starter', duration: '3 min', xp: 60,
+    description: 'Learn to slow down and verify a message before you click.',
+    scenario: 'A fictional delivery company texts you: “Your package is paused. Pay a small fee now at parcel-help.example.” You were not expecting a delivery.',
+    questions: [
+      { prompt: 'What is the safest first move?', options: ['Open the link to see what it asks for', 'Use the delivery company’s official app or website to check independently', 'Reply with your full name so support can find your parcel'], answer: 1, explanation: 'Go to a service through a trusted route you choose yourself. Unexpected urgency and a payment link are reasons to pause.' },
+      { prompt: 'What should you do with the unexpected message?', options: ['Forward it to friends to ask if it looks real', 'Report it as spam or phishing, then delete it', 'Keep it and try the link later'], answer: 1, explanation: 'Reporting helps your messaging provider improve filtering. You do not need to interact with a suspicious link.' },
+      { prompt: 'Which clue deserves extra scrutiny?', options: ['The message creates urgency and asks for payment through an unfamiliar link', 'It arrived on a weekday', 'It uses a short greeting'], answer: 0, explanation: 'Unexpected payment requests, pressure, and unfamiliar domains are useful warning signs. Verify using a separate trusted channel.' }
+    ]
+  },
+  {
+    id: 'password-power-up', title: 'Lock down your account', category: 'ACCOUNT DEFENSE', tone: 'purple', difficulty: 'Starter', duration: '4 min', xp: 70,
+    description: 'Build a stronger password and add a second layer of protection.',
+    scenario: 'You are setting up a new fictional gaming account. A friend suggests reusing the password you use for email because it is easy to remember.',
+    questions: [
+      { prompt: 'What is the strongest password habit?', options: ['Reuse one memorable password everywhere', 'Use a unique, long password for each account, ideally stored in a password manager', 'Add “123” to your usual password'], answer: 1, explanation: 'Unique passwords limit the damage if one service is breached. A reputable password manager can help create and store them.' },
+      { prompt: 'What extra protection should you turn on?', options: ['Multi-factor authentication (MFA), preferably a passkey or authenticator method', 'A public profile so friends can confirm it is you', 'The same password hint as your other accounts'], answer: 0, explanation: 'MFA asks for another proof of identity. Passkeys and authenticator methods are generally safer than relying on a password alone.' },
+      { prompt: 'A login alert arrives that you did not request. What now?', options: ['Approve it so the alert stops', 'Deny it, change your password from the official app/site, and review account sessions', 'Share the alert code with whoever contacts you'], answer: 1, explanation: 'Never approve a sign-in you did not start or share a one-time code. Use the official service to secure the account and check active sessions.' }
+    ]
+  },
+  {
+    id: 'public-wifi-check', title: 'The café Wi-Fi check', category: 'SAFE CONNECTIONS', tone: 'green', difficulty: 'Explorer', duration: '4 min', xp: 70,
+    description: 'Make safer choices when connecting on a public network.',
+    scenario: 'At a café, two networks appear: “Cafe Guest” on the menu and “Cafe_Free_Fast” with a stronger signal. You need to check a bank notification.',
+    questions: [
+      { prompt: 'Which network should you choose?', options: ['The strongest signal, even if you do not know who runs it', 'Confirm the official network name with staff before connecting', 'Both networks because public Wi-Fi is always encrypted'], answer: 1, explanation: 'A familiar-looking network name can be imitated. Confirm the correct network with staff before joining.' },
+      { prompt: 'What is the safer way to check the bank notification?', options: ['Use your mobile connection and the official banking app', 'Follow a banking link from a pop-up on the Wi-Fi page', 'Install a certificate the network asks you to download'], answer: 0, explanation: 'For sensitive accounts, a trusted mobile connection and official app reduce exposure to untrusted networks and fake login pages.' },
+      { prompt: 'A page warns that your device is infected and offers a download. What should you do?', options: ['Install it immediately to stay protected', 'Close the page and use your device’s trusted security settings or official support', 'Enter your device password to dismiss the warning'], answer: 1, explanation: 'Unexpected security pop-ups can be scams. Do not install software or enter credentials from an unsolicited page.' }
+    ]
   }
-  init() {
-    if (!this.ctx) {
-      this.ctx = new (window.AudioContext || window.webkitAudioContext)();
-    }
-  }
-  playKeyClick() {
-    if (!this.enabled || !this.ctx) return;
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-    osc.type = 'triangle';
-    osc.frequency.setValueAtTime(600 + Math.random() * 400, this.ctx.currentTime);
-    gain.gain.setValueAtTime(0.03, this.ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.05);
-    osc.connect(gain);
-    gain.connect(this.ctx.destination);
-    osc.start();
-    osc.stop(this.ctx.currentTime + 0.05);
-  }
-  playSuccess() {
-    if (!this.enabled || !this.ctx) return;
-    const notes = [440, 554, 659, 880];
-    notes.forEach((freq, idx) => {
-      const osc = this.ctx.createOscillator();
-      const gain = this.ctx.createGain();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(freq, this.ctx.currentTime + idx * 0.08);
-      gain.gain.setValueAtTime(0.08, this.ctx.currentTime + idx * 0.08);
-      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + idx * 0.08 + 0.2);
-      osc.connect(gain);
-      gain.connect(this.ctx.destination);
-      osc.start(this.ctx.currentTime + idx * 0.08);
-      osc.stop(this.ctx.currentTime + idx * 0.08 + 0.2);
-    });
-  }
-  playAlert() {
-    if (!this.enabled || !this.ctx) return;
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-    osc.type = 'sawtooth';
-    osc.frequency.setValueAtTime(220, this.ctx.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(110, this.ctx.currentTime + 0.25);
-    gain.gain.setValueAtTime(0.12, this.ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.25);
-    osc.connect(gain);
-    gain.connect(this.ctx.destination);
-    osc.start();
-    osc.stop(this.ctx.currentTime + 0.25);
+];
+
+function readProgress() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    return {
+      xp: Number.isFinite(parsed.xp) ? Math.max(0, parsed.xp) : 0,
+      completed: Array.isArray(parsed.completed) ? parsed.completed.filter((id) => typeof id === 'string') : [],
+      lastPlayed: typeof parsed.lastPlayed === 'string' ? parsed.lastPlayed : null,
+      streak: Number.isFinite(parsed.streak) ? Math.max(0, parsed.streak) : 0
+    };
+  } catch {
+    return { xp: 0, completed: [], lastPlayed: null, streak: 0 };
   }
 }
 
-const sounds = new SoundEngine();
-
-// --- MATRIX RAIN BACKGROUND ---
-function initMatrixRain() {
-  const canvas = document.getElementById('matrixCanvas');
-  const ctx = canvas.getContext('2d');
-  let w = (canvas.width = window.innerWidth);
-  let h = (canvas.height = window.innerHeight);
-
-  const cols = Math.floor(w / 20);
-  const ypos = Array(cols).fill(0);
-
-  function matrix() {
-    ctx.fillStyle = 'rgba(5, 8, 17, 0.06)';
-    ctx.fillRect(0, 0, w, h);
-    ctx.fillStyle = '#00f0ff';
-    ctx.font = '14pt monospace';
-
-    ypos.forEach((y, ind) => {
-      const text = String.fromCharCode(Math.random() * 128);
-      const x = ind * 20;
-      ctx.fillText(text, x, y);
-      if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
-      else ypos[ind] = y + 20;
-    });
-  }
-  setInterval(matrix, 50);
-  window.addEventListener('resize', () => {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  });
-}
-
-// --- GAME STATE & CONTROLLER ---
-class CyberGame {
+class CyberHeistGame {
   constructor() {
-    this.exp = parseInt(localStorage.getItem('cyber_exp') || '0');
-    this.credits = parseInt(localStorage.getItem('cyber_credits') || '0');
-    this.activeMission = null;
-    this.stepIndex = 0;
-    this.trace = 0;
+    this.progress = readProgress();
     this.missions = [];
-    this.traceInterval = null;
-
-    this.output = document.getElementById('terminalOutput');
-    this.input = document.getElementById('terminalInput');
-    this.sendBtn = document.getElementById('sendBtn');
-    this.traceBar = document.getElementById('traceBar');
-    this.tracePercent = document.getElementById('tracePercent');
-    this.expDisplay = document.getElementById('expDisplay');
-    this.credDisplay = document.getElementById('credDisplay');
-    this.missionTitle = document.getElementById('missionTitle');
-    this.missionDesc = document.getElementById('missionDesc');
-    this.missionObjective = document.getElementById('missionObjective');
-    this.breachProgress = document.getElementById('breachProgress');
-    this.audioToggle = document.getElementById('audioToggle');
-
-    this.init();
+    this.activeMission = null;
+    this.questionIndex = 0;
+    this.correctAnswers = 0;
+    this.answered = false;
+    this.toastTimer = null;
+    this.grid = document.getElementById('missionGrid');
+    this.dialog = document.getElementById('missionDialog');
+    this.stage = document.getElementById('missionStage');
+    this.toast = document.getElementById('toast');
+    this.bindEvents();
+    this.loadMissions();
   }
 
-  async init() {
-    initMatrixRain();
-    this.updateStats();
-    await this.loadMissions();
-    this.bindEvents();
-
-    if (this.missions.length > 0) {
-      this.selectMission(this.missions[0]);
-    }
+  bindEvents() {
+    document.getElementById('closeDialog').addEventListener('click', () => this.dialog.close());
+    this.dialog.addEventListener('click', (event) => {
+      if (event.target === this.dialog) this.dialog.close();
+    });
+    this.grid.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-mission-id]');
+      if (!button || button.disabled) return;
+      const mission = this.missions.find((item) => item.id === button.dataset.missionId);
+      if (mission) this.startMission(mission);
+    });
+    this.stage.addEventListener('click', (event) => {
+      const answer = event.target.closest('[data-answer-index]');
+      if (answer && !this.answered) this.answerQuestion(Number(answer.dataset.answerIndex));
+      if (event.target.closest('[data-next]')) this.nextStep();
+      if (event.target.closest('[data-finish]')) {
+        this.dialog.close();
+        this.render();
+      }
+    });
   }
 
   async loadMissions() {
     try {
-      const res = await fetch('missions.json');
-      const data = await res.json();
-      this.missions = data.missions || [];
-      this.printLine(`[SYSTEM] Loaded ${this.missions.length} active contract protocols.`, 'sys-msg');
-    } catch (e) {
-      this.printLine(`[ERROR] Could not load mission cache. Using emergency fallback.`, 'danger');
+      const response = await fetch('missions.json', { cache: 'no-cache' });
+      if (!response.ok) throw new Error('Mission file unavailable');
+      const data = await response.json();
+      if (!Array.isArray(data.missions) || !data.missions.length) throw new Error('No missions found');
+      this.missions = data.missions;
+    } catch {
+      this.missions = fallbackMissions;
+      this.showToast('Using the built-in mission pack.');
     }
+    this.render();
   }
 
-  bindEvents() {
-    document.addEventListener('click', () => sounds.init(), { once: true });
-
-    this.sendBtn.addEventListener('click', () => this.handleCommand());
-    this.input.addEventListener('keydown', (e) => {
-      sounds.playKeyClick();
-      if (e.key === 'Enter') this.handleCommand();
-    });
-
-    document.querySelectorAll('.macro-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const cmd = btn.getAttribute('data-cmd');
-        this.input.value = cmd;
-        this.handleCommand();
-      });
-    });
-
-    this.audioToggle.addEventListener('click', () => {
-      sounds.init();
-      sounds.enabled = !sounds.enabled;
-      this.audioToggle.textContent = sounds.enabled ? '🔊 AUDIO' : '🔇 MUTED';
-      this.printLine(`Audio output: ${sounds.enabled ? 'ENABLED' : 'MUTED'}`, 'sys-msg');
-    });
+  render() {
+    const completed = new Set(this.progress.completed);
+    const completedCount = this.missions.filter((mission) => completed.has(mission.id)).length;
+    const level = this.getLevel(this.progress.xp);
+    document.getElementById('levelValue').textContent = level.name;
+    document.getElementById('xpValue').textContent = `${this.progress.xp} XP earned`;
+    document.getElementById('completedValue').textContent = `${completedCount} / ${this.missions.length}`;
+    document.getElementById('missionCount').textContent = `${this.missions.length} missions`;
+    document.getElementById('streakValue').textContent = `${this.progress.streak} day${this.progress.streak === 1 ? '' : 's'} streak`;
+    this.grid.replaceChildren(...this.missions.map((mission) => this.createMissionCard(mission, completed.has(mission.id))));
   }
 
-  updateStats() {
-    this.expDisplay.textContent = this.exp;
-    this.credDisplay.textContent = `₿ ${this.credits}`;
-    localStorage.setItem('cyber_exp', this.exp);
-    localStorage.setItem('cyber_credits', this.credits);
+  createMissionCard(mission, completed) {
+    const article = document.createElement('article');
+    article.className = `mission-card${completed ? ' complete' : ''}`;
+    const top = document.createElement('div');
+    top.className = 'card-top';
+    const category = document.createElement('span');
+    category.className = `category-pill${mission.tone === 'green' ? ' green-tone' : mission.tone === 'orange' ? ' orange-tone' : ''}`;
+    category.textContent = mission.category;
+    const difficulty = document.createElement('span');
+    difficulty.className = 'difficulty';
+    difficulty.textContent = mission.difficulty;
+    top.append(category, difficulty);
+    const heading = document.createElement('h3');
+    heading.textContent = mission.title;
+    const description = document.createElement('p');
+    description.textContent = mission.description;
+    const meta = document.createElement('div');
+    meta.className = 'mission-meta';
+    const time = document.createElement('span');
+    time.textContent = `◷ ${mission.duration}`;
+    const xp = document.createElement('span');
+    xp.textContent = `✦ ${mission.xp} XP`;
+    meta.append(time, xp);
+    const button = document.createElement('button');
+    button.className = 'mission-button';
+    button.dataset.missionId = mission.id;
+    button.textContent = completed ? 'Play again' : 'Start mission  →';
+    article.append(top, heading, description, meta, button);
+    return article;
   }
 
-  printLine(text, type = 'sys-msg') {
-    const div = document.createElement('div');
-    div.className = `log-line ${type}`;
-    div.textContent = text;
-    this.output.appendChild(div);
-    this.output.scrollTop = this.output.scrollHeight;
-  }
-
-  selectMission(m) {
-    this.activeMission = m;
-    this.stepIndex = 0;
-    this.trace = 0;
-    this.updateTrace(0);
-
-    this.missionTitle.textContent = m.title;
-    this.missionDesc.textContent = m.desc;
-    this.missionObjective.textContent = `Execute '${m.solution_commands[0].cmd}' to initiate sequence.`;
-    this.breachProgress.style.width = '0%';
-
-    // Reset nodes visual
-    document.querySelectorAll('.node-box').forEach(node => {
-      node.classList.remove('breached');
-      node.querySelector('.node-state').textContent = 'SECURE';
-    });
-
-    this.printLine(`\n[CONTRACT LOADED] ${m.title}`, 'cmd');
-    this.printLine(`Target: ${m.target} | Difficulty: ${m.difficulty}`, 'sys-msg');
-    this.startTraceTimer();
-  }
-
-  startTraceTimer() {
-    if (this.traceInterval) clearInterval(this.traceInterval);
-    this.traceInterval = setInterval(() => {
-      if (!this.activeMission) return;
-      this.trace = Math.min(100, this.trace + 1);
-      this.updateTrace(this.trace);
-      if (this.trace >= 100) {
-        sounds.playAlert();
-        this.printLine(`[CRITICAL ALERT] CORPORATE TRACE COMPLETE! YOUR IP WAS SEIZED! CONTRACT ABORTED.`, 'danger');
-        clearInterval(this.traceInterval);
-        setTimeout(() => this.selectMission(this.activeMission), 3000);
-      }
-    }, 1800);
-  }
-
-  updateTrace(val) {
-    this.traceBar.style.width = `${val}%`;
-    this.tracePercent.textContent = `${val}%`;
-    if (val > 75) this.traceBar.style.background = '#ff0033';
-    else if (val > 40) this.traceBar.style.background = '#ffcc00';
-    else this.traceBar.style.background = 'var(--neon-red)';
-  }
-
-  handleCommand() {
-    const raw = this.input.value.trim();
-    if (!raw) return;
-    this.input.value = '';
-
-    this.printLine(`operator@heist:~# ${raw}`, 'cmd');
-    const parts = raw.toLowerCase().split(' ');
-    const cmd = parts[0];
-
-    switch (cmd) {
-      case 'help':
-        this.printLine(`AVAILABLE PROTOCOLS:`, 'sys-msg');
-        this.printLine(`  missions       - Display all available cyber contracts`, 'sys-msg');
-        this.printLine(`  select <id>    - Select target contract (e.g., 'select M01')`, 'sys-msg');
-        this.printLine(`  scan           - Scan target system topology & open ports`, 'sys-msg');
-        this.printLine(`  nmap           - Deep port scan for vulnerabilities`, 'sys-msg');
-        this.printLine(`  crack          - Decrypt target security hashes`, 'sys-msg');
-        this.printLine(`  breach         - Siphon data vault & complete contract`, 'sys-msg');
-        this.printLine(`  trace-shield   - Reset & scramble corporate trace counter`, 'sys-msg');
-        this.printLine(`  clear          - Flush terminal buffer`, 'sys-msg');
-        break;
-
-      case 'clear':
-        this.output.innerHTML = '';
-        break;
-
-      case 'missions':
-        this.printLine(`=== AVAILABLE CYBER CONTRACTS ===`, 'sys-msg');
-        this.missions.forEach(m => {
-          this.printLine(`[${m.id}] ${m.title} // REWARD: ₿ ${m.reward_credits} [${m.difficulty}]`, 'cmd-highlight');
-        });
-        this.printLine(`Type 'select <ID>' to activate contract.`, 'sys-msg');
-        break;
-
-      case 'select':
-        const targetId = (parts[1] || '').toUpperCase();
-        const found = this.missions.find(m => m.id === targetId);
-        if (found) {
-          this.selectMission(found);
-        } else {
-          this.printLine(`Contract '${targetId}' not found. Type 'missions' for active list.`, 'danger');
-        }
-        break;
-
-      case 'trace-shield':
-        this.trace = Math.max(0, this.trace - 40);
-        this.updateTrace(this.trace);
-        this.printLine(`[SHIELD] Neural trace counter scrambled (-40%).`, 'success');
-        break;
-
-      default:
-        // Check if command advances active mission
-        if (this.activeMission) {
-          const expected = this.activeMission.solution_commands[this.stepIndex];
-          if (expected && expected.cmd === cmd) {
-            this.printLine(expected.output, 'success');
-            sounds.playSuccess();
-            this.stepIndex++;
-
-            // Visual node update
-            const nodes = document.querySelectorAll('.node-box');
-            if (nodes[this.stepIndex - 1]) {
-              nodes[this.stepIndex - 1].classList.add('breached');
-              nodes[this.stepIndex - 1].querySelector('.node-state').textContent = 'PWNED';
-            }
-
-            const pct = Math.round((this.stepIndex / this.activeMission.solution_commands.length) * 100);
-            this.breachProgress.style.width = `${pct}%`;
-
-            if (this.stepIndex >= this.activeMission.solution_commands.length) {
-              // Mission complete!
-              clearInterval(this.traceInterval);
-              this.credits += this.activeMission.reward_credits;
-              this.exp += this.activeMission.reward_exp;
-              this.updateStats();
-              this.printLine(`>>> HEIST COMPLETED! +₿ ${this.activeMission.reward_credits} CREDITS, +${this.activeMission.reward_exp} EXP! <<<`, 'success');
-              this.missionObjective.textContent = `CONTRACT COMPLETED! Run 'missions' for next target.`;
-            } else {
-              const nextCmd = this.activeMission.solution_commands[this.stepIndex].cmd;
-              this.missionObjective.textContent = `Next step: Execute '${nextCmd}'`;
-            }
-          } else {
-            sounds.playAlert();
-            this.trace = Math.min(100, this.trace + 15);
-            this.updateTrace(this.trace);
-            this.printLine(`[ACCESS DENIED] Unrecognized sequence. Trace alerted (+15%)!`, 'danger');
-          }
-        } else {
-          this.printLine(`Unknown protocol '${cmd}'. Type 'help' for command manual.`, 'warning');
-        }
+  startMission(mission) {
+    if (!Array.isArray(mission.questions) || !mission.questions.length) {
+      this.showToast('This mission is not ready yet.');
+      return;
     }
+    this.activeMission = mission;
+    this.questionIndex = 0;
+    this.correctAnswers = 0;
+    this.answered = false;
+    document.getElementById('dialogCategory').textContent = mission.category;
+    this.renderQuestion();
+    this.dialog.showModal();
+  }
+
+  renderQuestion(feedback = null) {
+    const question = this.activeMission.questions[this.questionIndex];
+    this.answered = false;
+    this.stage.replaceChildren();
+    const title = document.createElement('h2');
+    title.id = 'dialogTitle';
+    title.textContent = this.activeMission.title;
+    const intro = document.createElement('p');
+    intro.className = 'dialog-intro';
+    intro.textContent = this.activeMission.description;
+    const scenario = document.createElement('div');
+    scenario.className = 'scenario-box';
+    const context = document.createElement('strong');
+    context.textContent = 'THE SITUATION';
+    const contextText = document.createElement('p');
+    contextText.textContent = this.activeMission.scenario;
+    scenario.append(context, contextText);
+    const count = document.createElement('p');
+    count.className = 'question-count';
+    count.textContent = `DECISION ${this.questionIndex + 1} OF ${this.activeMission.questions.length}`;
+    const prompt = document.createElement('p');
+    prompt.className = 'question-title';
+    prompt.textContent = question.prompt;
+    const list = document.createElement('div');
+    list.className = 'answer-list';
+    list.setAttribute('role', 'group');
+    list.setAttribute('aria-label', 'Choose your answer');
+    question.options.forEach((option, index) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'answer-button';
+      button.dataset.answerIndex = String(index);
+      button.textContent = option;
+      list.append(button);
+    });
+    this.stage.append(title, intro, scenario, count, prompt, list);
+    if (feedback) this.showFeedback(feedback.correct, feedback.explanation);
+  }
+
+  answerQuestion(selectedIndex) {
+    const question = this.activeMission.questions[this.questionIndex];
+    const correct = selectedIndex === question.answer;
+    this.answered = true;
+    const buttons = [...this.stage.querySelectorAll('[data-answer-index]')];
+    buttons.forEach((button, index) => {
+      button.disabled = true;
+      if (index === question.answer) button.classList.add('correct');
+      else if (index === selectedIndex) button.classList.add('incorrect');
+    });
+    if (correct) this.correctAnswers += 1;
+    this.showFeedback(correct, question.explanation);
+  }
+
+  showFeedback(correct, explanation) {
+    const feedback = document.createElement('div');
+    feedback.className = `feedback ${correct ? 'good' : 'try-again'}`;
+    const heading = document.createElement('strong');
+    heading.textContent = correct ? 'Good call. ' : 'Here’s the safer move. ';
+    feedback.append(heading, document.createTextNode(explanation));
+    const next = document.createElement('button');
+    next.className = 'next-button';
+    next.dataset.next = 'true';
+    next.textContent = this.questionIndex + 1 < this.activeMission.questions.length ? 'Next decision  →' : 'See mission results  →';
+    feedback.append(document.createElement('br'), next);
+    this.stage.append(feedback);
+    next.focus();
+  }
+
+  nextStep() {
+    if (!this.answered) return;
+    if (this.questionIndex + 1 < this.activeMission.questions.length) {
+      this.questionIndex += 1;
+      this.renderQuestion();
+      return;
+    }
+    this.finishMission();
+  }
+
+  finishMission() {
+    const alreadyCompleted = this.progress.completed.includes(this.activeMission.id);
+    const earnedXp = alreadyCompleted ? 0 : this.activeMission.xp;
+    if (!alreadyCompleted) this.progress.completed.push(this.activeMission.id);
+    this.progress.xp += earnedXp;
+    this.updateStreak();
+    this.saveProgress();
+    this.stage.replaceChildren();
+    const result = document.createElement('div');
+    result.className = 'result-panel';
+    const symbol = document.createElement('div');
+    symbol.className = 'result-emoji';
+    symbol.textContent = '✦';
+    const title = document.createElement('h2');
+    title.id = 'dialogTitle';
+    title.textContent = 'Mission cleared!';
+    const score = document.createElement('div');
+    score.className = 'result-score';
+    score.textContent = `${this.correctAnswers} / ${this.activeMission.questions.length}`;
+    const copy = document.createElement('p');
+    copy.textContent = `${this.correctAnswers === this.activeMission.questions.length ? 'Excellent instincts.' : 'Every choice is a chance to learn.'} ${earnedXp ? `You earned ${earnedXp} XP.` : 'You already earned XP for this mission, so replaying is just for practice.'}`;
+    const finish = document.createElement('button');
+    finish.className = 'next-button';
+    finish.dataset.finish = 'true';
+    finish.textContent = 'Back to missions';
+    result.append(symbol, title, score, copy, finish);
+    this.stage.append(result);
+  }
+
+  updateStreak() {
+    const formatLocalDate = (date) => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+    const today = formatLocalDate(new Date());
+    if (this.progress.lastPlayed === today) return;
+    const previous = new Date();
+    previous.setDate(previous.getDate() - 1);
+    const yesterday = formatLocalDate(previous);
+    this.progress.streak = this.progress.lastPlayed === yesterday ? this.progress.streak + 1 : 1;
+    this.progress.lastPlayed = today;
+  }
+
+  getLevel(xp) {
+    if (xp >= 600) return { name: 'Guardian' };
+    if (xp >= 300) return { name: 'Defender' };
+    if (xp >= 120) return { name: 'Scout' };
+    return { name: 'Rookie' };
+  }
+
+  saveProgress() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.progress));
+    } catch {
+      this.showToast('Could not save progress in this browser.');
+    }
+    this.render();
+  }
+
+  showToast(message) {
+    this.toast.textContent = message;
+    this.toast.classList.add('show');
+    clearTimeout(this.toastTimer);
+    this.toastTimer = setTimeout(() => this.toast.classList.remove('show'), 2400);
   }
 }
 
-// Start Game
-window.addEventListener('DOMContentLoaded', () => {
-  new CyberGame();
-});
+window.addEventListener('DOMContentLoaded', () => new CyberHeistGame());
