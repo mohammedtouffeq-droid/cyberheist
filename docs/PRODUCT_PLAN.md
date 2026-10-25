@@ -53,7 +53,7 @@ The intended learning outcome is a demonstrable foundation: explain core concept
 | Account Defense | Build better account habits and respond to login warnings | Password examples are never collected or checked; choices use toy accounts | MVP |
 | Defender Desk | Triage a fictional incident using a timeline and short log excerpts | Static, curated logs with fake hosts, identities, and data | V1 |
 | Secure Builder | Find risky choices in toy app, cloud, and device configurations | Constrained visual puzzles; no deployment or external requests | V1 |
-| Practice Arcade | Inspect messages, scope toy permissions, arrange a network path, review configuration and code, minimize data, triage alerts, and plan recovery | All visual drills use fictional local scenarios; no real account, device inspection, or network traffic | Browser prototype |
+| Practice Arcade | Twenty focused visual drills cover message analysis, identity, network concepts, response, configuration, privacy, secure development, alerting, evidence handling, supply chain, data labels, cloud sharing, risk, and recovery | All visual drills use fixed fictional scenarios; no real account, device inspection, cloud connection, command execution, or network traffic | Browser prototype |
 | Training Terminal | Search a synthetic authentication log, reconstruct a short timeline, and submit a staged defensive decision | Exact allow-listed commands operate on a fixed in-memory dataset; no host shell, filesystem, or network access | Browser prototype |
 | Story Campaign | Follow a connected incident-response storyline across chapters | Fictional organizations and sanitized artifacts | V1 |
 | Cyber League | Compete in rotating knowledge and defense challenges | Deterministic challenges; verified scoring and no open-ended attack input | V2, after backend and abuse review |
@@ -62,6 +62,8 @@ The intended learning outcome is a demonstrable foundation: explain core concept
 “Hacking topics” can be represented as defender investigations and contained puzzles. Any future offensive-security lesson needs an isolated toy target, explicit learning purpose, and a separate safety review before implementation.
 
 ### Research-informed skill map and player guidance
+
+The 50-item feature inventory and 18-source research review live in [Research and feature backlog](RESEARCH_AND_FEATURE_BACKLOG.md). Each item is explicitly marked live, next, later, or blocked, with its acceptance evidence and safety boundary. “Planned” must never be presented as implemented.
 
 The learning guide and future course revisions use three complementary lenses rather than presenting “cybersecurity” as one undifferentiated skill:
 
@@ -144,7 +146,7 @@ A feature is done only when its user flow is implemented, content and safety bou
 
 ## 7. Immediate backlog
 
-1. Validate routed browser navigation, mobile tap targets, notes, search/filter, the nine visual simulations, terminal state, and answer-order balance at phone and desktop sizes.
+1. Validate routed browser navigation, mobile tap targets, notes, search/filter, all 20 visual simulations and the classification interaction, terminal state, and answer-order balance at phone and desktop sizes.
 2. Expand module-specific labs with reviewed scenarios, feedback rubrics, and meaningful branching beyond the current reusable drills.
 3. Add progress reset/export controls with clear confirmation and privacy copy.
 4. Write a detailed authoring guide and commission qualified reviewers for the 60-day pack.

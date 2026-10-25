@@ -138,6 +138,173 @@ const LABS = {
     ],
     debrief: 'Recovery needs an owner and a defined scope, a known-good source, an approved restore path, and a validation step. A backup is only useful when it can be restored and checked.',
   },
+  'evidence-register': {
+    title: 'Evidence Register',
+    category: 'INVESTIGATION PRACTICE',
+    mode: 'order',
+    workbenchTitle: 'PRESERVE A BASIC EVIDENCE RECORD',
+    brief: 'A fictional responder has been asked to review a suspicious account event. Arrange careful evidence handling steps.',
+    artifact: 'Synthetic case IR-12: an exported sign-in log is available. No live account or device is involved.',
+    items: [
+      { label: 'Confirm authority, case scope, and who owns the source data', clue: true },
+      { label: 'Record where the provided export came from and when it was received', clue: true },
+      { label: 'Keep an untouched original and analyze a working copy', clue: true },
+      { label: 'Document observations, actions, and remaining uncertainty', clue: true },
+    ],
+    debrief: 'A simple chain-of-custody record helps preserve context and explain what happened to evidence. This is a process exercise, not a forensic acquisition tool.',
+  },
+  'dependency-review': {
+    title: 'Dependency Review',
+    category: 'SOFTWARE SUPPLY CHAIN',
+    mode: 'select',
+    workbenchTitle: 'CHOOSE RELEASE CHECKS THAT REDUCE SUPPLY-CHAIN RISK',
+    brief: 'Review a fictional application release checklist and flag the gaps before its owner approves the release.',
+    artifact: 'Toy release: dependencies are pinned; one package has no known owner; a build artifact has no provenance; the team reviews changes and has a rollback plan.',
+    items: [
+      { label: 'Confirm the owner and maintenance status of an unfamiliar package', clue: true },
+      { label: 'Verify build provenance and artifact integrity', clue: true },
+      { label: 'Skip review because the package version is pinned', clue: false },
+      { label: 'Keep the change review and rollback plan', clue: false },
+    ],
+    debrief: 'Pinned versions help make builds repeatable but do not prove a dependency is trustworthy. Ownership, provenance, review, and a tested rollback matter too.',
+  },
+  'data-labels': {
+    title: 'Data Labels',
+    category: 'DATA HANDLING',
+    mode: 'classify',
+    workbenchTitle: 'ASSIGN THE LEAST SURPRISING HANDLING LABEL',
+    brief: 'Classify each fictional record using the team’s simple handling scheme. Use each record’s purpose and sensitivity.',
+    artifact: 'Labels: Public = approved for anyone; Internal = routine non-public operations; Restricted = sensitive personal, authentication, or business data.',
+    options: ['Public', 'Internal', 'Restricted'],
+    items: [
+      { label: 'Published product support hours', answer: 'Public' },
+      { label: 'Internal office maintenance schedule', answer: 'Internal' },
+      { label: 'Customer recovery codes', answer: 'Restricted' },
+      { label: 'Approved public security contact page', answer: 'Public' },
+    ],
+    debrief: 'Classification only helps when handling rules follow it. Keep recovery codes out of notes and chat, restrict access, and publish only information the owner approved.',
+  },
+  'incident-brief': {
+    title: 'Incident Brief',
+    category: 'COMMUNICATION & RESPONSE',
+    mode: 'order',
+    workbenchTitle: 'BUILD A USEFUL FIRST UPDATE',
+    brief: 'Prepare a concise internal update during a fictional service incident without overstating what is known.',
+    artifact: 'The service owner confirmed unusual access. Investigation is active; the scope and customer impact are not yet known.',
+    items: [
+      { label: 'State the confirmed observation and when it was noticed', clue: true },
+      { label: 'Name the response owner and the next update time', clue: true },
+      { label: 'Separate confirmed impact from open questions', clue: true },
+      { label: 'Use the approved internal channel and avoid sharing secrets', clue: true },
+    ],
+    debrief: 'Good updates are factual, scoped, owned, and time-bounded. Avoid speculation, unnecessary personal information, and secrets; follow the organization’s communication plan.',
+  },
+  'access-review': {
+    title: 'Access Review',
+    category: 'IDENTITY GOVERNANCE',
+    mode: 'select',
+    workbenchTitle: 'KEEP ONLY ACCESS WITH A CURRENT BUSINESS NEED',
+    brief: 'Review a fictional team’s access list. Mark the grants that need owner follow-up before renewal.',
+    artifact: 'Quarterly review: an active analyst has read-only case access; a former contractor still has access; a service account has a named owner and limited role; an intern has permanent administrator rights.',
+    items: [
+      { label: 'Former contractor account remains active', clue: true },
+      { label: 'Active analyst has read-only case access needed for the role', clue: false },
+      { label: 'Service account has a named owner and narrow role', clue: false },
+      { label: 'Intern has permanent administrator rights without a stated need', clue: true },
+    ],
+    debrief: 'Access reviews check current identity, purpose, scope, and expiry. Confirm with the owner before changing production access; this fictional exercise does not touch real accounts.',
+  },
+  'alert-confidence': {
+    title: 'Signal or Assumption?',
+    category: 'EVIDENCE REASONING',
+    mode: 'classify',
+    workbenchTitle: 'SEPARATE OBSERVED FACTS FROM INTERPRETATION',
+    brief: 'A small synthetic log bundle contains observations and hypotheses. Classify each statement by what the evidence supports.',
+    artifact: 'Evidence labels: Observed = directly present in the bundle; Inference = plausible interpretation that needs validation; Unknown = not established by these records.',
+    options: ['Observed', 'Inference', 'Unknown'],
+    items: [
+      { label: 'The bundle records three denied MFA prompts at 09:14', answer: 'Observed' },
+      { label: 'The account owner approved one of the prompts', answer: 'Unknown' },
+      { label: 'Repeated prompts may indicate an attempt to pressure the owner', answer: 'Inference' },
+      { label: 'A successful sign-in appears in this excerpt', answer: 'Unknown' },
+    ],
+    debrief: 'A disciplined analyst marks what the source actually shows, labels interpretations as hypotheses, and states what the excerpt cannot establish.',
+  },
+  'cloud-sharing': {
+    title: 'Cloud Share Check',
+    category: 'CLOUD CONFIGURATION',
+    mode: 'select',
+    workbenchTitle: 'FLAG SHARES THAT EXCEED THE STATED NEED',
+    brief: 'Review a fictional document workspace before a project owner approves external sharing.',
+    artifact: 'Toy workspace: a public read link is enabled for payroll exports; project members have role-based access; an old vendor invite has no expiry; audit history is retained.',
+    items: [
+      { label: 'Public read link exposes payroll exports', clue: true },
+      { label: 'Project members receive role-based access', clue: false },
+      { label: 'Old vendor invite has no owner or expiry', clue: true },
+      { label: 'Audit history is retained under the team policy', clue: false },
+    ],
+    debrief: 'Review audience, sensitivity, owner, and expiry for every external share. The puzzle is a fictional policy review, not a cloud integration.',
+  },
+  'release-gate': {
+    title: 'Release Gate',
+    category: 'SECURE DEVELOPMENT',
+    mode: 'order',
+    workbenchTitle: 'PUT A SMALL DEFENSIVE RELEASE GATE IN ORDER',
+    brief: 'Arrange a fictional change review from requirement to post-release observation.',
+    artifact: 'A toy feature stores user-submitted profile text. The team wants to limit avoidable security regressions before release.',
+    items: [
+      { label: 'Define who may view or change the profile data', clue: true },
+      { label: 'Review input validation and safe output handling', clue: true },
+      { label: 'Run the approved tests and review findings with an owner', clue: true },
+      { label: 'Release through the normal change process and monitor outcomes', clue: true },
+    ],
+    debrief: 'Security belongs in requirements, implementation review, verification, and operations. Passing a checklist is not proof that software is vulnerability-free.',
+  },
+  'vendor-desk': {
+    title: 'Vendor Desk',
+    category: 'THIRD-PARTY RISK',
+    mode: 'select',
+    workbenchTitle: 'IDENTIFY QUESTIONS THE SERVICE OWNER SHOULD RESOLVE',
+    brief: 'A fictional team is choosing a document service. Flag missing information that affects the decision.',
+    artifact: 'The vendor proposal describes encryption and uptime. It does not name the data location, incident contact, retention period, or account offboarding process.',
+    items: [
+      { label: 'Where the organization’s data is stored and who can access it', clue: true },
+      { label: 'How the vendor reports and coordinates security incidents', clue: true },
+      { label: 'How retention, deletion, and account offboarding work', clue: true },
+      { label: 'The color of the vendor’s product logo', clue: false },
+    ],
+    debrief: 'Third-party decisions need an owner, data map, incident route, and exit plan—not just feature claims. The appropriate legal and procurement review depends on the organization.',
+  },
+  'risk-board': {
+    title: 'Risk Board',
+    category: 'RISK PRIORITIZATION',
+    mode: 'order',
+    workbenchTitle: 'PRIORITIZE BY IMPACT AND CONTEXT',
+    brief: 'A small organization has limited time for four fictional fixes. Rank the given items using the scenario’s stated impact and exposure.',
+    artifact: 'Scenario notes: a public admin console has a confirmed default credential; a sensitive archive has no recovery copy; a low-impact test page has an old banner; a staff laptop is missing a routine patch but is not internet-facing.',
+    items: [
+      { label: 'Confirmed default credential on a public admin console', clue: true },
+      { label: 'Sensitive archive has no tested recovery copy', clue: true },
+      { label: 'Old banner on a low-impact test page', clue: true },
+      { label: 'Routine patch due on a non-public staff laptop', clue: true },
+    ],
+    debrief: 'A defensible ranking considers likelihood, impact, exposure, dependencies, and continuity—not just how alarming a label sounds. Real teams validate assumptions and record who accepts residual risk.',
+  },
+  'backup-drill': {
+    title: 'Backup Drill',
+    category: 'RESILIENCE PRACTICE',
+    mode: 'select',
+    workbenchTitle: 'SELECT EVIDENCE THAT A BACKUP CAN ACTUALLY HELP',
+    brief: 'A fictional team is checking whether a backup plan can support recovery after a disruption.',
+    artifact: 'The plan needs to show that copies exist, access is controlled, and restoration produces a usable service.',
+    items: [
+      { label: 'A recent restore test completed with a recorded result', clue: true },
+      { label: 'Backup access is separate from ordinary user access', clue: true },
+      { label: 'The schedule says “backup successful” but no restore was tested', clue: false },
+      { label: 'A named owner knows the recovery procedure', clue: true },
+    ],
+    debrief: 'A backup strategy needs protected copies, clear ownership, and restore testing. A green job status alone does not show that a service can be recovered.',
+  },
 };
 
 const fallbackMissions = [
@@ -211,6 +378,7 @@ class CyberHeistGame {
     this.returnMission = null;
     this.labSelection = new Set();
     this.labOrder = [];
+    this.labAnswers = new Map();
     this.terminalStep = 'inspect';
     this.terminalEvidenceInspected = false;
     this.terminalHistory = [];
@@ -245,6 +413,10 @@ class CyberHeistGame {
     this.labGrid.addEventListener('click', (event) => {
       const button = event.target.closest('[data-lab-id]');
       if (button) this.startLab(button.dataset.labId);
+    });
+    this.stage.addEventListener('change', (event) => {
+      const select = event.target.closest('[data-lab-answer]');
+      if (select) this.labAnswers.set(Number(select.dataset.labAnswer), select.value);
     });
     this.stage.addEventListener('click', (event) => {
       const clue = event.target.closest('[data-lab-choice]');
@@ -407,7 +579,7 @@ class CyberHeistGame {
     document.getElementById('xpValue').textContent = `${this.progress.xp} XP`;
     document.getElementById('xpProgress').style.width = `${level.progress}%`;
     document.getElementById('completedValue').textContent = `${completedCount} / ${this.missions.length}`;
-    document.getElementById('recordMark').textContent = `${this.progress.labsCompleted.length} / ${Object.keys(LABS).length} LABS`;
+    document.getElementById('recordMark').textContent = `${this.progress.labsCompleted.length} / ${Object.keys(LABS).length} DRILLS`;
     document.getElementById('recordCaseDetail').textContent = `${completedCount} ${completedCount === 1 ? 'case' : 'cases'}`;
     document.getElementById('recordLabDetail').textContent = `${this.progress.labsCompleted.length} of ${Object.keys(LABS).length}`;
     document.getElementById('recordTerminalDetail').textContent = this.progress.terminalLabCompleted ? 'Completed' : 'Not completed';
@@ -724,6 +896,7 @@ class CyberHeistGame {
     this.activeLab = { id, ...lab };
     this.labSelection = new Set();
     this.labOrder = lab.items.map((_, index) => index).reverse();
+    this.labAnswers = new Map();
     document.getElementById('dialogCategory').textContent = lab.category;
     this.renderLab();
     this.dialog.showModal();
@@ -761,6 +934,28 @@ class CyberHeistGame {
         button.textContent = item.label;
         workbench.append(button);
       });
+    } else if (lab.mode === 'classify') {
+      lab.items.forEach((item, index) => {
+        const row = document.createElement('label');
+        row.className = 'lab-order-row lab-classify-row';
+        const prompt = document.createElement('span');
+        prompt.textContent = item.label;
+        const select = document.createElement('select');
+        select.dataset.labAnswer = String(index);
+        select.setAttribute('aria-label', `Classify: ${item.label}`);
+        const placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.textContent = 'Choose label';
+        select.append(placeholder);
+        lab.options.forEach((option) => {
+          const choice = document.createElement('option');
+          choice.value = option;
+          choice.textContent = option;
+          select.append(choice);
+        });
+        row.append(prompt, select);
+        workbench.append(row);
+      });
     } else {
       this.labOrder.forEach((itemIndex, position) => {
         const row = document.createElement('div');
@@ -794,6 +989,8 @@ class CyberHeistGame {
     if (lab.mode === 'select') {
       const expected = new Set(lab.items.flatMap((item, index) => item.clue ? [index] : []));
       passed = expected.size === this.labSelection.size && [...expected].every((index) => this.labSelection.has(index));
+    } else if (lab.mode === 'classify') {
+      passed = lab.items.every((item, index) => this.labAnswers.get(index) === item.answer);
     } else {
       passed = this.labOrder.every((itemIndex, index) => itemIndex === index);
     }

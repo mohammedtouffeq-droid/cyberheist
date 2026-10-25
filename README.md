@@ -29,7 +29,7 @@ To regenerate the 60-day content pack, run `python scripts/build_course_pack.py`
 
 - `index.html` — separately routed briefing, research-informed learning guide, record, searchable case library, practice floor, and private notes
 - `style.css` — responsive visual design
-- `game.js` — routed case flow, shuffled answer presentation, nine interactive safe simulations, a guided allow-listed fictional log terminal, notes, and local progress
+- `game.js` — routed case flow, shuffled answer presentation, twenty fictional simulations (selection, ordering, and classification), a guided allow-listed fictional log terminal, notes, and local progress
 - `missions.json` — authored fictional learning scenarios and static case evidence
 - `curriculum.json` — 60-day beginner-to-foundation course map, with one playable mission for each day
 - `scripts/build_course_pack.py` — reproducibly builds the authored course pack and keeps the learning promise bounded
@@ -47,7 +47,7 @@ This checkout does not currently have Java, Gradle, or the Android SDK installed
 
 The repository contains a working browser learning game and an early native Android project. It is not a finished Android app or Play Store release; Android compilation/device testing, qualified subject-matter review, accessibility review, privacy disclosures, and store materials remain outstanding. The course is designed to build beginner foundations; it cannot guarantee expert status in 60 days.
 
-The staged product roadmap is in [`docs/PRODUCT_PLAN.md`](docs/PRODUCT_PLAN.md), and the proposed native Android architecture is in [`docs/TECHNICAL_PLAN.md`](docs/TECHNICAL_PLAN.md). These documents distinguish planned work from features that have actually shipped.
+The staged product roadmap is in [`docs/PRODUCT_PLAN.md`](docs/PRODUCT_PLAN.md), the proposed native Android architecture is in [`docs/TECHNICAL_PLAN.md`](docs/TECHNICAL_PLAN.md), and the 18-source review plus 50-item acceptance backlog is in [`docs/RESEARCH_AND_FEATURE_BACKLOG.md`](docs/RESEARCH_AND_FEATURE_BACKLOG.md). These documents distinguish planned work from features that have actually shipped.
 
 ## Content contributions
 
