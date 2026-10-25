@@ -74,8 +74,8 @@ The learning outcome is a demonstrable foundation: explain core concepts, make s
 Track the work in four reviewable build parts, as requested. The parts describe deliverable slices, not a claim that four messages can replace implementation, device QA, or release gates.
 
 1. **Part 1 — Product foundation and visual/gameplay prototype:** product direction, distinct visual identity, responsive briefing desk, working first case loop, and review of the existing web experience. Delivered as a browser prototype; it is not the Android app.
-2. **Part 2 — Academy and game systems:** 60-day course map, first authored lesson set, daily case rotation, field notes, content validation, and reusable progression/gameplay. This is the current slice; qualified content review remains a launch requirement.
-3. **Part 3 — Native Android product:** Compose app foundation, offline content/state, navigation/accessibility, device testing, and Android build pipeline.
+2. **Part 2 — Academy and game systems:** 60-day course map, first authored lesson set, daily case rotation, field notes, content validation, and reusable progression/gameplay. The browser slice is delivered; qualified content review remains a launch requirement.
+3. **Part 3 — Native Android product:** Compose app foundation, offline content/state, navigation/accessibility, device testing, and Android build pipeline. The native scaffold is in the repository and is the current slice; compiling and device verification are outstanding.
 4. **Part 4 — League and release candidate:** League services and scoring integrity after privacy/moderation design, broader content/device QA, current Play Store declarations, and a verified release candidate.
 
 Do not announce a part as complete until its listed scope is implemented and its acceptance evidence is available. The full Play Store project is complete only after Part 4 release criteria pass.

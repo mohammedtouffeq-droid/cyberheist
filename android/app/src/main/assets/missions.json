@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "content_note": "Fictional, defensive cybersecurity awareness scenarios. This content performs no network actions.",
+  "missions": [
+    {
+      "id": "phishing-first-look",
+      "day": 1,
+      "title": "The too-good-to-be-true parcel",
+      "category": "SPOT THE SCAM",
+      "tone": "orange",
+      "difficulty": "Starter",
+      "duration": "3 min",
+      "xp": 60,
+      "description": "Learn to slow down and verify a message before you click.",
+      "lesson": "Scams often borrow the look of a service you know. Slow down when a message creates pressure or asks you to pay, sign in, or share information through a link you did not expect. Check the sender and the request separately. If you need to contact the service, use its official app or type a known address yourself.",
+      "takeaway": "Pause when a message pressures you. Verify through an official route you choose yourself.",
+      "scenario": "A fictional delivery company texts you: “Your package is paused. Pay a small fee now at parcel-help.example.” You were not expecting a delivery.",
+      "questions": [
+        {
+          "prompt": "What is the safest first move?",
+          "options": ["Open the link to see what it asks for", "Use the delivery company’s official app or website to check independently", "Reply with your full name so support can find your parcel"],
+          "answer": 1,
+          "explanation": "Go to a service through a trusted route you choose yourself. Unexpected urgency and a payment link are reasons to pause."
+        },
+        {
+          "prompt": "What should you do with the unexpected message?",
+          "options": ["Forward it to friends to ask if it looks real", "Report it as spam or phishing, then delete it", "Keep it and try the link later"],
+          "answer": 1,
+          "explanation": "Reporting helps your messaging provider improve filtering. You do not need to interact with a suspicious link."
+        },
+        {
+          "prompt": "Which clue deserves extra scrutiny?",
+          "options": ["The message creates urgency and asks for payment through an unfamiliar link", "It arrived on a weekday", "It uses a short greeting"],
+          "answer": 0,
+          "explanation": "Unexpected payment requests, pressure, and unfamiliar domains are useful warning signs. Verify using a separate trusted channel."
+        }
+      ]
+    },
+    {
+      "id": "password-power-up",
+      "day": 2,
+      "title": "Lock down your account",
+      "category": "ACCOUNT DEFENSE",
+      "tone": "purple",
+      "difficulty": "Starter",
+      "duration": "4 min",
+      "xp": 70,
+      "description": "Build a stronger password and add a second layer of protection.",
+      "lesson": "A reused password can put several accounts at risk if one service has a problem. Use a different, long password for each account; a reputable password manager can help. Add another sign-in factor where available. Never approve an alert you did not start or share a one-time code with someone who contacts you.",
+      "takeaway": "Use a unique long sign-in secret for each account, and turn on a strong second factor.",
+      "scenario": "You are setting up a new fictional gaming account. A friend suggests reusing the password you use for email because it is easy to remember.",
+      "questions": [
+        {
+          "prompt": "What is the strongest password habit?",
+          "options": ["Reuse one memorable password everywhere", "Use a unique, long password for each account, ideally stored in a password manager", "Add “123” to your usual password"],
+          "answer": 1,
+          "explanation": "Unique passwords limit the damage if one service is breached. A reputable password manager can help create and store them."
+        },
+        {
+          "prompt": "What extra protection should you turn on?",
+          "options": ["Multi-factor authentication (MFA), preferably a passkey or authenticator method", "A public profile so friends can confirm it is you", "The same password hint as your other accounts"],
+          "answer": 0,
+          "explanation": "MFA asks for another proof of identity. Passkeys and authenticator methods are generally safer than relying on a password alone."
+        },
+        {
+          "prompt": "A login alert arrives that you did not request. What now?",
+          "options": ["Approve it so the alert stops", "Deny it, change your password from the official app/site, and review account sessions", "Share the alert code with whoever contacts you"],
+          "answer": 1,
+          "explanation": "Never approve a sign-in you did not start or share a one-time code. Use the official service to secure the account and check active sessions."
+        }
+      ]
+    },
+    {
+      "id": "public-wifi-check",
+      "day": 3,
+      "title": "The café Wi-Fi check",
+      "category": "SAFE CONNECTIONS",
+      "tone": "green",
+      "difficulty": "Explorer",
+      "duration": "4 min",
+      "xp": 70,
+      "description": "Make safer choices when connecting on a public network.",
+      "lesson": "A network name is only a label, not proof of who operates it. Confirm the official name with staff before joining. For sensitive activity, use a connection you trust and open the service through its official app or site. An encrypted connection protects information in transit, but it does not make every site or request trustworthy.",
+      "takeaway": "Confirm the network name and keep sensitive activity on a trusted connection and official app.",
+      "scenario": "At a café, two networks appear: “Cafe Guest” on the menu and “Cafe_Free_Fast” with a stronger signal. You need to check a bank notification.",
+      "questions": [
+        {
+          "prompt": "Which network should you choose?",
+          "options": ["The strongest signal, even if you do not know who runs it", "Confirm the official network name with staff before connecting", "Both networks because public Wi-Fi is always encrypted"],
+          "answer": 1,
+          "explanation": "A familiar-looking network name can be imitated. Confirm the correct network with staff before joining."
+        },
+        {
+          "prompt": "What is the safer way to check the bank notification?",
+          "options": ["Use your mobile connection and the official banking app", "Follow a banking link from a pop-up on the Wi-Fi page", "Install a certificate the network asks you to download"],
+          "answer": 0,
+          "explanation": "For sensitive accounts, a trusted mobile connection and official app reduce exposure to untrusted networks and fake login pages."
+        },
+        {
+          "prompt": "A page warns that your device is infected and offers a download. What should you do?",
+          "options": ["Install it immediately to stay protected", "Close the page and use your device’s trusted security settings or official support", "Enter your device password to dismiss the warning"],
+          "answer": 1,
+          "explanation": "Unexpected security pop-ups can be scams. Do not install software or enter credentials from an unsolicited page."
+        }
+      ]
+    },
+    {
+      "id": "privacy-footprint",
+      "day": 4,
+      "title": "The form that asks for too much",
+      "category": "PRIVACY JUDGMENT",
+      "tone": "orange",
+      "difficulty": "Starter",
+      "duration": "5 min",
+      "xp": 50,
+      "description": "Make a careful choice when a service asks for personal details.",
+      "lesson": "Personal data can be copied, combined, or exposed later. Before sharing it, ask whether the feature truly needs that detail and who will receive it. Keep optional permissions disabled until a feature needs them. Choose a limited audience when sharing, and remove optional details when the service lets you.",
+      "takeaway": "Share only information needed for the feature; keep optional permissions off until you need them.",
+      "scenario": "A fictional event-planning app asks for your birthday, home address, contact list, and precise location before it will show a public schedule.",
+      "questions": [
+        {"prompt": "What is the most useful first question?", "options": ["Which of these details are actually needed for the schedule?", "Can I enter a friend's address instead?", "Can I provide every detail to get through faster?"], "answer": 0, "explanation": "Check whether each requested detail is needed for the feature. Avoid sharing extra personal data just because a form asks for it."},
+        {"prompt": "The app says location is optional. What is a sensible choice?", "options": ["Allow always-on location just in case", "Leave it off unless you choose a feature that needs it", "Share your location publicly so the organizer can find you"], "answer": 1, "explanation": "Use the least data and access needed. If a feature needs location, review the choice and the app's explanation first."},
+        {"prompt": "You already submitted more information than needed. What next?", "options": ["Review privacy and account settings, remove optional details, and contact the service if needed", "Post the form publicly to warn people", "Send the same details to a second app for comparison"], "answer": 0, "explanation": "Reduce optional information where the service allows it. Use its official support route if you need help managing the data."}
+      ]
+    },
+    {
+      "id": "update-routine",
+      "day": 5,
+      "title": "A calm update routine",
+      "category": "DEVICE CARE",
+      "tone": "green",
+      "difficulty": "Starter",
+      "duration": "5 min",
+      "xp": 50,
+      "description": "Keep devices current without following suspicious update prompts.",
+      "lesson": "Software updates can include security fixes and reliability improvements. Check for them through the device's built-in settings or the software maker's official channel. Ignore urgent download prompts from unfamiliar pages. If a device no longer receives fixes, plan how to move sensitive work to a supported option.",
+      "takeaway": "Check and install updates through the device's built-in settings or official software channel.",
+      "scenario": "Your phone shows a system update in Settings. Later, a pop-up on an unfamiliar page claims you must install a separate security update immediately.",
+      "questions": [
+        {"prompt": "Where should you check for the real system update?", "options": ["Open the device's built-in Settings and update screen", "Download the file linked by the pop-up", "Search for a mirror that installs it faster"], "answer": 0, "explanation": "Use the device's built-in update settings or the software maker's official channel. An unexpected web pop-up is not a trusted update route."},
+        {"prompt": "What is a good routine for important updates?", "options": ["Install from the official update screen when ready, with enough battery and a backup for important data", "Ignore all updates forever", "Install every file a page labels urgent"], "answer": 0, "explanation": "Updates can fix security and reliability issues. Use official settings and practical preparation rather than an unsolicited download."},
+        {"prompt": "A device no longer receives security updates. What should you consider?", "options": ["Keep using it for every sensitive task because it still turns on", "Plan to move sensitive activity to a supported device and check the maker's options", "Install a random tool that promises lifetime support"], "answer": 1, "explanation": "Unsupported software may miss future fixes. Plan a supported replacement or follow the manufacturer's official guidance."}
+      ]
+    },
+    {
+      "id": "backup-plan",
+      "day": 6,
+      "title": "Can you recover your work?",
+      "category": "RECOVERY HABITS",
+      "tone": "purple",
+      "difficulty": "Starter",
+      "duration": "5 min",
+      "xp": 50,
+      "description": "Choose a backup routine you can actually restore from.",
+      "lesson": "A backup is useful only if it remains available when the original device is lost or damaged. Choose important files, keep a copy in a separate trusted place, and check that the backup completed. Occasionally restore a test file. Keep private recovery material separate from folders shared with other people.",
+      "takeaway": "Keep a separate backup of important files and periodically test that you can restore one.",
+      "scenario": "A student keeps a project, family photos, and account recovery codes on one laptop. They have never checked whether the files are backed up.",
+      "questions": [
+        {"prompt": "What is a useful first step?", "options": ["Choose the important files and set up an automatic backup to a trusted, separate location", "Copy everything to another folder on the same laptop", "Wait until the laptop breaks"], "answer": 0, "explanation": "A backup should remain available if the original device is lost or damaged. Separate, trusted storage gives you a recovery option."},
+        {"prompt": "How do you know the backup will help?", "options": ["Check that the backup completed and periodically practice restoring a test file", "Assume it worked because a button was clicked once", "Share the recovery codes in a group chat"], "answer": 0, "explanation": "A small restore check confirms that files can be recovered. Keep account recovery information private and in a suitable secure place."},
+        {"prompt": "Which item should not be casually copied into a shared backup folder?", "options": ["A public class timetable", "One-time recovery codes or private identity documents", "A copy of a public brochure"], "answer": 1, "explanation": "Sensitive recovery material needs deliberate protection and limited access. Do not place it in a folder shared with other people."}
+      ]
+    },
+    {
+      "id": "foundation-check",
+      "day": 7,
+      "title": "First-week defender check",
+      "category": "FIELD CHECK",
+      "tone": "green",
+      "difficulty": "Checkpoint",
+      "duration": "6 min",
+      "xp": 80,
+      "description": "Bring your first-week habits together in one fictional case.",
+      "lesson": "Good defense starts with small, repeatable decisions: verify an unexpected request through a separate route, deny a sign-in you did not start, limit shared information, and keep a recovery plan. Write down observable facts and follow the organization's approved reporting route when a real concern needs attention.",
+      "takeaway": "Verify unusual requests, deny sign-ins you did not start, and limit who can see personal information.",
+      "scenario": "A fictional club account gets a parcel-fee message, an unfamiliar sign-in prompt, and a request to upload a member list to a public folder.",
+      "evidence": [
+        {"time": "08:14", "label": "Unexpected delivery message", "detail": "An unsolicited text asks for a small payment at parcel-help.example. No delivery was expected."},
+        {"time": "08:17", "label": "Sign-in approval prompt", "detail": "A sign-in request appears. The account owner says they did not start it."},
+        {"time": "08:21", "label": "Shared folder setting", "detail": "A folder containing a fictional club member list is set to anyone-with-the-link access."}
+      ],
+      "questions": [
+        {"prompt": "Which step should happen before interacting with the parcel message?", "options": ["Check the delivery independently through its official app or site", "Open the payment link to discover who sent it", "Forward it with the club member list"], "answer": 0, "explanation": "Use a separate trusted route to verify an unexpected request. The link itself is not proof that the message is genuine."},
+        {"prompt": "An unfamiliar sign-in prompt appears. What is the safer response?", "options": ["Approve it so you can move on", "Deny it, then review the account through its official app or site", "Share any code with someone offering to help"], "answer": 1, "explanation": "Do not approve a sign-in you did not start or share a one-time code. Review the account through a trusted route."},
+        {"prompt": "What should happen before the member list is uploaded?", "options": ["Check who needs it, remove unnecessary details, and choose a restricted sharing setting", "Make the folder public so everyone can find it", "Upload it to a personal account without checking club rules"], "answer": 0, "explanation": "Use the smallest necessary data, confirm the intended recipients, and restrict access to people who need it."}
+      ]
+    }
+  ]
+}

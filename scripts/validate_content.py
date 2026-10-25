@@ -18,6 +18,13 @@ def main() -> int:
     mission_data = load_json(ROOT / "missions.json")
     errors: list[str] = []
 
+    android_assets = ROOT / "android" / "app" / "src" / "main" / "assets"
+    for name in ("curriculum.json", "missions.json"):
+        source_path = ROOT / name
+        asset_path = android_assets / name
+        if not asset_path.is_file() or asset_path.read_bytes() != source_path.read_bytes():
+            errors.append(f"Android asset {name} is missing or out of sync; run scripts/sync_android_content.py.")
+
     duration = course.get("program", {}).get("duration_days")
     modules = course.get("modules", [])
     days = [day for module in modules for day in module.get("days", [])]

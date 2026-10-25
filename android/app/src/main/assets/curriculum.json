@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "program": {
+    "title": "CyberHeist Field Academy",
+    "duration_days": 60,
+    "daily_minutes": 20,
+    "promise": "A structured beginner path with short lessons, safe simulations, recall practice, and a final defensive capstone.",
+    "outcome": "Build and demonstrate strong cybersecurity foundations and beginner defensive workflows. Specialist expertise requires further study, supervised practice, and experience.",
+    "available_days": 7
+  },
+  "modules": [
+    {
+      "id": "foundations", "title": "Start with the signal", "subtitle": "Digital safety foundations", "days": [
+        {"day": 1, "title": "Read a message critically", "objective": "Pause, inspect context, and choose a trusted verification route.", "mission_id": "phishing-first-look"},
+        {"day": 2, "title": "Protect an account", "objective": "Choose unique credentials and add a second proof of identity.", "mission_id": "password-power-up"},
+        {"day": 3, "title": "Choose a trusted connection", "objective": "Recognize network-name uncertainty and protect sensitive activity.", "mission_id": "public-wifi-check"},
+        {"day": 4, "title": "Share less personal data", "objective": "Spot unnecessary data requests and select a safer privacy choice.", "mission_id": "privacy-footprint"},
+        {"day": 5, "title": "Keep devices current", "objective": "Understand updates and choose a safe update path.", "mission_id": "update-routine"},
+        {"day": 6, "title": "Prepare for recovery", "objective": "Use backups and recovery options before a problem occurs.", "mission_id": "backup-plan"},
+        {"day": 7, "title": "Foundation field check", "objective": "Combine the first week's habits in a short defensive case.", "mission_id": "foundation-check"}
+      ]
+    },
+    {
+      "id": "identity", "title": "Identity & access", "subtitle": "Accounts, authentication, and recovery", "days": [
+        {"day": 8, "title": "How sign-in proves identity", "objective": "Separate identity claims from evidence used to verify them."},
+        {"day": 9, "title": "Passkeys in plain language", "objective": "Explain how passkeys reduce reliance on shared secrets."},
+        {"day": 10, "title": "MFA methods compared", "objective": "Choose a second factor based on the account and available options."},
+        {"day": 11, "title": "Account recovery safely", "objective": "Review recovery channels and protect the recovery process."},
+        {"day": 12, "title": "Least privilege", "objective": "Give a user or app only the access needed for its task."},
+        {"day": 13, "title": "Shared devices and sessions", "objective": "Find and close sessions that should no longer be active."},
+        {"day": 14, "title": "Identity review", "objective": "Apply access and recovery habits in a fictional account review."}
+      ]
+    },
+    {
+      "id": "networks", "title": "Networks & the internet", "subtitle": "How everyday connections fit together", "days": [
+        {"day": 15, "title": "A device joins a network", "objective": "Trace the basic path from a device to a service."},
+        {"day": 16, "title": "Addresses and names", "objective": "Distinguish an address from a human-readable domain name."},
+        {"day": 17, "title": "DNS as a directory", "objective": "Describe the role of name lookup without treating it as proof of trust."},
+        {"day": 18, "title": "What encryption protects", "objective": "Explain what an encrypted connection does and does not guarantee."},
+        {"day": 19, "title": "Routers and network boundaries", "objective": "Identify the purpose of a home router and guest network."},
+        {"day": 20, "title": "Wi-Fi settings that matter", "objective": "Choose reasonable home Wi-Fi and guest-access settings."},
+        {"day": 21, "title": "Connection path review", "objective": "Read a fictional network diagram and identify safer choices."}
+      ]
+    },
+    {
+      "id": "devices", "title": "Devices & operating systems", "subtitle": "The everyday systems you rely on", "days": [
+        {"day": 22, "title": "Files and sensitive information", "objective": "Classify common files and choose appropriate handling."},
+        {"day": 23, "title": "Apps and permissions", "objective": "Match permissions to an app's real purpose."},
+        {"day": 24, "title": "Updates and support windows", "objective": "Recognize when software is no longer receiving fixes."},
+        {"day": 25, "title": "Browser safety controls", "objective": "Use browser settings and site indicators with good judgment."},
+        {"day": 26, "title": "Backups and restore checks", "objective": "Plan a backup routine and confirm that recovery is possible."},
+        {"day": 27, "title": "Device loss response", "objective": "Prioritize account protection and device recovery steps."},
+        {"day": 28, "title": "Personal device review", "objective": "Review a fictional device setup for practical improvements."}
+      ]
+    },
+    {
+      "id": "people-data", "title": "People, privacy & trust", "subtitle": "Make careful decisions under pressure", "days": [
+        {"day": 29, "title": "Pressure and persuasion", "objective": "Notice urgency, authority, and secrecy as decision-pressure cues."},
+        {"day": 30, "title": "Verify a request out of band", "objective": "Confirm unusual requests through a separate trusted channel."},
+        {"day": 31, "title": "Personal data and consent", "objective": "Minimize collection and explain a reasonable data choice."},
+        {"day": 32, "title": "Safe sharing and permissions", "objective": "Check recipients and access before sharing a file."},
+        {"day": 33, "title": "Report a concern", "objective": "Choose a useful reporting route and include relevant facts."},
+        {"day": 34, "title": "Keep useful evidence", "objective": "Preserve a clear timeline without spreading sensitive material."},
+        {"day": 35, "title": "Trust and privacy case", "objective": "Resolve a fictional privacy concern with a measured response."}
+      ]
+    },
+    {
+      "id": "monitoring", "title": "Signals & monitoring", "subtitle": "Understand records and triage alerts", "days": [
+        {"day": 36, "title": "What an event log records", "objective": "Read timestamps, actors, actions, and outcomes in sample events."},
+        {"day": 37, "title": "Normal activity and context", "objective": "Use a baseline and context before deciding an event is unusual."},
+        {"day": 38, "title": "Sign-in alerts", "objective": "Prioritize a sign-in alert using time, location context, and user report."},
+        {"day": 39, "title": "Signal, noise, and confidence", "objective": "Record evidence and uncertainty separately."},
+        {"day": 40, "title": "Triage a small queue", "objective": "Rank fictional alerts by impact and urgency."},
+        {"day": 41, "title": "Write a useful incident note", "objective": "Summarize observable facts, actions, and next owner."},
+        {"day": 42, "title": "Monitoring desk exercise", "objective": "Triage a static, fictional event timeline."}
+      ]
+    },
+    {
+      "id": "secure-build", "title": "Build & configure carefully", "subtitle": "Defensive design for apps and cloud services", "days": [
+        {"day": 43, "title": "Security goals for a feature", "objective": "Name the data, people, and failure outcomes a feature should protect."},
+        {"day": 44, "title": "Validate input as data", "objective": "Explain why apps check format, length, and allowed values."},
+        {"day": 45, "title": "Access checks in an app", "objective": "Match each action to an explicit permission check."},
+        {"day": 46, "title": "Protect configuration values", "objective": "Keep private configuration out of public code and logs."},
+        {"day": 47, "title": "Cloud roles and storage", "objective": "Choose limited access for a fictional cloud service."},
+        {"day": 48, "title": "Secure defaults", "objective": "Prefer settings that protect a user before customization."},
+        {"day": 49, "title": "Configuration review", "objective": "Improve a fictional app and cloud configuration."}
+      ]
+    },
+    {
+      "id": "response", "title": "Respond & recover", "subtitle": "A calm, repeatable incident workflow", "days": [
+        {"day": 50, "title": "Recognize and report", "objective": "Decide when to report and whom to contact."},
+        {"day": 51, "title": "Prioritize impact", "objective": "Assess affected accounts, devices, and information."},
+        {"day": 52, "title": "Contain with authority", "objective": "Choose a proportionate action within your role."},
+        {"day": 53, "title": "Preserve a clear timeline", "objective": "Record what happened and when without guessing."},
+        {"day": 54, "title": "Restore and verify", "objective": "Recover from a known-good state and confirm normal operation."},
+        {"day": 55, "title": "Communicate clearly", "objective": "Give affected people accurate next steps without speculation."},
+        {"day": 56, "title": "After-action learning", "objective": "Turn a fictional incident into a small, owned improvement."}
+      ]
+    },
+    {
+      "id": "capstone", "title": "Field capstone", "subtitle": "Show what you can do with the foundations", "days": [
+        {"day": 57, "title": "Capstone briefing", "objective": "Review the scope and success criteria for a fictional case."},
+        {"day": 58, "title": "Investigate the timeline", "objective": "Connect message, account, and event clues without assuming facts."},
+        {"day": 59, "title": "Choose and explain a response", "objective": "Select proportionate defensive actions and explain trade-offs."},
+        {"day": 60, "title": "Defender field review", "objective": "Demonstrate core habits in a reviewed, fictional tabletop case."}
+      ]
+    }
+  ]
+}

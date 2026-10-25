@@ -6,9 +6,9 @@
 
 ## Current repository
 
-The active build is a static browser prototype: `index.html`, `style.css`, `game.js`, and `missions.json`. It has no server, Android package, user account, analytics, or online multiplayer. Run it through a local static web server because the browser loads mission data with `fetch()`.
+The repository has a static browser prototype (`index.html`, `style.css`, `game.js`) plus an initial native Android Compose app in `android/`. Both load the same bundled course map and playable mission pack. There is no product server, user account, analytics, or online multiplayer. The browser preview uses a local static web server because it loads mission data with `fetch()`.
 
-The browser prototype is for validating the learning loop and visual direction. It is not the planned Android application architecture.
+The browser prototype validates the learning loop and visual direction. The Android project now establishes the planned native architecture, but still requires an Android SDK build and device testing before it can be considered a working Android release.
 
 ## Android direction
 
@@ -20,7 +20,7 @@ Build the Play Store client as a native Android application using Kotlin and Jet
 - **Presentation:** ViewModels expose screen state and handle player actions without embedding content policy in UI components.
 - **Domain:** typed mission, decision, scoring, mastery, and progression models; pure rules for scoring and unlocks.
 - **Content:** versioned bundled lesson packs with schema/version validation. A malformed lesson is rejected and reported without crashing the app.
-- **Storage:** Room for completed lessons, answers, and history if relational queries are useful; DataStore for preferences and small progression settings. Keep first release data on-device.
+- **Storage:** DataStore for completed lessons, answers, notes, and small progression settings. Keep first release data on-device.
 - **Network:** absent from the first release. Add only behind an explicit future feature decision, with authenticated, server-validated league operations.
 
 ### Suggested package boundaries
@@ -38,6 +38,10 @@ core/designsystem/
 ```
 
 Keep the first native build modular without introducing extra frameworks until a concrete need appears. Maintain a single source of truth for lesson state and scoring rules.
+
+### Native foundation status
+
+The current `android/app` contains Compose screens for Briefing, Academy, Cases, Notes, the learning record, and a decision/debrief flow. Bundled `curriculum.json` and `missions.json` are parsed into typed Kotlin models. Preferences DataStore persists XP, completed mission IDs, streak, and player-authored field notes. The package ID and target SDK are provisional; no network permission, accounts, analytics, ads, or multiplayer are included. The project has not been compiled or exercised on an Android device because the current workspace has no JDK or Android SDK. Keep player notes free of passwords, recovery codes, and other secrets.
 
 ## Lesson content model
 
