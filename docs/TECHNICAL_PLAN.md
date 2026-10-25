@@ -8,7 +8,7 @@
 
 The repository has a static browser prototype (`index.html`, `style.css`, `game.js`) plus an initial native Android Compose app in `android/`. Both load the same bundled course map and playable mission pack. There is no product server, user account, analytics, or online multiplayer. The browser preview uses a local static web server because it loads mission data with `fetch()`.
 
-The browser prototype now includes a searchable 60-case library, four self-contained interactive practice simulations linked from the daily lessons, local notes, sequential Academy unlocks, and mastery-gated XP with shuffled answer presentation. These browser systems are still a prototype; the Android project requires practice-lab, filtering, and note-composer parity work, an Android SDK build, and device testing before it can be considered a working Android release.
+The browser prototype now includes separate Briefing, Case, Practice, and Record views; a searchable 60-case library; nine self-contained interactive practice simulations; an allow-listed terminal that reads one fixed fictional log bundle; local notes; sequential Academy unlocks; and mastery-gated XP with shuffled answer presentation. These browser systems are still a prototype; the Android project requires practice-lab, terminal, filtering, and note-composer parity work, an Android SDK build, and device testing before it can be considered a working Android release.
 
 ## Android direction
 
@@ -56,7 +56,7 @@ Each lesson should be data, not executable code. A reviewed lesson includes:
 
 The browser prototype separates the 60-day outline (`curriculum.json`) from playable scenario content (`missions.json`); the current pack maps each course day to a playable mission. Day 7 includes a static fictional evidence timeline rendered as text. `scripts/build_course_pack.py` rebuilds the data pack, and `scripts/validate_content.py` checks day coverage, lesson references, answer indexes, field-guide and practice copy, evidence fields, and required explanations; these structural checks do not replace qualified subject-matter review.
 
-The renderer must treat lesson text as text, not markup or commands. The client must not interpret a lesson as a URL to visit, a shell command to execute, a network target to inspect, or a credential to capture. Remote content, if ever introduced, is untrusted input and must pass the same schema and review rules as bundled content.
+The renderer must treat lesson text as text, not markup or commands. The client must not interpret a lesson as a URL to visit, an arbitrary shell command to execute, a network target to inspect, or a credential to capture. The browser training terminal accepts only exact allow-listed commands over a hard-coded fictional dataset. Remote content, if ever introduced, is untrusted input and must pass the same schema and review rules as bundled content.
 
 ## Privacy and security baseline
 

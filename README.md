@@ -5,6 +5,7 @@ CyberHeist is a free cybersecurity learning game project. The browser prototype 
 ## Safety and privacy
 
 - Missions are simulations. The app does not scan networks, connect to targets, crack passwords, or access accounts.
+- The browser training terminal reads a fixed, fictional log bundle through an allow-list of commands; it cannot run a host shell command, access the device filesystem, or connect to a network.
 - Browser progress uses this device's local storage; Android progress uses on-device DataStore. There are no accounts, analytics, ads, purchases, or subscriptions in these MVP builds.
 - Mission content is bundled in `missions.json`; the game does not need an AI service or API key.
 - Never use a training exercise to access a real account or system without explicit authorization.
@@ -26,9 +27,9 @@ To regenerate the 60-day content pack, run `python scripts/build_course_pack.py`
 
 ## Project structure
 
-- `index.html` — responsive briefing, searchable case library, practice floor, and private notes
+- `index.html` — separately routed briefing, record, searchable case library, practice floor, and private notes
 - `style.css` — responsive visual design
-- `game.js` — case flow, shuffled answer presentation, four interactive safe simulations, notes, and local progress
+- `game.js` — routed case flow, shuffled answer presentation, nine interactive safe simulations, an allow-listed fictional log terminal, notes, and local progress
 - `missions.json` — authored fictional learning scenarios and static case evidence
 - `curriculum.json` — 60-day beginner-to-foundation course map, with one playable mission for each day
 - `scripts/build_course_pack.py` — reproducibly builds the authored course pack and keeps the learning promise bounded

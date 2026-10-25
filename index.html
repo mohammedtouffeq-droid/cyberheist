@@ -11,7 +11,7 @@
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <a class="brand" href="#home" aria-label="CyberHeist home">
+      <a class="brand" href="#home" data-route-link aria-label="CyberHeist home">
         <span class="brand-mark">CH</span>
         <span class="brand-copy">CYBERHEIST<small>SECURITY FIELD OFFICE</small></span>
       </a>
@@ -24,18 +24,19 @@
     <div class="app-layout">
       <nav class="side-rail" aria-label="Main navigation">
         <span class="rail-label">WORKSPACE</span>
-        <a class="nav-link active" href="#home"><span class="nav-number">01</span> Briefing</a>
+        <a class="nav-link active" href="#home" data-route-link><span class="nav-number">01</span> Briefing</a>
         <button class="nav-link course-nav" id="academyRailButton"><span class="nav-number">02</span> 60-day academy</button>
-        <a class="nav-link" href="#cases"><span class="nav-number">03</span> Case files</a>
+        <a class="nav-link" href="#cases" data-route-link><span class="nav-number">03</span> Case files</a>
         <button class="nav-link notes-nav" id="notesRailButton"><span class="nav-number">04</span> Field notes</button>
-        <a class="nav-link" href="#labs"><span class="nav-number">05</span> Lab arcade</a>
-        <a class="nav-link" href="#record"><span class="nav-number">06</span> Your record</a>
+        <a class="nav-link" href="#labs" data-route-link><span class="nav-number">05</span> Lab arcade</a>
+        <a class="nav-link" href="#record" data-route-link><span class="nav-number">06</span> Your record</a>
         <div class="rail-spacer"></div>
         <div class="rail-note"><span class="note-rule"></span><p>Every case is fictional.<br>Every skill is real.</p></div>
         <span class="rail-version">FIELD MANUAL <b>01—A</b></span>
       </nav>
 
-      <main id="home" class="workspace">
+      <main class="workspace">
+        <section id="home" class="route-view" data-route-view aria-label="Operator briefing">
         <section class="desk-heading">
           <div><p class="eyebrow"><span class="eyebrow-rule"></span> OPERATOR BRIEFING <span class="briefing-date" id="briefingDate">FIELD NOTE 001</span></p><h1>Good instincts are<br><em>your best firewall.</em></h1><p class="welcome-copy">Read the signal. Make the call. Learn why it matters.</p></div>
           <div class="day-stamp"><span class="stamp-label">YOUR FIELD STREAK</span><strong id="streakValue">0 <small>DAYS</small></strong><span class="stamp-caption">One smart choice at a time.</span></div>
@@ -49,33 +50,58 @@
           </div>
           <div class="featured-foot"><span>LESSON + SIMULATION</span><span class="foot-divider"></span><span>FICTIONAL CASE</span><span class="foot-spacer"></span><span id="featuredXp" class="featured-xp">+50 XP</span></div>
         </section>
+        <div class="briefing-next"><span class="briefing-next-index">NEXT SHIFT</span><strong>Choose a case. Try the lab. Keep your notes.</strong><span>Your profile stays on this device.</span></div>
+        </section>
 
-        <section id="record" class="record-strip" aria-label="Learning record">
+        <section id="record" class="route-view record-view" data-route-view aria-labelledby="recordTitle" hidden>
+          <div class="page-heading"><p class="eyebrow"><span class="eyebrow-rule"></span> OPERATOR RECORD</p><h1 id="recordTitle">Evidence of practice.</h1><p class="page-summary">Progress is saved locally on this device. Only completed work appears here.</p></div>
+          <section class="record-strip" aria-label="Learning record">
           <div class="record-heading"><span class="record-icon">↗</span><div><span class="record-label">YOUR RECORD</span><strong id="levelValue">Rookie</strong></div></div>
           <div class="record-progress"><div class="record-progress-top"><span>FIELD EXPERIENCE</span><span id="xpValue">0 XP</span></div><div class="progress-track"><span id="xpProgress"></span></div></div>
           <div class="record-cleared"><span class="record-label">CASES CLEARED</span><strong id="completedValue">0 <small>/ 3</small></strong></div>
-          <div class="record-mark" id="recordMark" aria-label="Practice labs completed">0 / 4 LABS</div>
+          <div class="record-mark" id="recordMark" aria-label="Practice labs completed">0 / 9 LABS</div>
+          </section>
+          <div class="record-panels">
+            <article class="record-panel"><span class="panel-kicker">01 / CASEWORK</span><h2>Cases cleared</h2><p>Fictional scenarios completed from the case library or academy.</p><strong id="recordCaseDetail">0 cases</strong></article>
+            <article class="record-panel"><span class="panel-kicker">02 / PRACTICE</span><h2>Simulations passed</h2><p>Hands-on exercises completed in the safe practice floor.</p><strong id="recordLabDetail">0 of 9</strong></article>
+            <article class="record-panel"><span class="panel-kicker">03 / EVIDENCE</span><h2>Log review lab</h2><p>Read a fictional authentication log, identify the event, and choose a proportionate response.</p><strong id="recordTerminalDetail">Not completed</strong></article>
+          </div>
+          <p class="record-boundary">This record measures practice in this prototype; it is not a certification or a claim of professional readiness.</p>
         </section>
 
-        <section id="labs" class="lab-section" aria-labelledby="labTitle">
-          <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-rule"></span> THE PRACTICE FLOOR</p><h2 id="labTitle">Work the problem, not a quiz.</h2><p class="section-copy">Hands-on toy exercises. Every artifact is fictional; nothing touches a real account or network.</p></div><span class="library-index">04 SAFE SIMULATIONS</span></div>
+        <section id="labs" class="route-view lab-section" data-route-view aria-labelledby="labTitle" hidden>
+          <div class="page-heading"><p class="eyebrow"><span class="eyebrow-rule"></span> PRACTICE FLOOR / ISOLATED</p><h1>Work the evidence.</h1><p class="page-summary">Every exercise runs on fictional data in this page. No real device, account, or network is accessed.</p></div>
+          <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-rule"></span> THE PRACTICE FLOOR</p><h2 id="labTitle">Pick a simulation.</h2><p class="section-copy">Nine visual drills plus a read-only training terminal. Each uses fictional data and a different defensive task.</p></div><span class="library-index">09 DRILLS + TERMINAL</span></div>
           <div id="labGrid" class="lab-grid">
             <article class="lab-card"><span class="lab-index">01 / MESSAGE ANALYSIS</span><h3>Signal Hunt</h3><p>Mark the clues that make a fictional service message unsafe to trust.</p><button type="button" class="mission-button" data-lab-id="signal-hunt">Open simulation <span>↗</span></button></article>
             <article class="lab-card"><span class="lab-index">02 / ACCESS DESIGN</span><h3>Permission Desk</h3><p>Give a pretend utility app only the access its job needs.</p><button type="button" class="mission-button" data-lab-id="permission-desk">Open simulation <span>↗</span></button></article>
             <article class="lab-card"><span class="lab-index">03 / NETWORK CONCEPTS</span><h3>Packet Route</h3><p>Arrange a fictional connection path and learn what each stop does.</p><button type="button" class="mission-button" data-lab-id="packet-route">Open simulation <span>↗</span></button></article>
             <article class="lab-card"><span class="lab-index">04 / INCIDENT RESPONSE</span><h3>Response Runbook</h3><p>Put a calm, authorized response in a useful order.</p><button type="button" class="mission-button" data-lab-id="response-runbook">Open simulation <span>↗</span></button></article>
+            <article class="lab-card"><span class="lab-index">05 / SECURE CONFIGURATION</span><h3>Configuration Audit</h3><p>Find risky access, default credentials, and secrets in fictional settings.</p><button type="button" class="mission-button" data-lab-id="config-audit">Open simulation <span>↗</span></button></article>
+            <article class="lab-card"><span class="lab-index">06 / PRIVACY DESIGN</span><h3>Data Minimizer</h3><p>Choose what a simple service actually needs to collect.</p><button type="button" class="mission-button" data-lab-id="data-minimizer">Open simulation <span>↗</span></button></article>
+            <article class="lab-card"><span class="lab-index">07 / SECURE DEVELOPMENT</span><h3>Secure Code Review</h3><p>Spot unsafe patterns in a fictional change request.</p><button type="button" class="mission-button" data-lab-id="code-review">Open simulation <span>↗</span></button></article>
+            <article class="lab-card"><span class="lab-index">08 / SECURITY OPERATIONS</span><h3>Alert Queue</h3><p>Prioritize a fictional alert queue by impact and evidence.</p><button type="button" class="mission-button" data-lab-id="alert-triage">Open simulation <span>↗</span></button></article>
+            <article class="lab-card"><span class="lab-index">09 / BACKUP &amp; RECOVERY</span><h3>Recovery Check</h3><p>Plan a controlled restore and verify that it worked.</p><button type="button" class="mission-button" data-lab-id="recovery-check">Open simulation <span>↗</span></button></article>
           </div>
+          <section class="terminal-module" aria-labelledby="terminalTitle">
+            <div class="terminal-heading"><div><p class="eyebrow"><span class="eyebrow-rule"></span> TERMINAL ROOM / TRAINING IMAGE</p><h2 id="terminalTitle">Read the sign-in trail.</h2><p>Use the simulated shell to review a fictional authentication event. Commands are allow-listed; this is not a system terminal.</p></div><span class="terminal-seal">OFFLINE<br>SIMULATOR</span></div>
+            <div class="terminal-brief"><strong>YOUR OBJECTIVE</strong><ol><li>Find the source address on the denied MFA event.</li><li>Submit that address with <code>answer &lt;address&gt;</code>.</li><li>Choose an authorized, owner-led next step with <code>decision owner-led</code>.</li></ol></div>
+            <div id="terminalOutput" class="terminal-output" role="log" aria-live="polite" aria-relevant="additions text"><p class="terminal-line terminal-system">CyberHeist training image · synthetic incident bundle IR-04</p><p class="terminal-line">Type <code>help</code> to see the read-only commands.</p></div>
+            <form id="terminalForm" class="terminal-form" autocomplete="off"><label for="terminalCommand"><span>trainee@field-lab:~$</span></label><input id="terminalCommand" name="command" type="text" spellcheck="false" autocapitalize="off" maxlength="120" placeholder="help" aria-label="Simulated terminal command"><button type="submit">Run command <span aria-hidden="true">↵</span></button></form>
+            <p class="terminal-safety">No host shell · No network access · Fictional documentation IPs only · Progress stays on this device</p>
+          </section>
         </section>
 
-        <section id="cases" class="case-section">
-          <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-rule"></span> THE CASE LIBRARY</p><h2>Choose what to investigate.</h2></div><span id="missionCount" class="library-index">01—03&nbsp; / &nbsp;AVAILABLE</span></div>
+        <section id="cases" class="route-view case-section" data-route-view aria-labelledby="casesTitle" hidden>
+          <div class="page-heading"><p class="eyebrow"><span class="eyebrow-rule"></span> CASE LIBRARY / FICTIONAL SCENARIOS</p><h1 id="casesTitle">Choose what to investigate.</h1><p class="page-summary">Each case has its own context, decision, and explanation. Search by title or learning area.</p></div>
+          <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-rule"></span> THE CASE LIBRARY</p><h2>60 case files.</h2></div><span id="missionCount" class="library-index">01—03&nbsp; / &nbsp;AVAILABLE</span></div>
           <div class="case-tools"><label for="caseSearch">Search cases</label><input id="caseSearch" type="search" placeholder="Title or learning area" autocomplete="off"><label for="caseCategory">Area</label><select id="caseCategory"><option value="all">All areas</option></select></div>
           <div id="missionGrid" class="mission-grid" aria-live="polite"><div class="loading-card">Opening case files…</div></div>
         </section>
         <footer><span>CYBERHEIST&nbsp; / &nbsp;FIELD OFFICE <i>—</i> LEARN THE SIGNAL. BUILD THE INSTINCT.</span><span>PROGRESS SAVED ON THIS DEVICE</span></footer>
       </main>
     </div>
-      <nav class="mobile-nav" aria-label="Main navigation"><a class="mobile-link active" href="#home"><span>01</span>Briefing</a><button class="mobile-link" id="academyMobileButton"><span>60</span>Academy</button><a class="mobile-link" href="#cases"><span>02</span>Cases</a><a class="mobile-link" href="#labs"><span>03</span>Labs</a><button class="mobile-link" id="notesMobileButton"><span id="mobileNoteCount">00</span>Notes</button></nav>
+      <nav class="mobile-nav" aria-label="Main navigation"><a class="mobile-link active" href="#home" data-route-link><span aria-hidden="true">01</span><b>Briefing</b></a><button class="mobile-link" id="academyMobileButton"><span aria-hidden="true">60</span><b>Academy</b></button><a class="mobile-link" href="#cases" data-route-link><span aria-hidden="true">02</span><b>Cases</b></a><a class="mobile-link" href="#labs" data-route-link><span aria-hidden="true">03</span><b>Labs</b></a><button class="mobile-link" id="notesMobileButton"><span id="mobileNoteCount" aria-hidden="true">00</span><b>Notes</b></button><button class="mobile-link" id="recordMobileButton" data-route-link="record"><span aria-hidden="true">04</span><b>Record</b></button></nav>
   </div>
 
   <dialog id="missionDialog" class="mission-dialog" aria-labelledby="dialogTitle"><div class="dialog-top"><span class="dialog-chip" id="dialogCategory">CASE FILE</span><button id="closeDialog" class="close-button" aria-label="Exit case and return to the field office">Exit ×</button></div><div id="missionStage"></div></dialog>

@@ -4,6 +4,8 @@ const LABS = {
   'signal-hunt': {
     title: 'Signal Hunt',
     category: 'MESSAGE ANALYSIS',
+    mode: 'select',
+    workbenchTitle: 'MARK THE SIGNALS THAT NEED A SEPARATE CHECK',
     brief: 'Inspect the fictional service message. Mark the details that deserve verification before you act.',
     artifact: 'Fictional message: “Your club membership will close in 10 minutes. Confirm your account at club-help.example and pay a reactivation fee.”',
     items: [
@@ -17,6 +19,8 @@ const LABS = {
   'permission-desk': {
     title: 'Permission Desk',
     category: 'ACCESS DESIGN',
+    mode: 'select',
+    workbenchTitle: 'GRANT ONLY WHAT THE FEATURE NEEDS',
     brief: 'A fictional flashlight utility needs to turn its light on. Select only the permission needed for that job.',
     artifact: 'Toy app request: Camera (controls the light), Contacts, Location, Microphone.',
     items: [
@@ -30,6 +34,8 @@ const LABS = {
   'packet-route': {
     title: 'Packet Route',
     category: 'NETWORK CONCEPTS',
+    mode: 'order',
+    workbenchTitle: 'ARRANGE THE SIMPLIFIED CONNECTION PATH',
     brief: 'Put the fictional connection path in order. This is a paper model; it sends no packets and uses no real addresses.',
     artifact: 'Arrange the components from the learner’s device toward the requested service.',
     items: [
@@ -43,6 +49,8 @@ const LABS = {
   'response-runbook': {
     title: 'Response Runbook',
     category: 'INCIDENT RESPONSE',
+    mode: 'order',
+    workbenchTitle: 'ARRANGE A CALM RESPONSE',
     brief: 'Order a calm response for a fictional account alert. Stay within the account owner’s authority.',
     artifact: 'A person reports an unexpected sign-in alert. No one has confirmed whether the account was accessed.',
     items: [
@@ -52,6 +60,83 @@ const LABS = {
       { label: 'Document what changed and what remains unknown', clue: true },
     ],
     debrief: 'A useful response preserves facts, acts through an authorized route, checks recovery and sessions, then records outcomes and uncertainty. Never collect or share the person’s password or codes.',
+  },
+  'config-audit': {
+    title: 'Configuration Audit',
+    category: 'SECURE CONFIGURATION',
+    mode: 'select',
+    workbenchTitle: 'FLAG THE SETTINGS THAT NEED A FIX',
+    brief: 'Review a fictional service configuration. Select the choices that create avoidable exposure.',
+    artifact: 'Toy review: remote administration is open to every network; a shared default admin password is still active; updates come from the official vendor channel; a session token appears in a debug log; read access is limited to the service role.',
+    items: [
+      { label: 'Remote administration open to every network', clue: true },
+      { label: 'Shared default administrator password', clue: true },
+      { label: 'Updates installed from the official vendor channel', clue: false },
+      { label: 'Session token written into a debug log', clue: true },
+      { label: 'Read access limited to the service role', clue: false },
+    ],
+    debrief: 'Restrict management access, replace shared defaults with managed unique credentials, and keep tokens out of logs. The fictional configuration should be corrected by its authorized owner and reviewed before release.',
+  },
+  'data-minimizer': {
+    title: 'Data Minimizer',
+    category: 'PRIVACY DESIGN',
+    mode: 'select',
+    workbenchTitle: 'KEEP ONLY DATA NEEDED FOR THE TASK',
+    brief: 'A fictional community sends a monthly email bulletin. Choose the data required to deliver it.',
+    artifact: 'Toy signup form proposes: email address, full birth date, government ID, home address, and optional topic preferences.',
+    items: [
+      { label: 'Email address for delivery', clue: true },
+      { label: 'Full birth date', clue: false },
+      { label: 'Government ID number', clue: false },
+      { label: 'Home address', clue: false },
+      { label: 'Optional topic preferences', clue: false },
+    ],
+    debrief: 'Only the email address is necessary to deliver the bulletin. Make preferences optional, explain why any data is collected, and provide a clear way to stop future mail.',
+  },
+  'code-review': {
+    title: 'Secure Code Review',
+    category: 'SECURE DEVELOPMENT',
+    mode: 'select',
+    workbenchTitle: 'MARK THE CODE REVIEW FINDINGS',
+    brief: 'Review a fictional change request. Select patterns a developer should fix before release.',
+    artifact: 'Toy code review: user text is inserted into a database query by string concatenation; the current user role is checked before showing a record; user-provided text is rendered as trusted HTML; display names are length- and format-validated.',
+    items: [
+      { label: 'Concatenate user input into a database query', clue: true },
+      { label: 'Check the user role before showing a record', clue: false },
+      { label: 'Render user-provided text as trusted HTML', clue: true },
+      { label: 'Validate display-name length and allowed format', clue: false },
+    ],
+    debrief: 'Use parameterized queries for database values and context-aware output encoding for untrusted text. Keep authorization checks and bounded input validation. This puzzle reviews defensive code patterns; it does not run or exploit code.',
+  },
+  'alert-triage': {
+    title: 'Alert Queue',
+    category: 'SECURITY OPERATIONS',
+    mode: 'order',
+    workbenchTitle: 'ORDER BY URGENCY, THEN INVESTIGATE',
+    brief: 'Rank a small fictional alert queue from highest to lowest immediate concern. Context and confirmation still matter.',
+    artifact: 'Four toy alerts: confirmed exposure of a shared administrator credential; an account owner reports an unfamiliar active session; one denied MFA challenge with no success event; a routine update failed on a test device.',
+    items: [
+      { label: 'Confirmed exposure of a shared administrator credential', clue: true },
+      { label: 'Owner reports an unfamiliar active session', clue: true },
+      { label: 'One denied MFA challenge; no successful sign-in seen', clue: true },
+      { label: 'Routine update failed on a test device', clue: true },
+    ],
+    debrief: 'Prioritize the confirmed high-impact exposure, then the owner-reported active session, then the isolated denied challenge, then the routine test-device update issue. Severity is a starting point; responders verify evidence and follow their authority.',
+  },
+  'recovery-check': {
+    title: 'Recovery Check',
+    category: 'BACKUP & RECOVERY',
+    mode: 'order',
+    workbenchTitle: 'ORDER A CONTROLLED RECOVERY',
+    brief: 'A fictional team is restoring a service after a disruption. Put its defensive recovery steps in order.',
+    artifact: 'Arrange: verify service and recovery owner; choose a known-good backup; restore in the approved recovery environment; validate operation and record the outcome.',
+    items: [
+      { label: 'Confirm the service owner, impact, and recovery scope', clue: true },
+      { label: 'Select a known-good backup and verify its timestamp', clue: true },
+      { label: 'Restore through the approved recovery environment', clue: true },
+      { label: 'Check normal operation and document the result', clue: true },
+    ],
+    debrief: 'Recovery needs an owner and a defined scope, a known-good source, an approved restore path, and a validation step. A backup is only useful when it can be restored and checked.',
   },
 };
 
@@ -102,11 +187,12 @@ function readProgress() {
       completed: Array.isArray(parsed.completed) ? parsed.completed.filter((id) => typeof id === 'string') : [],
       notes: Array.isArray(parsed.notes) ? parsed.notes.filter((note) => note && typeof note.missionId === 'string' && typeof note.text === 'string').slice(0, 100) : [],
       labsCompleted: Array.isArray(parsed.labsCompleted) ? parsed.labsCompleted.filter((id) => typeof id === 'string') : [],
+      terminalLabCompleted: parsed.terminalLabCompleted === true,
       lastPlayed: typeof parsed.lastPlayed === 'string' ? parsed.lastPlayed : null,
       streak: Number.isFinite(parsed.streak) ? Math.max(0, parsed.streak) : 0
     };
   } catch {
-    return { xp: 0, completed: [], notes: [], labsCompleted: [], lastPlayed: null, streak: 0 };
+    return { xp: 0, completed: [], notes: [], labsCompleted: [], terminalLabCompleted: false, lastPlayed: null, streak: 0 };
   }
 }
 
@@ -125,6 +211,10 @@ class CyberHeistGame {
     this.returnMission = null;
     this.labSelection = new Set();
     this.labOrder = [];
+    this.terminalStep = 'inspect';
+    this.terminalEvidenceInspected = false;
+    this.terminalHistory = [];
+    this.terminalHistoryIndex = 0;
     this.toastTimer = null;
     this.grid = document.getElementById('missionGrid');
     this.labGrid = document.getElementById('labGrid');
@@ -136,6 +226,7 @@ class CyberHeistGame {
     this.stage = document.getElementById('missionStage');
     this.toast = document.getElementById('toast');
     this.bindEvents();
+    this.navigate(this.routeFromHash(), { updateHistory: false, scroll: false });
     this.loadMissions();
   }
 
@@ -189,20 +280,31 @@ class CyberHeistGame {
       event.preventDefault();
       this.saveManualNote();
     });
-    document.querySelectorAll('.nav-link, .mobile-link').forEach((link) => {
+    document.querySelectorAll('[data-route-link]').forEach((link) => {
       link.addEventListener('click', (event) => {
-        const href = link.getAttribute('href');
-        if (href?.startsWith('#')) {
-          const destination = document.querySelector(href);
-          if (destination) {
-            event.preventDefault();
-            history.replaceState(null, '', href);
-            destination.scrollIntoView({ behavior: 'auto', block: 'start' });
-          }
-        }
-        document.querySelectorAll('.nav-link, .mobile-link').forEach((item) => item.classList.remove('active'));
-        if (href) document.querySelectorAll(`[href="${href}"]`).forEach((item) => item.classList.add('active'));
+        event.preventDefault();
+        const route = link.dataset.routeLink || link.getAttribute('href')?.slice(1);
+        this.navigate(route);
       });
+    });
+    window.addEventListener('hashchange', () => this.navigate(this.routeFromHash(), { updateHistory: false }));
+    document.getElementById('terminalForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const input = document.getElementById('terminalCommand');
+      this.runTerminalCommand(input.value);
+      input.value = '';
+      input.focus();
+    });
+    document.getElementById('terminalCommand').addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowUp' && this.terminalHistory.length) {
+        event.preventDefault();
+        this.terminalHistoryIndex = Math.max(0, this.terminalHistoryIndex - 1);
+        event.target.value = this.terminalHistory[this.terminalHistoryIndex] || '';
+      } else if (event.key === 'ArrowDown' && this.terminalHistory.length) {
+        event.preventDefault();
+        this.terminalHistoryIndex = Math.min(this.terminalHistory.length, this.terminalHistoryIndex + 1);
+        event.target.value = this.terminalHistory[this.terminalHistoryIndex] || '';
+      }
     });
     this.dialog.addEventListener('click', (event) => {
       if (event.target === this.dialog) this.dialog.close();
@@ -231,6 +333,34 @@ class CyberHeistGame {
       this.academyDialog.close();
       this.startMission(mission);
     });
+  }
+
+  routeFromHash() {
+    const route = window.location.hash.replace(/^#/, '');
+    return document.getElementById(route)?.matches('[data-route-view]') ? route : 'home';
+  }
+
+  navigate(route, { updateHistory = true, scroll = true, focus = scroll } = {}) {
+    const target = document.getElementById(route)?.matches('[data-route-view]') ? document.getElementById(route) : null;
+    const selectedRoute = target ? route : 'home';
+    document.querySelectorAll('[data-route-view]').forEach((view) => {
+      view.hidden = view.id !== selectedRoute;
+    });
+    this.currentRoute = selectedRoute;
+    document.querySelectorAll('.nav-link, .mobile-link').forEach((item) => {
+      const itemRoute = item.dataset.routeLink || item.getAttribute('href')?.replace(/^#/, '');
+      item.classList.toggle('active', itemRoute === selectedRoute);
+    });
+    const nextHash = `#${selectedRoute}`;
+    if (updateHistory && window.location.hash !== nextHash) history.pushState(null, '', nextHash);
+    if (scroll) window.scrollTo({ top: 0, behavior: 'auto' });
+    if (focus) {
+      const heading = target?.querySelector('h1, h2');
+      if (heading) {
+        heading.tabIndex = -1;
+        heading.focus({ preventScroll: true });
+      }
+    }
   }
 
   async loadMissions() {
@@ -263,6 +393,9 @@ class CyberHeistGame {
     document.getElementById('xpProgress').style.width = `${level.progress}%`;
     document.getElementById('completedValue').textContent = `${completedCount} / ${this.missions.length}`;
     document.getElementById('recordMark').textContent = `${this.progress.labsCompleted.length} / ${Object.keys(LABS).length} LABS`;
+    document.getElementById('recordCaseDetail').textContent = `${completedCount} ${completedCount === 1 ? 'case' : 'cases'}`;
+    document.getElementById('recordLabDetail').textContent = `${this.progress.labsCompleted.length} of ${Object.keys(LABS).length}`;
+    document.getElementById('recordTerminalDetail').textContent = this.progress.terminalLabCompleted ? 'Completed' : 'Not completed';
     document.getElementById('missionCount').textContent = `${String(this.missions.length).padStart(2, '0')} CASES  /  AVAILABLE`;
     const streakValue = document.getElementById('streakValue');
     const dayLabel = document.createElement('small');
@@ -288,6 +421,119 @@ class CyberHeistGame {
     this.renderCategoryOptions();
     this.renderCases();
     this.renderLabs();
+  }
+
+  runTerminalCommand(rawCommand) {
+    const command = String(rawCommand || '').trim().replace(/\s+/g, ' ');
+    const output = document.getElementById('terminalOutput');
+    if (!command) return;
+    this.terminalHistory.push(command);
+    this.terminalHistory = this.terminalHistory.slice(-30);
+    this.terminalHistoryIndex = this.terminalHistory.length;
+    const entered = document.createElement('p');
+    entered.className = 'terminal-line terminal-command';
+    entered.textContent = `trainee@field-lab:~$ ${command}`;
+    output.append(entered);
+    const write = (text, kind = '') => {
+      const line = document.createElement('p');
+      line.className = `terminal-line${kind ? ` ${kind}` : ''}`;
+      line.textContent = text;
+      output.append(line);
+    };
+    const files = {
+      'auth.log': [
+        '08:12:02 user=amina event=LOGIN result=SUCCESS src=203.0.113.10 device=known',
+        '08:19:44 user=amina event=MFA_DENIED result=DENIED src=198.51.100.23 device=unknown',
+        '08:20:05 user=amina event=PASSWORD_RESET result=REQUESTED src=198.51.100.23 channel=unverified',
+        '08:20:52 user=amina event=SESSION_REVOKED result=SUCCESS src=203.0.113.10 actor=account-owner',
+      ],
+      'asset-baseline.csv': [
+        'asset,expected-sign-in-source,owner',
+        'account-amina,203.0.113.10,amina@example.test',
+        'scope,fictional training data,read-only exercise',
+      ],
+      'incident-brief.txt': [
+        'IR-04 / FICTIONAL TRAINING CASE',
+        'An account owner reports an unfamiliar sign-in challenge.',
+        'The log is synthetic; an alert is a signal, not proof of compromise.',
+        'Stay within the owner’s authority and use the service’s official route.',
+      ],
+    };
+    const finishOutput = () => {
+      while (output.children.length > 26) output.firstElementChild.remove();
+      output.scrollTop = output.scrollHeight;
+    };
+    const normalized = command.toLocaleLowerCase();
+
+    if (normalized === 'help') {
+      write('Allowed commands: help · whoami · pwd · ls · cat <file> · grep <text> <file> · timeline · answer <IP> · decision owner-led · clear', 'terminal-system');
+      write('Files: auth.log, asset-baseline.csv, incident-brief.txt. This simulator never executes host commands.');
+    } else if (normalized === 'whoami') {
+      write('trainee (simulated identity; no host account is read).');
+    } else if (normalized === 'pwd') {
+      write('/field-lab/IR-04 (fictional path; no device filesystem access).');
+    } else if (normalized === 'ls') {
+      write('auth.log  asset-baseline.csv  incident-brief.txt');
+    } else if (normalized === 'timeline') {
+      this.terminalEvidenceInspected = true;
+      write('08:12 known-source sign-in succeeded.');
+      write('08:19 MFA challenge denied from 198.51.100.23 (documentation-only address).');
+      write('08:20 password reset requested through an unverified channel.');
+      write('08:20 account owner revoked the session from the known source.');
+    } else if (normalized === 'clear') {
+      output.replaceChildren();
+      write('Display cleared. Your exercise progress is unchanged.', 'terminal-system');
+    } else {
+      const catMatch = normalized.match(/^cat\s+([a-z0-9._-]+)$/);
+      const grepMatch = normalized.match(/^grep\s+(?:"([^"]+)"|'([^']+)'|([^\s]+))\s+([a-z0-9._-]+)$/);
+      const answerMatch = normalized.match(/^answer\s+([0-9.]+)$/);
+      const decisionMatch = normalized.match(/^decision\s+([a-z-]+)$/);
+      if (catMatch) {
+        const filename = catMatch[1];
+        if (!files[filename]) write(`No such training artifact: ${filename}. Use ls to list the fictional bundle.`, 'terminal-error');
+        else {
+          if (filename === 'auth.log') this.terminalEvidenceInspected = true;
+          files[filename].forEach((line) => write(line));
+        }
+      } else if (grepMatch) {
+        const needle = (grepMatch[1] || grepMatch[2] || grepMatch[3] || '').toLocaleLowerCase();
+        const filename = grepMatch[4];
+        if (!files[filename]) write(`No such training artifact: ${filename}. Use ls to list the fictional bundle.`, 'terminal-error');
+        else {
+          const matches = files[filename].filter((line) => line.toLocaleLowerCase().includes(needle));
+          if (filename === 'auth.log' && needle.includes('mfa_denied') && matches.length) this.terminalEvidenceInspected = true;
+          if (matches.length) matches.forEach((line) => write(line));
+          else write('(no matching lines)');
+        }
+      } else if (answerMatch) {
+        if (!this.terminalEvidenceInspected) write('Review auth.log first. Use grep MFA_DENIED auth.log or cat auth.log.', 'terminal-error');
+        else if (answerMatch[1] !== '198.51.100.23') write('That address is not attached to the denied MFA event. Re-check the event row; no penalty.', 'terminal-error');
+        else {
+          this.terminalStep = 'decision';
+          write('Finding recorded in this local exercise: 198.51.100.23. Now choose an owner-led next step.', 'terminal-success');
+        }
+      } else if (decisionMatch) {
+        if (this.terminalStep !== 'decision') write('First inspect the evidence and submit the source address with answer <IP>.', 'terminal-error');
+        else if (decisionMatch[1] !== 'owner-led') write('Keep the response authorized and proportionate. Review incident-brief.txt; no penalty.', 'terminal-error');
+        else {
+          write('Correct: confirm with the account owner, secure access through the official service route, review sessions with them, and document facts separately from assumptions.', 'terminal-success');
+          const firstCompletion = !this.progress.terminalLabCompleted;
+          if (firstCompletion) {
+            this.progress.terminalLabCompleted = true;
+            this.progress.xp += 80;
+            this.updateStreak();
+            this.saveProgress();
+            write('Training objective complete · 80 XP earned once. The simulated command changed no real account.', 'terminal-success');
+          } else {
+            write('Replay complete. No repeat XP.', 'terminal-system');
+          }
+          this.terminalStep = 'complete';
+        }
+      } else {
+        write('Command not available in this isolated training image. Nothing was executed. Type help.', 'terminal-error');
+      }
+    }
+    finishOutput();
   }
 
   renderCategoryOptions() {
@@ -466,9 +712,9 @@ class CyberHeistGame {
     const workbench = document.createElement('section');
     workbench.className = 'lab-workbench';
     const caption = document.createElement('strong');
-    caption.textContent = lab.id === 'signal-hunt' ? 'MARK THE SIGNALS' : lab.id === 'permission-desk' ? 'CHOOSE THE MINIMUM ACCESS' : 'ARRANGE THE STEPS';
+    caption.textContent = lab.workbenchTitle || (lab.mode === 'select' ? 'SELECT THE BEST-FIT OPTIONS' : 'ARRANGE THE STEPS');
     workbench.append(caption);
-    if (lab.id === 'signal-hunt' || lab.id === 'permission-desk') {
+    if (lab.mode === 'select') {
       lab.items.forEach((item, index) => {
         const button = document.createElement('button');
         button.type = 'button';
@@ -508,7 +754,7 @@ class CyberHeistGame {
     const lab = this.activeLab;
     if (!lab) return;
     let passed = false;
-    if (lab.id === 'signal-hunt' || lab.id === 'permission-desk') {
+    if (lab.mode === 'select') {
       const expected = new Set(lab.items.flatMap((item, index) => item.clue ? [index] : []));
       passed = expected.size === this.labSelection.size && [...expected].every((index) => this.labSelection.has(index));
     } else {
@@ -779,9 +1025,15 @@ class CyberHeistGame {
 
   getRelatedLabId(mission) {
     const category = String(mission.category || '').toLowerCase();
+    const title = String(mission.title || '').toLowerCase();
     if (category.includes('network')) return 'packet-route';
-    if (category.includes('identity') || category.includes('account') || category.includes('build') || category.includes('device')) return 'permission-desk';
-    if (category.includes('monitoring') || category.includes('respond') || category.includes('capstone') || category.includes('field check')) return 'response-runbook';
+    if (category.includes('privacy') || category.includes('people')) return 'data-minimizer';
+    if (category.includes('build') && (title.includes('input') || title.includes('access checks'))) return 'code-review';
+    if (category.includes('build') || category.includes('configuration') || category.includes('secure')) return 'config-audit';
+    if (category.includes('monitoring')) return 'alert-triage';
+    if (category.includes('recovery') || category.includes('backup')) return 'recovery-check';
+    if (category.includes('respond') || category.includes('capstone') || category.includes('field check')) return 'response-runbook';
+    if (category.includes('identity') || category.includes('account') || category.includes('device')) return 'permission-desk';
     return 'signal-hunt';
   }
 
