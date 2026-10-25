@@ -234,7 +234,7 @@ class CyberHeistGame {
     document.getElementById('closeDialog').addEventListener('click', () => this.dialog.close());
     document.getElementById('closeAcademy').addEventListener('click', () => this.academyDialog.close());
     document.getElementById('closeNotes').addEventListener('click', () => this.notesDialog.close());
-    ['academyButton', 'academyRailButton', 'academyMobileButton'].forEach((id) => {
+    ['academyButton', 'academyRailButton', 'academyMobileButton', 'startAcademyGuide'].forEach((id) => {
       document.getElementById(id).addEventListener('click', () => this.openAcademy());
     });
     ['notesButton', 'notesRailButton', 'notesMobileButton'].forEach((id) => {
@@ -305,6 +305,21 @@ class CyberHeistGame {
         this.terminalHistoryIndex = Math.min(this.terminalHistory.length, this.terminalHistoryIndex + 1);
         event.target.value = this.terminalHistory[this.terminalHistoryIndex] || '';
       }
+    });
+    document.getElementById('terminalGuide').addEventListener('click', (event) => {
+      const example = event.target.closest('[data-terminal-fill]');
+      if (!example) return;
+      const input = document.getElementById('terminalCommand');
+      input.value = example.dataset.terminalFill;
+      input.focus();
+    });
+    document.getElementById('openGuidedTerminal').addEventListener('click', () => {
+      this.navigate('labs');
+      document.querySelector('.terminal-module').scrollIntoView({ behavior: 'auto', block: 'start' });
+      const input = document.getElementById('terminalCommand');
+      input.value = 'help';
+      input.focus();
+      this.showToast('Starter command loaded. Press Enter or Run command.');
     });
     this.dialog.addEventListener('click', (event) => {
       if (event.target === this.dialog) this.dialog.close();
@@ -465,9 +480,31 @@ class CyberHeistGame {
     };
     const normalized = command.toLocaleLowerCase();
 
-    if (normalized === 'help') {
-      write('Allowed commands: help · whoami · pwd · ls · cat <file> · grep <text> <file> · timeline · answer <IP> · decision owner-led · clear', 'terminal-system');
-      write('Files: auth.log, asset-baseline.csv, incident-brief.txt. This simulator never executes host commands.');
+    if (normalized === 'help' || normalized === '?' || normalized === 'man') {
+      write('Start with: ls → grep MFA_DENIED auth.log → answer 198.51.100.23 → decision owner-led', 'terminal-system');
+      write('Commands: help / ? / man <command> · whoami · pwd · ls · cat <file> · grep <text> <file> · timeline · history · answer <IP> · decision owner-led · clear');
+      write('Files: auth.log, asset-baseline.csv, incident-brief.txt. Tap a Load command button above to fill the prompt.');
+      write('No host shell, host files, network, accounts, or arbitrary commands are available.');
+    } else if (/^(?:man|help)\s+([a-z]+)$/.test(normalized)) {
+      const requested = normalized.match(/^(?:man|help)\s+([a-z]+)$/)[1];
+      const manuals = {
+        ls: 'List the three fictional files in this training bundle. Example: ls',
+        cat: 'Read one allowed file without changing it. Example: cat auth.log',
+        grep: 'Find literal text inside one allowed file. Example: grep MFA_DENIED auth.log',
+        timeline: 'Review a short fixed event sequence. It contains no live telemetry.',
+        answer: 'Submit the IP tied to the denied MFA event after you inspect auth.log. Example: answer 198.51.100.23',
+        decision: 'Submit the owner-authorized response after the evidence step. Example: decision owner-led',
+        history: 'Show commands entered in this current page session only.',
+        clear: 'Clear the visible transcript. Exercise progress is unchanged.',
+        whoami: 'Show the fictional trainee identity; the host account is never read.',
+        pwd: 'Show the simulated path, not a path on your device.',
+      };
+      write(manuals[requested] || 'No manual entry for that word. Type help to see the supported commands.', manuals[requested] ? 'terminal-system' : 'terminal-error');
+    } else if (normalized === 'history') {
+      const history = this.terminalHistory.slice(0, -1);
+      write(history.length ? history.map((item, index) => `${index + 1}  ${item}`).join('\n') : 'No earlier commands in this session.');
+    } else if (normalized === 'exit' || normalized === 'quit') {
+      write('This is a fixed training panel, not a shell session. Close the exercise or use another screen in CyberHeist.');
     } else if (normalized === 'whoami') {
       write('trainee (simulated identity; no host account is read).');
     } else if (normalized === 'pwd') {
@@ -530,7 +567,7 @@ class CyberHeistGame {
           this.terminalStep = 'complete';
         }
       } else {
-        write('Command not available in this isolated training image. Nothing was executed. Type help.', 'terminal-error');
+        write('Command not available in this training image. Nothing was executed. Type help or choose a Load command step above.', 'terminal-error');
       }
     }
     finishOutput();

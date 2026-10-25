@@ -8,7 +8,7 @@
 
 The repository has a static browser prototype (`index.html`, `style.css`, `game.js`) plus an initial native Android Compose app in `android/`. Both load the same bundled course map and playable mission pack. There is no product server, user account, analytics, or online multiplayer. The browser preview uses a local static web server because it loads mission data with `fetch()`.
 
-The browser prototype now includes separate Briefing, Case, Practice, and Record views; a searchable 60-case library; nine self-contained interactive practice simulations; an allow-listed terminal that reads one fixed fictional log bundle; local notes; sequential Academy unlocks; and mastery-gated XP with shuffled answer presentation. These browser systems are still a prototype; the Android project requires practice-lab, terminal, filtering, and note-composer parity work, an Android SDK build, and device testing before it can be considered a working Android release.
+The browser prototype now includes separate Briefing, Guide, Case, Practice, and Record views; a searchable 60-case library; nine self-contained interactive practice simulations; a step-by-step terminal guide over one fixed fictional log bundle; local notes; sequential Academy unlocks; and mastery-gated XP with shuffled answer presentation. The Guide distinguishes live prototype exercises from planned specialist content. These browser systems are still a prototype; the Android project requires guide, practice-lab, terminal, filtering, and note-composer parity work, an Android SDK build, and device testing before it can be considered a working Android release.
 
 ## Android direction
 
@@ -77,6 +77,8 @@ Before using the browser prototype as a behavior reference:
 - Confirm progress persistence and recovery when storage is unavailable or malformed.
 - Check accessible labels, focus movement, color contrast, reduced motion, and useful error states.
 - Review every scenario for fictional data and safe defensive learning.
+- Every guided exercise names its objective, prerequisites, exact player actions, permitted scope, expected outcome, and recovery/help path.
+- Research maps knowledge to NIST NICE Tasks/Knowledge/Skills and CSF 2.0 outcomes; AppSec awareness material tracks the then-current OWASP Top 10 while remaining clearly distinct from comprehensive secure-development training.
 
 ## Release and delivery controls
 

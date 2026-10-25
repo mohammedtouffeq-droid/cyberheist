@@ -27,9 +27,9 @@ To regenerate the 60-day content pack, run `python scripts/build_course_pack.py`
 
 ## Project structure
 
-- `index.html` — separately routed briefing, record, searchable case library, practice floor, and private notes
+- `index.html` — separately routed briefing, research-informed learning guide, record, searchable case library, practice floor, and private notes
 - `style.css` — responsive visual design
-- `game.js` — routed case flow, shuffled answer presentation, nine interactive safe simulations, an allow-listed fictional log terminal, notes, and local progress
+- `game.js` — routed case flow, shuffled answer presentation, nine interactive safe simulations, a guided allow-listed fictional log terminal, notes, and local progress
 - `missions.json` — authored fictional learning scenarios and static case evidence
 - `curriculum.json` — 60-day beginner-to-foundation course map, with one playable mission for each day
 - `scripts/build_course_pack.py` — reproducibly builds the authored course pack and keeps the learning promise bounded

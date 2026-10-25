@@ -61,6 +61,17 @@ The intended learning outcome is a demonstrable foundation: explain core concept
 
 “Hacking topics” can be represented as defender investigations and contained puzzles. Any future offensive-security lesson needs an isolated toy target, explicit learning purpose, and a separate safety review before implementation.
 
+### Research-informed skill map and player guidance
+
+The learning guide and future course revisions use three complementary lenses rather than presenting “cybersecurity” as one undifferentiated skill:
+
+- **NIST NICE:** organize career learning as observable Tasks supported by Knowledge and Skills (TKS), then map those to competency areas and work roles. This helps separate “read about it” from “demonstrate it.” See [Getting Started with the NICE Framework](https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/getting-started) and [current NICE components](https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/nice-framework-current-versions).
+- **NIST CSF 2.0:** use Govern, Identify, Protect, Detect, Respond, and Recover as connected, continuing risk-management functions. A game mission may emphasize one function, but the guide should show how it connects to the wider lifecycle. See the [CSF FAQ](https://www.nist.gov/cyberframework/faqs).
+- **OWASP Top 10:2025:** use the current awareness categories to plan the introductory secure-application track: access control, misconfiguration, software supply chain, cryptography, injection, insecure design, authentication, integrity, logging/alerting, and exceptional conditions. These are awareness topics, not a complete AppSec curriculum. See [OWASP Top 10:2025](https://top10.owasp.org/2025/).
+- **CISA Workforce Training Guide:** use role and proficiency groupings to identify reputable optional further study; course availability and eligibility must be checked at the linked provider. See the [CISA guide](https://www.cisa.gov/sites/default/files/publications/Cybersecurity%20Workforce%20Training%20Guide_508c.pdf).
+
+Player guidance should make five things explicit for each activity: the learning objective, prerequisites, exact steps/controls, safe scope, and what evidence demonstrates the skill. It must label what works in the current prototype separately from planned content. The current 60-day pack is a beginner foundation route; specialist areas such as cloud security, application security, digital forensics, cryptography engineering, and governance require separate curricula, qualified review, and longer supervised practice.
+
 ## 4. Progression and free model
 
 - XP is earned for passing a lesson mastery check or completing a local practice simulation; first completion only, with no replay farming.
