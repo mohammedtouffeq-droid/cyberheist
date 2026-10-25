@@ -27,6 +27,10 @@ The first release should explain jargon, work offline, support touch and keyboar
 5. **Private by default:** local progress first; optional online features only when their data and moderation needs are designed.
 6. **Ship in reviewable steps:** each milestone has a real build, acceptance criteria, and documented limits.
 
+### Visual identity
+
+Use an investigative field-office language: warm paper, ink, deep forest green, and a restrained rust signal color; editorial serif headlines paired with precise compact interface typography; numbered case references, evidence cards, and a small custom case illustration. Keep the game interface focused on the current case and a short horizontal case library on phones. Avoid generic neon hacker screens, blue/purple gradients, oversized reward dashboards, and promotional labels that do not help the player.
+
 ## 2. Core game loop
 
 1. **Briefing:** a short fictional incident establishes the context and learning objective.
@@ -58,6 +62,17 @@ The first release should explain jargon, work offline, support touch and keyboar
 - Keep the first build account-free and offline-capable. Online leagues require an explicit product decision about optional accounts, server costs, cheating, deletion, and moderation.
 
 ## 5. Milestones and acceptance criteria
+
+### Four-part delivery contract
+
+Track the work in four reviewable build parts, as requested. The parts describe deliverable slices, not a claim that four messages can replace implementation, device QA, or release gates.
+
+1. **Part 1 — Product foundation and visual/gameplay prototype:** product direction, distinct visual identity, responsive briefing desk, working first case loop, and review of the existing web experience. This is the current slice.
+2. **Part 2 — Actual game systems and content:** reusable lesson schema, content validation/review, Defender Desk and additional game modes, replay/mastery, player controls, and stronger local progression.
+3. **Part 3 — Native Android product:** Compose app foundation, offline content/state, navigation/accessibility, device testing, and Android build pipeline.
+4. **Part 4 — League and release candidate:** League services and anti-cheat only after privacy/moderation design, broader content/device QA, Play Store readiness, and a verified release candidate.
+
+Do not announce a part as complete until its listed scope is implemented and its acceptance evidence is available. The full Play Store project is complete only after Part 4 release criteria pass.
 
 ### Milestone 0 — Product and quality foundation (current)
 

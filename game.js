@@ -67,6 +67,15 @@ class CyberHeistGame {
 
   bindEvents() {
     document.getElementById('closeDialog').addEventListener('click', () => this.dialog.close());
+    document.getElementById('startFeatured').addEventListener('click', () => {
+      if (this.missions[0]) this.startMission(this.missions[0]);
+    });
+    document.querySelectorAll('.nav-link, .mobile-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        document.querySelectorAll('.nav-link, .mobile-link').forEach((item) => item.classList.remove('active'));
+        document.querySelectorAll(`[href="${link.getAttribute('href')}"]`).forEach((item) => item.classList.add('active'));
+      });
+    });
     this.dialog.addEventListener('click', (event) => {
       if (event.target === this.dialog) this.dialog.close();
     });
@@ -106,10 +115,15 @@ class CyberHeistGame {
     const completedCount = this.missions.filter((mission) => completed.has(mission.id)).length;
     const level = this.getLevel(this.progress.xp);
     document.getElementById('levelValue').textContent = level.name;
-    document.getElementById('xpValue').textContent = `${this.progress.xp} XP earned`;
+    document.getElementById('xpValue').textContent = `${this.progress.xp} XP`;
+    document.getElementById('xpProgress').style.width = `${level.progress}%`;
     document.getElementById('completedValue').textContent = `${completedCount} / ${this.missions.length}`;
-    document.getElementById('missionCount').textContent = `${this.missions.length} missions`;
-    document.getElementById('streakValue').textContent = `${this.progress.streak} day${this.progress.streak === 1 ? '' : 's'} streak`;
+    document.getElementById('missionCount').textContent = `${String(this.missions.length).padStart(2, '0')} CASES  /  AVAILABLE`;
+    const streakValue = document.getElementById('streakValue');
+    const dayLabel = document.createElement('small');
+    dayLabel.textContent = this.progress.streak === 1 ? 'DAY' : 'DAYS';
+    streakValue.replaceChildren(document.createTextNode(String(this.progress.streak)), dayLabel);
+    if (this.missions[0]) document.getElementById('featuredDescription').textContent = this.missions[0].description;
     this.grid.replaceChildren(...this.missions.map((mission) => this.createMissionCard(mission, completed.has(mission.id))));
   }
 
@@ -277,10 +291,10 @@ class CyberHeistGame {
   }
 
   getLevel(xp) {
-    if (xp >= 600) return { name: 'Guardian' };
-    if (xp >= 300) return { name: 'Defender' };
-    if (xp >= 120) return { name: 'Scout' };
-    return { name: 'Rookie' };
+    if (xp >= 600) return { name: 'Guardian', progress: 100 };
+    if (xp >= 300) return { name: 'Defender', progress: Math.round(((xp - 300) / 300) * 100) };
+    if (xp >= 120) return { name: 'Scout', progress: Math.round(((xp - 120) / 180) * 100) };
+    return { name: 'Rookie', progress: Math.round((xp / 120) * 100) };
   }
 
   saveProgress() {
