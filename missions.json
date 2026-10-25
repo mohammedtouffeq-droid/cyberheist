@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-10-25T08:48:33.818972+00:00",
+  "last_updated": "2026-10-25T18:36:47.480143+00:00",
   "architect": "Mohammed Ahmed & Google Gemini 2.5 Pro",
   "missions": [
     {
@@ -884,6 +884,39 @@
         {
           "cmd": "breach",
           "output": "[BREACH ACCOMPLISHED]\n\n    [ K U R O S H I O ]\n    ~~~[DEEP-SEA-NET]~~~\n    ===// NEXUS 4000 //===\n\nVault siphoned! Harvested \u20bf 7835 Credits & 3631 EXP!"
+        }
+      ]
+    },
+    {
+      "id": "M28",
+      "title": "Operation Overdrive: Nakamoto Shadow DAO",
+      "target": "Nakamoto Shadow DAO",
+      "difficulty": "Cyber-Lord",
+      "reward_credits": 8069,
+      "reward_exp": 3734,
+      "desc": "Self-governed autonomous AI liquidity pool hidden behind zero-knowledge proofs.",
+      "nodes": [
+        "PROXY",
+        "FIREWALL",
+        "DATABASE",
+        "VAULT"
+      ],
+      "solution_commands": [
+        {
+          "cmd": "scan",
+          "output": "[SCAN // NAKAMOTO] Quantum subnets mapped. Target: Nakamoto Shadow DAO. Firewall integrity at 100%."
+        },
+        {
+          "cmd": "nmap",
+          "output": "[NMAP // VULN] Port 8768 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
+        },
+        {
+          "cmd": "crack",
+          "output": "[CRACK // CIPHER] Quantum salt broken: NAKAMOTO_532_SIG. Root authorization acquired."
+        },
+        {
+          "cmd": "breach",
+          "output": "[BREACH ACCOMPLISHED]\n\n    [ H Y P E R I O N ]\n    <*[[ BIO-NEURAL ]]*>\n    <<==GEN-CORE-v4==>>\n\nVault siphoned! Harvested \u20bf 8069 Credits & 3734 EXP!"
         }
       ]
     }
