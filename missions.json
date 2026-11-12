@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-11-11T22:22:17.335426+00:00",
+  "last_updated": "2026-11-12T11:58:26.558685+00:00",
   "architect": "Mohammed Ahmed & Google Gemini 2.5 Pro",
   "missions": [
     {
@@ -2039,6 +2039,39 @@
         {
           "cmd": "breach",
           "output": "[BREACH ACCOMPLISHED]\n\n    [ N A K A M O T O ]\n    \u20bf [ SHADOW-DAO ] \u20bf\n    ===ZK-PROOF-CORE===\n\nVault siphoned! Harvested \u20bf 16596 Credits & 7494 EXP!"
+        }
+      ]
+    },
+    {
+      "id": "M63",
+      "title": "Operation Overdrive: Nakamoto Shadow DAO",
+      "target": "Nakamoto Shadow DAO",
+      "difficulty": "Cyber-Lord",
+      "reward_credits": 17102,
+      "reward_exp": 7490,
+      "desc": "Self-governed autonomous AI liquidity pool hidden behind zero-knowledge proofs.",
+      "nodes": [
+        "PROXY",
+        "FIREWALL",
+        "DATABASE",
+        "VAULT"
+      ],
+      "solution_commands": [
+        {
+          "cmd": "scan",
+          "output": "[SCAN // NAKAMOTO] Quantum subnets mapped. Target: Nakamoto Shadow DAO. Firewall integrity at 100%."
+        },
+        {
+          "cmd": "nmap",
+          "output": "[NMAP // VULN] Port 9636 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
+        },
+        {
+          "cmd": "crack",
+          "output": "[CRACK // CIPHER] Quantum salt broken: NAKAMOTO_996_SIG. Root authorization acquired."
+        },
+        {
+          "cmd": "breach",
+          "output": "[BREACH ACCOMPLISHED]\n\n    [ N A K A M O T O ]\n    \u20bf [ SHADOW-DAO ] \u20bf\n    ===ZK-PROOF-CORE===\n\nVault siphoned! Harvested \u20bf 17102 Credits & 7490 EXP!"
         }
       ]
     }
