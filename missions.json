@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-11-21T11:54:05.105511+00:00",
+  "last_updated": "2026-11-21T21:18:04.235976+00:00",
   "architect": "Mohammed Ahmed & Google Gemini 2.5 Pro",
   "missions": [
     {
@@ -2666,6 +2666,39 @@
         {
           "cmd": "breach",
           "output": "[BREACH ACCOMPLISHED]\n\n    [ A E T H E R I U S ]\n    /\\===[QUANTUM]===/\\\n    \\/===ORBIT-NET===\\/\n\nVault siphoned! Harvested \u20bf 21370 Credits & 9599 EXP!"
+        }
+      ]
+    },
+    {
+      "id": "M82",
+      "title": "Operation Overdrive: Aetherius Orbital Array",
+      "target": "Aetherius Orbital Array",
+      "difficulty": "Adept",
+      "reward_credits": 21555,
+      "reward_exp": 9678,
+      "desc": "High-orbit quantum communication satellites controlling trans-Pacific defense grids.",
+      "nodes": [
+        "PROXY",
+        "FIREWALL",
+        "DATABASE",
+        "VAULT"
+      ],
+      "solution_commands": [
+        {
+          "cmd": "scan",
+          "output": "[SCAN // AETHERIUS] Quantum subnets mapped. Target: Aetherius Orbital Array. Firewall integrity at 100%."
+        },
+        {
+          "cmd": "nmap",
+          "output": "[NMAP // VULN] Port 5145 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
+        },
+        {
+          "cmd": "crack",
+          "output": "[CRACK // CIPHER] Quantum salt broken: AETHERIUS_679_SIG. Root authorization acquired."
+        },
+        {
+          "cmd": "breach",
+          "output": "[BREACH ACCOMPLISHED]\n\n    [ H Y P E R I O N ]\n    <*[[ BIO-NEURAL ]]*>\n    <<==GEN-CORE-v4==>>\n\nVault siphoned! Harvested \u20bf 21555 Credits & 9678 EXP!"
         }
       ]
     }
