@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-11-20T22:26:14.575894+00:00",
+  "last_updated": "2026-11-21T11:54:05.105511+00:00",
   "architect": "Mohammed Ahmed & Google Gemini 2.5 Pro",
   "missions": [
     {
@@ -2633,6 +2633,39 @@
         {
           "cmd": "breach",
           "output": "[BREACH ACCOMPLISHED]\n\n    [ N A K A M O T O ]\n    \u20bf [ SHADOW-DAO ] \u20bf\n    ===ZK-PROOF-CORE===\n\nVault siphoned! Harvested \u20bf 21095 Credits & 9457 EXP!"
+        }
+      ]
+    },
+    {
+      "id": "M81",
+      "title": "Operation Overdrive: Hyperion Bio-Neural Core",
+      "target": "Hyperion Bio-Neural Core",
+      "difficulty": "Neural-Ghost",
+      "reward_credits": 21370,
+      "reward_exp": 9599,
+      "desc": "Synthetic human neural link testing facility holding genetic decryption keys.",
+      "nodes": [
+        "PROXY",
+        "FIREWALL",
+        "DATABASE",
+        "VAULT"
+      ],
+      "solution_commands": [
+        {
+          "cmd": "scan",
+          "output": "[SCAN // HYPERION] Quantum subnets mapped. Target: Hyperion Bio-Neural Core. Firewall integrity at 100%."
+        },
+        {
+          "cmd": "nmap",
+          "output": "[NMAP // VULN] Port 7130 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
+        },
+        {
+          "cmd": "crack",
+          "output": "[CRACK // CIPHER] Quantum salt broken: HYPERION_683_SIG. Root authorization acquired."
+        },
+        {
+          "cmd": "breach",
+          "output": "[BREACH ACCOMPLISHED]\n\n    [ A E T H E R I U S ]\n    /\\===[QUANTUM]===/\\\n    \\/===ORBIT-NET===\\/\n\nVault siphoned! Harvested \u20bf 21370 Credits & 9599 EXP!"
         }
       ]
     }
