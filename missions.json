@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-11-23T13:50:30.404064+00:00",
+  "last_updated": "2026-11-24T02:40:17.222469+00:00",
   "architect": "Mohammed Ahmed & Google Gemini 2.5 Pro",
   "missions": [
     {
@@ -2798,6 +2798,39 @@
         {
           "cmd": "breach",
           "output": "[BREACH ACCOMPLISHED]\n\n    [ A E T H E R I U S ]\n    /\\===[QUANTUM]===/\\\n    \\/===ORBIT-NET===\\/\n\nVault siphoned! Harvested \u20bf 22345 Credits & 9891 EXP!"
+        }
+      ]
+    },
+    {
+      "id": "M86",
+      "title": "Operation Overdrive: Oblivion DarkNet Syndicate",
+      "target": "Oblivion DarkNet Syndicate",
+      "difficulty": "Cyber-Lord",
+      "reward_credits": 22743,
+      "reward_exp": 10086,
+      "desc": "Underground network of rogue rogue AIs trading zero-day zero-click exploits.",
+      "nodes": [
+        "PROXY",
+        "FIREWALL",
+        "DATABASE",
+        "VAULT"
+      ],
+      "solution_commands": [
+        {
+          "cmd": "scan",
+          "output": "[SCAN // OBLIVION] Quantum subnets mapped. Target: Oblivion DarkNet Syndicate. Firewall integrity at 100%."
+        },
+        {
+          "cmd": "nmap",
+          "output": "[NMAP // VULN] Port 9066 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
+        },
+        {
+          "cmd": "crack",
+          "output": "[CRACK // CIPHER] Quantum salt broken: OBLIVION_730_SIG. Root authorization acquired."
+        },
+        {
+          "cmd": "breach",
+          "output": "[BREACH ACCOMPLISHED]\n\n    [ H Y P E R I O N ]\n    <*[[ BIO-NEURAL ]]*>\n    <<==GEN-CORE-v4==>>\n\nVault siphoned! Harvested \u20bf 22743 Credits & 10086 EXP!"
         }
       ]
     }
