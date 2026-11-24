@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-11-24T02:40:17.222469+00:00",
+  "last_updated": "2026-11-24T14:24:27.373897+00:00",
   "architect": "Mohammed Ahmed & Google Gemini 2.5 Pro",
   "missions": [
     {
@@ -2831,6 +2831,39 @@
         {
           "cmd": "breach",
           "output": "[BREACH ACCOMPLISHED]\n\n    [ H Y P E R I O N ]\n    <*[[ BIO-NEURAL ]]*>\n    <<==GEN-CORE-v4==>>\n\nVault siphoned! Harvested \u20bf 22743 Credits & 10086 EXP!"
+        }
+      ]
+    },
+    {
+      "id": "M87",
+      "title": "Operation Overdrive: Kuroshio DeepSea Nexus",
+      "target": "Kuroshio DeepSea Nexus",
+      "difficulty": "Adept",
+      "reward_credits": 23196,
+      "reward_exp": 10190,
+      "desc": "Underwater fiber hub at 4,000m depth laundering decentralized trillion-dollar yields.",
+      "nodes": [
+        "PROXY",
+        "FIREWALL",
+        "DATABASE",
+        "VAULT"
+      ],
+      "solution_commands": [
+        {
+          "cmd": "scan",
+          "output": "[SCAN // KUROSHIO] Quantum subnets mapped. Target: Kuroshio DeepSea Nexus. Firewall integrity at 100%."
+        },
+        {
+          "cmd": "nmap",
+          "output": "[NMAP // VULN] Port 7361 exposed. CVE-2026-ZERO-DAY buffer vector unlocked."
+        },
+        {
+          "cmd": "crack",
+          "output": "[CRACK // CIPHER] Quantum salt broken: KUROSHIO_148_SIG. Root authorization acquired."
+        },
+        {
+          "cmd": "breach",
+          "output": "[BREACH ACCOMPLISHED]\n\n    [ A E T H E R I U S ]\n    /\\===[QUANTUM]===/\\\n    \\/===ORBIT-NET===\\/\n\nVault siphoned! Harvested \u20bf 23196 Credits & 10190 EXP!"
         }
       ]
     }
